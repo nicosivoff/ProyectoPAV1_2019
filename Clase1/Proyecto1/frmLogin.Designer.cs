@@ -40,7 +40,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Location = new System.Drawing.Point(12, 24);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(73, 22);
+            this.lblUsuario.Size = new System.Drawing.Size(71, 20);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario";
             // 
@@ -48,13 +48,13 @@
             // 
             this.txtUsuario.Location = new System.Drawing.Point(107, 24);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(158, 29);
+            this.txtUsuario.Size = new System.Drawing.Size(158, 26);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(107, 94);
+            this.btnLogin.Location = new System.Drawing.Point(190, 91);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 29);
             this.btnLogin.TabIndex = 2;
@@ -67,7 +67,7 @@
             this.lblClave.AutoSize = true;
             this.lblClave.Location = new System.Drawing.Point(12, 59);
             this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(53, 22);
+            this.lblClave.Size = new System.Drawing.Size(53, 20);
             this.lblClave.TabIndex = 3;
             this.lblClave.Text = "Clave";
             // 
@@ -75,12 +75,12 @@
             // 
             this.txtClave.Location = new System.Drawing.Point(107, 59);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(158, 29);
+            this.txtClave.Size = new System.Drawing.Size(158, 26);
             this.txtClave.TabIndex = 1;
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 160);
             this.Controls.Add(this.txtClave);
@@ -88,9 +88,12 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblUsuario);
-            this.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
