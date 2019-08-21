@@ -51,5 +51,10 @@ namespace Proyecto1
                 MessageBox.Show("Usuario Invalido");
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

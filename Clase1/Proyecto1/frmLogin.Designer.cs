@@ -33,6 +33,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblClave = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -54,11 +55,11 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(190, 91);
+            this.btnLogin.Location = new System.Drawing.Point(16, 104);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 29);
+            this.btnLogin.Size = new System.Drawing.Size(92, 29);
             this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.Text = "Ingresar";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -78,11 +79,22 @@
             this.txtClave.Size = new System.Drawing.Size(158, 26);
             this.txtClave.TabIndex = 1;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(138, 104);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 29);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 160);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.lblClave);
             this.Controls.Add(this.btnLogin);
@@ -108,6 +120,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblClave;
         private System.Windows.Forms.TextBox txtClave;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
 
