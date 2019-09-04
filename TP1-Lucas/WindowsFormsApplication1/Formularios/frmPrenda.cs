@@ -121,7 +121,13 @@ namespace TrabajoPractico
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Esta seguro de eliminar la prenda de codigo " + txtCodigo.Text, "ELIMINANDO", MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                prenda.Codigo = txtCodigo.Text;
+                prenda.eliminarPrenda();
+                /* Actualizar */
+                this.grdPrenda.DataSource = oBD.consultarTabla("Prenda");
+            }
         }
 
         private void grdPrenda_SelectionChanged(object sender, EventArgs e)
