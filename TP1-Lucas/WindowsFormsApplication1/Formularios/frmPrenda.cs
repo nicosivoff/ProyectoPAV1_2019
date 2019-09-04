@@ -105,6 +105,7 @@ namespace TrabajoPractico
                 this.grdPrenda.DataSource = oBD.consultarTabla("Prenda");
             }
             this.nuevo = false;
+            this.limpiar();
             this.habilitar(false);
         }
 
@@ -116,6 +117,33 @@ namespace TrabajoPractico
             txtPrecio.Clear();
             cboTipoPrenda.SelectedIndex = -1;
             txtCantidad.Clear();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdPrenda_SelectionChanged(object sender, EventArgs e)
+        {
+
+            this.actualizarCampos(Convert.ToInt32(grdPrenda.CurrentRow.Cells[0].Value));
+        }
+        private void actualizarCampos(int cod)
+        {
+            DataTable tabla = new DataTable();
+            tabla = oBD.consultar("SELECT * FROM Prenda WHERE codPrenda=" + cod);
+            txtCodigo.Text = tabla.Rows[0]["codPrenda"].ToString();
+            cboTipoPrenda.SelectedValue = tabla.Rows[0]["tipoPrenda"];
+            txtTalle.Text = tabla.Rows[0]["talle"].ToString();
+            txtDescripcion.Text = tabla.Rows[0]["descripcion"].ToString();
+            txtPrecio.Text = tabla.Rows[0]["precio"].ToString();
+            txtCantidad.Text = tabla.Rows[0]["cantidad"].ToString();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
 

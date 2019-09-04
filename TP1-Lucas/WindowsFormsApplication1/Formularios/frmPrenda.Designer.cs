@@ -149,6 +149,7 @@
             this.grdPrenda.Name = "grdPrenda";
             this.grdPrenda.Size = new System.Drawing.Size(532, 150);
             this.grdPrenda.TabIndex = 12;
+            this.grdPrenda.SelectionChanged += new System.EventHandler(this.grdPrenda_SelectionChanged);
             // 
             // txtCantidad
             // 
@@ -184,6 +185,7 @@
             this.btnBorrar.TabIndex = 16;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnGrabar
             // 
@@ -203,6 +205,7 @@
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmPrenda
             // 
