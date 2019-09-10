@@ -27,6 +27,7 @@ namespace TrabajoPractico
         {
            
             llenarCombo(cboTipoPrenda, oBD.consultarTabla("TipoPrenda"), "descripcion","codTipoPrenda");
+            llenarCombo(cboMarca, oBD.consultarTabla("Marca"), "nombre", "idMarca");
             this.grdPrenda.Rows.Clear();
             this.grdPrenda.DataSource = oBD.consultarTabla("Prenda");
             this.habilitar(false);
@@ -78,6 +79,7 @@ namespace TrabajoPractico
 
             prenda.Codigo = txtCodigo.Text;
             prenda.Tipo = Convert.ToInt32(cboTipoPrenda.SelectedValue);
+            prenda.Marca = Convert.ToInt32(cboMarca.SelectedValue);
             prenda.Talle = txtTalle.Text;
             prenda.Descripcion = txtDescripcion.Text;
             prenda.Precio = txtPrecio.Text;

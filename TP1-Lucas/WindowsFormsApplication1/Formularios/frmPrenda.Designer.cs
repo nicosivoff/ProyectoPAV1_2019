@@ -46,6 +46,8 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdPrenda)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             // 
             this.cboTipoPrenda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoPrenda.FormattingEnabled = true;
-            this.cboTipoPrenda.Location = new System.Drawing.Point(108, 63);
+            this.cboTipoPrenda.Location = new System.Drawing.Point(108, 52);
             this.cboTipoPrenda.Name = "cboTipoPrenda";
             this.cboTipoPrenda.Size = new System.Drawing.Size(121, 21);
             this.cboTipoPrenda.TabIndex = 1;
@@ -61,7 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 26);
+            this.label1.Location = new System.Drawing.Point(59, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 1;
@@ -70,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 71);
+            this.label2.Location = new System.Drawing.Point(20, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 2;
@@ -79,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 140);
+            this.label3.Location = new System.Drawing.Point(36, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 3;
@@ -88,7 +90,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 103);
+            this.label4.Location = new System.Drawing.Point(69, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 4;
@@ -97,7 +99,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 178);
+            this.label5.Location = new System.Drawing.Point(62, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 5;
@@ -112,21 +114,21 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(108, 178);
+            this.txtPrecio.Location = new System.Drawing.Point(108, 158);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecio.TabIndex = 4;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(108, 140);
+            this.txtDescripcion.Location = new System.Drawing.Point(108, 132);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 3;
             // 
             // txtTalle
             // 
-            this.txtTalle.Location = new System.Drawing.Point(108, 103);
+            this.txtTalle.Location = new System.Drawing.Point(108, 106);
             this.txtTalle.Name = "txtTalle";
             this.txtTalle.Size = new System.Drawing.Size(100, 20);
             this.txtTalle.TabIndex = 2;
@@ -152,7 +154,7 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(108, 209);
+            this.txtCantidad.Location = new System.Drawing.Point(108, 184);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
             this.txtCantidad.TabIndex = 5;
@@ -160,7 +162,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 209);
+            this.label6.Location = new System.Drawing.Point(50, 187);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 13;
@@ -206,11 +208,31 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(62, 82);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(40, 13);
+            this.lblMarca.TabIndex = 15;
+            this.lblMarca.Text = "Marca:";
+            // 
+            // cboMarca
+            // 
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(108, 79);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(121, 21);
+            this.cboMarca.TabIndex = 14;
+            // 
             // frmPrenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 437);
+            this.Controls.Add(this.lblMarca);
+            this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.btnBorrar);
@@ -261,5 +283,7 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.ComboBox cboMarca;
     }
 }

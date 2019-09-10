@@ -13,6 +13,7 @@ namespace TrabajoPractico.Clases
         Datos oBD = new Datos();
         string codigo;
         int tipo;
+        int marca;
         string talle;
         string descripcion;
         string precio;
@@ -27,6 +28,11 @@ namespace TrabajoPractico.Clases
         {
             get { return tipo; }
             set { tipo = value; }
+        }
+        public int Marca
+        {
+            get { return marca; }
+            set { marca = value; }
         }
         public string Talle
         {
@@ -53,13 +59,14 @@ namespace TrabajoPractico.Clases
         {
             string sqlInsert = "";
 
-            sqlInsert = @"INSERT INTO Prenda (codPrenda,tipoPrenda,talle,descripcion,precio,cantidad) VALUES ('" +
+            sqlInsert = @"INSERT INTO Prenda (codPrenda,tipoPrenda,talle,descripcion,precio,cantidad,marca) VALUES ('" +
                          this.codigo + "', '" +
-                         this.tipo + "', '" +
+                         this.tipo + "', '" +                         
                          this.talle + "', '" +
                          this.descripcion + "', '" +
                          this.precio + "', '" +
-                         this.cantidad + "')";
+                         this.cantidad + "', '" +
+                         this.marca + "')";
 
             oBD.actualizar(sqlInsert);
       
