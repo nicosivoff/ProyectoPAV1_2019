@@ -14,6 +14,7 @@ namespace TrabajoPractico
 {
     public partial class frmLogin : Form
     {
+        frmMenu menu = new frmMenu();
         Datos oBD = new Datos();
 
         public frmLogin()
@@ -23,7 +24,10 @@ namespace TrabajoPractico
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Esta seguro que desea salir del sistema", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                Application.Exit();
+            else
+                txtUsuario.Focus();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -44,6 +48,8 @@ namespace TrabajoPractico
             if (ValidarUsuario(txtUsuario.Text, txtClave.Text))
             {
                 MessageBox.Show("Usuario valido", "Validacion...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                menu.ShowDialog();
                 this.Close();
             }
             else

@@ -13,7 +13,7 @@ namespace TrabajoPractico
 {
     public partial class frmPrenda : Form
     {
-        frmLogin fl = new frmLogin();
+        
         Datos oBD = new Datos();
         Prenda prenda = new Prenda();
         bool nuevo = false;
@@ -25,7 +25,7 @@ namespace TrabajoPractico
 
         private void frmCargar_Load(object sender, EventArgs e)
         {
-            fl.ShowDialog();
+           
             llenarCombo(cboTipoPrenda, oBD.consultarTabla("TipoPrenda"), "descripcion","codTipoPrenda");
             this.grdPrenda.Rows.Clear();
             this.grdPrenda.DataSource = oBD.consultarTabla("Prenda");
@@ -50,10 +50,6 @@ namespace TrabajoPractico
             
         }
 
-        private void txtCodigo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -124,9 +120,11 @@ namespace TrabajoPractico
             if (MessageBox.Show("Esta seguro de eliminar la prenda de codigo " + txtCodigo.Text, "ELIMINANDO", MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 prenda.Codigo = txtCodigo.Text;
+                
                 prenda.eliminarPrenda();
                 /* Actualizar */
                 this.grdPrenda.DataSource = oBD.consultarTabla("Prenda");
+                
             }
         }
 
@@ -149,7 +147,8 @@ namespace TrabajoPractico
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.limpiar();
+            this.habilitar(false);
         }
 
 

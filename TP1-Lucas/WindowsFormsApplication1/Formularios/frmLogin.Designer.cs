@@ -41,7 +41,7 @@
             this.btnIngresar.Location = new System.Drawing.Point(27, 109);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
-            this.btnIngresar.TabIndex = 0;
+            this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
@@ -60,7 +60,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(101, 23);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TabIndex = 0;
             // 
             // label2
             // 
@@ -75,15 +75,16 @@
             // 
             this.txtClave.Location = new System.Drawing.Point(101, 66);
             this.txtClave.Name = "txtClave";
+            this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(100, 20);
-            this.txtClave.TabIndex = 4;
+            this.txtClave.TabIndex = 1;
             // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(126, 109);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -92,14 +93,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 153);
+            this.ClientSize = new System.Drawing.Size(243, 153);
+            this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnIngresar);
+            this.MaximumSize = new System.Drawing.Size(259, 192);
+            this.MinimumSize = new System.Drawing.Size(259, 192);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);

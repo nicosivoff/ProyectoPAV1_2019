@@ -56,7 +56,7 @@
             this.cboTipoPrenda.Location = new System.Drawing.Point(108, 63);
             this.cboTipoPrenda.Name = "cboTipoPrenda";
             this.cboTipoPrenda.Size = new System.Drawing.Size(121, 21);
-            this.cboTipoPrenda.TabIndex = 0;
+            this.cboTipoPrenda.TabIndex = 1;
             // 
             // label1
             // 
@@ -108,36 +108,35 @@
             this.txtCodigo.Location = new System.Drawing.Point(108, 26);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 6;
-            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.TabIndex = 0;
             // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(108, 178);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecio.TabIndex = 8;
+            this.txtPrecio.TabIndex = 4;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(108, 140);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
-            this.txtDescripcion.TabIndex = 9;
+            this.txtDescripcion.TabIndex = 3;
             // 
             // txtTalle
             // 
             this.txtTalle.Location = new System.Drawing.Point(108, 103);
             this.txtTalle.Name = "txtTalle";
             this.txtTalle.Size = new System.Drawing.Size(100, 20);
-            this.txtTalle.TabIndex = 10;
+            this.txtTalle.TabIndex = 2;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(15, 391);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -148,7 +147,7 @@
             this.grdPrenda.Location = new System.Drawing.Point(15, 235);
             this.grdPrenda.Name = "grdPrenda";
             this.grdPrenda.Size = new System.Drawing.Size(532, 150);
-            this.grdPrenda.TabIndex = 12;
+            this.grdPrenda.TabIndex = 6;
             this.grdPrenda.SelectionChanged += new System.EventHandler(this.grdPrenda_SelectionChanged);
             // 
             // txtCantidad
@@ -156,7 +155,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(108, 209);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
-            this.txtCantidad.TabIndex = 14;
+            this.txtCantidad.TabIndex = 5;
             // 
             // label6
             // 
@@ -172,7 +171,7 @@
             this.btnEditar.Location = new System.Drawing.Point(108, 391);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 15;
+            this.btnEditar.TabIndex = 8;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -182,7 +181,7 @@
             this.btnBorrar.Location = new System.Drawing.Point(199, 391);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
-            this.btnBorrar.TabIndex = 16;
+            this.btnBorrar.TabIndex = 9;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
@@ -192,7 +191,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(399, 391);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 23);
-            this.btnGrabar.TabIndex = 17;
+            this.btnGrabar.TabIndex = 10;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -202,7 +201,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(504, 391);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -230,7 +229,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboTipoPrenda);
+            this.MaximumSize = new System.Drawing.Size(612, 476);
+            this.MinimumSize = new System.Drawing.Size(612, 476);
             this.Name = "frmPrenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCargar";
             this.Load += new System.EventHandler(this.frmCargar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdPrenda)).EndInit();

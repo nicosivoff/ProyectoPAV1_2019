@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 
 namespace TrabajoPractico.Clases
 {
@@ -55,8 +56,8 @@ namespace TrabajoPractico.Clases
             sqlInsert = @"INSERT INTO Prenda (codPrenda,tipoPrenda,talle,descripcion,precio,cantidad) VALUES ('" +
                          this.codigo + "', '" +
                          this.tipo + "', '" +
-                         this.descripcion + "', '" +
                          this.talle + "', '" +
+                         this.descripcion + "', '" +
                          this.precio + "', '" +
                          this.cantidad + "')";
 
@@ -103,19 +104,28 @@ namespace TrabajoPractico.Clases
             string sqlUpdate = "";
             // (codPrenda,tipoPrenda,talle,descripcion,precio,cantidad)
             sqlUpdate = @"UPDATE Prenda SET tipoPrenda=" + this.tipo + ", " +
-                         "descripcion='" + this.descripcion + "', " +
-                         "talle='" + this.talle + "', " +
-                         "precio='" + this.precio + "', " +
-                         "cantidad='" + this.cantidad + "'" +
-                         " WHERE codPrenda=" + this.codigo ;
+                        "talle='" + this.talle + "', " + 
+                        "descripcion='" + this.descripcion + "', " +
+                        "precio='" + this.precio + "', " +
+                        "cantidad='" + this.cantidad + "'" +
+                        " WHERE codPrenda=" + this.codigo ;
 
             oBD.actualizar(sqlUpdate);
 
         }
         public void eliminarPrenda()
         {
-            string sqlDelete = @"DELETE FROM Prenda WHERE codPrenda='" + this.codigo;
+            string sqlDelete = @"DELETE FROM Prenda WHERE codPrenda='" + this.codigo + "'";
             oBD.actualizar(sqlDelete);
+        }
+
+        public DataTable recuperarPrenda()
+        {
+            string strSql = "SELECT p.codPrenda, t.descripcion, p.talle, p.descripcion, p.precio, p.cantidad, m.nombre"
+                            + " FROM Prenda p, TipoPrenda t, Marca m"
+                            + " WHERE p.tipoPrenda=t.codTipoPrenda"
+                            + " AND p.marca=m.idMarca";
+            return oBD.consultar(strSql);
         }
     }
 }

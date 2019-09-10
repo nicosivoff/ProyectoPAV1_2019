@@ -16,7 +16,7 @@ namespace TrabajoPractico
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrenda());
+            Application.Run(new frmLogin());
             
         }
     }
