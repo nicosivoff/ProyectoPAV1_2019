@@ -15,6 +15,7 @@ namespace TrabajoPractico
     public partial class frmDetalle : Form
     {
         Datos oBD = new Datos();
+        Prenda pr = new Prenda();
         public frmDetalle()
         {
             InitializeComponent();
@@ -46,6 +47,17 @@ namespace TrabajoPractico
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmDetalle_Load(object sender, EventArgs e)
+        {
+            txtTipo.Text = pr.Tipo.ToString();
+            txtCodigo.Text = pr.Codigo.ToString();
+            txtDescripcion.Text = pr.Descripcion.ToString();
+            txtMarca.Text = pr.Marca.ToString();
+            txtPrecio.Text = pr.Precio.ToString();
+            txtTalle.Text = pr.Precio.ToString();
+            txtCantidad.Text = pr.Precio.ToString();
         }
     }
 }

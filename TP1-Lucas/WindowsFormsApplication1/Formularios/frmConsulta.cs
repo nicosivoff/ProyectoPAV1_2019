@@ -80,14 +80,26 @@ namespace TrabajoPractico
             if (grdPrenda.CurrentRow != null)
             {
                 frmDetalle detalle = new frmDetalle();
-                var seleccionado = (DataRowView)grdPrenda.CurrentRow.DataBoundItem;
-                detalle.inicializarDetalle(seleccionado["codigo"].ToString());
+                int codigo = Convert.ToInt32(grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString());
+                int tipo = Convert.ToInt32(grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString());
+                int marca = Convert.ToInt32(grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString());
+                string talle = grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString();
+                string descripcion = grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString();
+                string precio = grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString();
+                string cantidad = grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString();
+                pr.Codigo = codigo;
+                pr.Tipo = tipo;
+                pr.Marca = marca;
+                pr.Talle = talle;
+                pr.Descripcion = descripcion;
+                pr.Precio = precio;
+                pr.Cantidad = cantidad;
                 detalle.ShowDialog();
             }
         }
 
         private void grdPrenda_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {            
             btnDetalle.Enabled = true;
         }
     }

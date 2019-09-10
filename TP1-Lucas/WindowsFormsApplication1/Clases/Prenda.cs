@@ -11,7 +11,7 @@ namespace TrabajoPractico.Clases
     class Prenda
     {
         Datos oBD = new Datos();
-        string codigo;
+        int codigo;
         int tipo;
         int marca;
         string talle;
@@ -19,7 +19,7 @@ namespace TrabajoPractico.Clases
         string precio;
         string cantidad;
 
-        public string Codigo
+        public int Codigo
         {
             get { return codigo; }
             set { codigo = value; }
@@ -73,7 +73,7 @@ namespace TrabajoPractico.Clases
         }
         public bool validarDatosPrenda()
         {
-            if (this.codigo == "")
+            if (this.codigo == null)
             {
                 MessageBox.Show("El codigo esta vacio");
                 return false;

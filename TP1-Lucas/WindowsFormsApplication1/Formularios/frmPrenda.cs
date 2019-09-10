@@ -77,7 +77,7 @@ namespace TrabajoPractico
         private void btnGrabar_Click(object sender, EventArgs e)
         {
 
-            prenda.Codigo = txtCodigo.Text;
+            prenda.Codigo = Convert.ToInt32(txtCodigo.Text);
             prenda.Tipo = Convert.ToInt32(cboTipoPrenda.SelectedValue);
             prenda.Marca = Convert.ToInt32(cboMarca.SelectedValue);
             prenda.Talle = txtTalle.Text;
@@ -121,7 +121,7 @@ namespace TrabajoPractico
         {
             if (MessageBox.Show("Esta seguro de eliminar la prenda de codigo " + txtCodigo.Text, "ELIMINANDO", MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                prenda.Codigo = txtCodigo.Text;
+                prenda.Codigo = Convert.ToInt32(txtCodigo.Text);
                 
                 prenda.eliminarPrenda();
                 /* Actualizar */
@@ -151,6 +151,11 @@ namespace TrabajoPractico
         {
             this.limpiar();
             this.habilitar(false);
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 
