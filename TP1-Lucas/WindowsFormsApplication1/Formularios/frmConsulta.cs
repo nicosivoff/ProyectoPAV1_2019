@@ -81,12 +81,12 @@ namespace TrabajoPractico
             {
                 frmDetalle detalle = new frmDetalle();
                 int codigo = Convert.ToInt32(grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString());
-                int tipo = Convert.ToInt32(grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString());
-                int marca = Convert.ToInt32(grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString());
-                string talle = grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString();
-                string descripcion = grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString();
-                string precio = grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString();
-                string cantidad = grdPrenda.CurrentRow.Cells["Codigo"].Value.ToString();
+                int tipo = Convert.ToInt32(grdPrenda.CurrentRow.Cells["Tipo"].Value.ToString());
+                int marca = Convert.ToInt32(grdPrenda.CurrentRow.Cells["Marca"].Value.ToString());
+                string talle = grdPrenda.CurrentRow.Cells["Talle"].Value.ToString();
+                string descripcion = grdPrenda.CurrentRow.Cells["Descripcion"].Value.ToString();
+                string precio = grdPrenda.CurrentRow.Cells["Precio"].Value.ToString();
+                string cantidad = grdPrenda.CurrentRow.Cells["Cantidad"].Value.ToString();
                 pr.Codigo = codigo;
                 pr.Tipo = tipo;
                 pr.Marca = marca;
