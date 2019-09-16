@@ -15,7 +15,7 @@ namespace TrabajoPractico
 {
     public partial class frmConsulta : Form
     {
-        Datos oBD = new Datos();
+        DBHelper oBD = new DBHelper();
         Prenda pr = new Prenda();
         private readonly PrendaService prendaService;
 

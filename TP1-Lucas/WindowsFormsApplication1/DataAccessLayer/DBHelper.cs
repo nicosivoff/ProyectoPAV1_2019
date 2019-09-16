@@ -8,7 +8,7 @@ using System.Data.OleDb;
 
 namespace TrabajoPractico.DataAccessLayer
 {
-    class Datos
+    class DBHelper
     {
         private OleDbConnection conexion = new OleDbConnection();
         private OleDbCommand comando = new OleDbCommand();

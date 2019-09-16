@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico.Entities
 {
-    class TipoPrenda
+    class Empleado
     {
-       
-        public int TipoPrenda { get; set; }
-
+        public int Legajo { get; set; }
         public string Nombre { get; set; }
+        public string Apellido { get; set; }
 
-        public override string ToString()
-        {
-            return Nombre;
-        }
     }
 }

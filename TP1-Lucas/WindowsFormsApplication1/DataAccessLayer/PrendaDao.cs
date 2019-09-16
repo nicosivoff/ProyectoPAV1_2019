@@ -13,7 +13,7 @@ namespace TrabajoPractico.DataAccessLayer
     
     class PrendaDao
     {
-        Datos oBD = new Datos();
+        DBHelper oBD = new DBHelper();
         /*public void grabarPrenda()
         {
             string sqlInsert = "";

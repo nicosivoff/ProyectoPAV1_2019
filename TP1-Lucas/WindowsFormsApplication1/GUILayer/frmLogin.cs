@@ -16,7 +16,7 @@ namespace TrabajoPractico
     public partial class frmLogin : Form
     {
         frmMenu menu = new frmMenu();
-        Datos oBD = new Datos();
+        DBHelper oBD = new DBHelper();
 
         public frmLogin()
         {

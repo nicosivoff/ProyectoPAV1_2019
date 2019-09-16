@@ -45,10 +45,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\PrendaService.cs" />
-    <Compile Include="DataAccessLayer\Datos.cs" />
+    <Compile Include="DataAccessLayer\DBHelper.cs" />
     <Compile Include="DataAccessLayer\PrendaDao.cs" />
+    <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\Empleado.cs" />
+    <Compile Include="Entities\Pedido.cs" />
     <Compile Include="Entities\Prenda.cs" />
+    <Compile Include="Entities\Proveedor.cs" />
     <Compile Include="Entities\TipoPrenda.cs" />
+    <Compile Include="Entities\Usuario.cs" />
     <Compile Include="GUILayer\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>

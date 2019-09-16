@@ -12,13 +12,13 @@ namespace TrabajoPractico.Entities
     class Prenda
     {
         
-        public int codPrenda { get; set; }
-        public TipoPrenda tipoPrenda { get; set; }
-        public string talle { get; set; }
-        public string descripcion { get; set; }
-        public int precio { get; set; }
-        public int cantidad { get; set; }
-        public Marca marca { get; set; }
+        public int CodPrenda { get; set; }
+        public TipoPrenda TipoPrenda { get; set; }
+        public string Talle { get; set; }
+        public string Descripcion { get; set; }
+        public int Precio { get; set; }
+        public int Cantidad { get; set; }
+        public Marca Marca { get; set; }
 
         
        /* public bool validarDatosPrenda()

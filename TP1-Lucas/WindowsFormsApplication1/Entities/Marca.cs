@@ -8,9 +8,14 @@ namespace TrabajoPractico
 {
     class Marca
     {
-        public int idMarca { get; set; }
+        public int IdMarca { get; set; }
 
-        public string nombre { get; set; }
+        public string Nombre { get; set; }
+
+        public override string ToString()
+        {
+            return Nombre;
+        }
 
 
     }
