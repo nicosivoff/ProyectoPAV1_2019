@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TrabajoPractico.Clases;
-using System.Data;
+using TrabajoPractico.Entities;
+using TrabajoPractico.DataAccessLayer;
+
 
 namespace TrabajoPractico
 {
@@ -51,13 +52,13 @@ namespace TrabajoPractico
 
         private void frmDetalle_Load(object sender, EventArgs e)
         {
-            txtTipo.Text = pr.Tipo.ToString();
-            txtCodigo.Text = pr.Codigo.ToString();
-            txtDescripcion.Text = pr.Descripcion.ToString();
-            txtMarca.Text = pr.Marca.ToString();
-            txtPrecio.Text = pr.Precio.ToString();
-            txtTalle.Text = pr.Precio.ToString();
-            txtCantidad.Text = pr.Precio.ToString();
+            txtTipo.Text = pr.tipoPrenda.ToString();
+            txtCodigo.Text = pr.codPrenda.ToString();
+            txtDescripcion.Text = pr.descripcion.ToString();
+            txtMarca.Text = pr.marca.ToString();
+            txtPrecio.Text = pr.precio.ToString();
+            txtTalle.Text = pr.talle.ToString();
+            txtCantidad.Text = pr.cantidad.ToString();
         }
     }
 }

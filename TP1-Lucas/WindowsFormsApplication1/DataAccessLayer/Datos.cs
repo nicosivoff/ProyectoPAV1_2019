@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.OleDb;
 
-namespace TrabajoPractico
+namespace TrabajoPractico.DataAccessLayer
 {
     class Datos
     {

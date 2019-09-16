@@ -44,53 +44,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Datos.cs" />
-    <Compile Include="Clases\Prenda.cs" />
-    <Compile Include="Formularios\frmLogin.cs">
+    <Compile Include="BusinessLayer\PrendaService.cs" />
+    <Compile Include="DataAccessLayer\Datos.cs" />
+    <Compile Include="DataAccessLayer\PrendaDao.cs" />
+    <Compile Include="Entities\Prenda.cs" />
+    <Compile Include="Entities\TipoPrenda.cs" />
+    <Compile Include="GUILayer\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmLogin.Designer.cs">
+    <Compile Include="GUILayer\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmPrenda.cs">
+    <Compile Include="GUILayer\frmConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmPrenda.Designer.cs">
-      <DependentUpon>frmPrenda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmConsulta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmConsulta.Designer.cs">
+    <Compile Include="GUILayer\frmConsulta.Designer.cs">
       <DependentUpon>frmConsulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDetalle.cs">
+    <Compile Include="GUILayer\frmDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDetalle.Designer.cs">
+    <Compile Include="GUILayer\frmDetalle.Designer.cs">
       <DependentUpon>frmDetalle.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenu.cs">
+    <Compile Include="GUILayer\frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenu.Designer.cs">
+    <Compile Include="GUILayer\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Marca.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\frmLogin.resx">
+    <EmbeddedResource Include="GUILayer\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmPrenda.resx">
-      <DependentUpon>frmPrenda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmConsulta.resx">
+    <EmbeddedResource Include="GUILayer\frmConsulta.resx">
       <DependentUpon>frmConsulta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDetalle.resx">
+    <EmbeddedResource Include="GUILayer\frmDetalle.resx">
       <DependentUpon>frmDetalle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenu.resx">
+    <EmbeddedResource Include="GUILayer\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -116,6 +111,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

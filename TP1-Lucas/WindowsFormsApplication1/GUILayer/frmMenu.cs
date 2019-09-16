@@ -13,15 +13,10 @@ namespace TrabajoPractico
     public partial class frmMenu : Form
     {
         frmConsulta consulta = new frmConsulta();
-        frmPrenda prenda = new frmPrenda();
+        
         public frmMenu()
         {
             InitializeComponent();
-        }
-
-        private void aBMToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            prenda.ShowDialog();
         }
 
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
