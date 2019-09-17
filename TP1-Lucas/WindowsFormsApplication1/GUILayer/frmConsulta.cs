@@ -11,6 +11,7 @@ using TrabajoPractico.Entities;
 using TrabajoPractico.DataAccessLayer;
 using TrabajoPractico.BusinessLayer;
 
+
 namespace TrabajoPractico
 {
     public partial class frmConsulta : Form
@@ -61,6 +62,31 @@ namespace TrabajoPractico
 
         private void btnConsultar_Click_1(object sender, EventArgs e)
         {
+            /*
+              String sqlcondiciones;
+            sqlcondiciones = "";
+
+            Dictionary<string, object> parametros = new Dictionary<string,object>();
+            if (!string.IsNullOrEmpty(cboTipoPrenda.Text))
+            {
+                var idTipoPrenda = cboTipoPrenda.SelectedValue.ToString();
+                sqlcondiciones += " AND p.tipoPrenda=" + cboTipoPrenda.SelectedValue.ToString();
+                parametros.Add("idTipoPrenda", idTipoPrenda);
+            }
+            if (!string.IsNullOrEmpty(cboMarca.Text))
+            {
+                var idMarca = cboMarca.SelectedValue.ToString();
+                sqlcondiciones += " AND p.marca=" + cboMarca.SelectedValue.ToString();
+                parametros.Add("idMarca", idMarca);
+            }
+            IList<Prenda> listadoPrendas = prendaService.ConsultarPrendasConFiltros(sqlcondiciones);
+            grdPrenda.DataSource = listadoPrendas;
+
+            if (grdPrenda.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontraron coincidencias para el/los filtros ingresados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+             */
             String strSql = "";
 
             if (cboTipoPrenda.SelectedIndex != -1)
@@ -78,10 +104,10 @@ namespace TrabajoPractico
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            if (grdPrenda.CurrentRow != null)
-            {
-    
-            }
+            frmDetalle detalle = new frmDetalle();
+            Prenda selectedItem = (Prenda) grdPrenda.CurrentRow.DataBoundItem;
+            detalle.inicializarDetalle(selectedItem.CodPrenda.ToString());
+            detalle.ShowDialog();
         }
 
         private void grdPrenda_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -16,5 +16,9 @@ namespace TrabajoPractico.BusinessLayer
         {
             return oPrendaDao.getPrendasCondicionada(condiciones);
         }
+        public Prenda ConsultarPrendaPorId(string id)
+        {
+            return oPrendaDao.getPrendaID(Int32.Parse(id));
+        }
     }
 }

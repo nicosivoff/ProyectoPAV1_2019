@@ -34,6 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grdPrenda = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoPrenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.talle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.cboTipoPrenda = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
@@ -96,14 +103,66 @@
             // 
             // grdPrenda
             // 
+            this.grdPrenda.AllowUserToAddRows = false;
+            this.grdPrenda.AllowUserToDeleteRows = false;
             this.grdPrenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdPrenda.Location = new System.Drawing.Point(12, 142);
+            this.grdPrenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
+            this.tipoPrenda,
+            this.talle,
+            this.descripcion,
+            this.precio,
+            this.cantidad,
+            this.marca});
+            this.grdPrenda.Location = new System.Drawing.Point(6, 145);
             this.grdPrenda.Name = "grdPrenda";
+            this.grdPrenda.ReadOnly = true;
             this.grdPrenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdPrenda.Size = new System.Drawing.Size(583, 150);
             this.grdPrenda.TabIndex = 2;
             this.grdPrenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPrenda_CellClick);
-            this.grdPrenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPrenda_CellContentClick);
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // tipoPrenda
+            // 
+            this.tipoPrenda.HeaderText = "Tipo";
+            this.tipoPrenda.Name = "tipoPrenda";
+            this.tipoPrenda.ReadOnly = true;
+            // 
+            // talle
+            // 
+            this.talle.HeaderText = "Talle";
+            this.talle.Name = "talle";
+            this.talle.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // marca
+            // 
+            this.marca.HeaderText = "Marca";
+            this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
             // 
             // cboMarca
             // 
@@ -146,6 +205,13 @@
         private System.Windows.Forms.DataGridView grdPrenda;
         private System.Windows.Forms.ComboBox cboMarca;
         private System.Windows.Forms.ComboBox cboTipoPrenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoPrenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn talle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marca;
         private System.Windows.Forms.Button btnDetalle;
     }
 }

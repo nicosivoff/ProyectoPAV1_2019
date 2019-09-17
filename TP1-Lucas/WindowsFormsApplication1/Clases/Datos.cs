@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.OleDb;
 
-namespace TrabajoPractico.DataAccessLayer
+namespace TrabajoPractico
 {
-    class DBHelper
+    class Datos
     {
         private OleDbConnection conexion = new OleDbConnection();
         private OleDbCommand comando = new OleDbCommand();

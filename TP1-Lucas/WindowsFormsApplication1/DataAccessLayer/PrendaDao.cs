@@ -63,7 +63,7 @@ namespace TrabajoPractico.DataAccessLayer
 
         public Prenda getPrendaID(int iD)
         {
-            string strSql = "SELECT p.codPrenda, p.tipoPrenda, t.descrip, p.talle, p.descripcion, p.precio, p.cantidad, p.marca, m.nombre"
+            string strSql = "SELECT p.codPrenda, p.tipoPrenda, t.descripcion, p.talle, p.descripcion, p.precio, p.cantidad, p.marca, m.nombre"
                             + " FROM Prenda p, TipoPrenda t, Marca m"
                             + " WHERE p.tipoPrenda=t.codTipoPrenda"
                             + " AND p.marca=m.idMarca"
@@ -77,7 +77,7 @@ namespace TrabajoPractico.DataAccessLayer
 
             List<Prenda> listadoPrendas = new List<Prenda>();
             
-            String strSql = "SELECT p.codPrenda, p.tipoPrenda, t.descrip, p.talle, p.descripcion, p.precio, p.cantidad, p.marca, m.nombre"
+            String strSql = "SELECT p.codPrenda, p.tipoPrenda, t.descripcion, p.talle, p.descripcion, p.precio, p.cantidad, p.marca, m.nombre"
                             + " FROM Prenda p, TipoPrenda t, Marca m"
                             + " WHERE p.tipoPrenda=t.codTipoPrenda"
                             + " AND p.marca=m.idMarca";
@@ -97,19 +97,20 @@ namespace TrabajoPractico.DataAccessLayer
         private Prenda MappingPrenda(DataRow row)
         {
             Prenda oPrenda = new Prenda();
-            oPrenda.codPrenda = Convert.ToInt32(row["codPrenda"].ToString());
-            oPrenda.tipoPrenda = new TipoPrenda();
-            oPrenda.tipoPrenda.codTipoPrenda = Convert.ToInt32(row["tipoPrenda"].ToString());
-            oPrenda.tipoPrenda.descrip = row["descrip"].ToString();
-            oPrenda.talle = row["talle"].ToString();
-            oPrenda.descripcion = row["descripcion"].ToString();
-            oPrenda.precio = Convert.ToInt32(row["precio"].ToString());
-            oPrenda.cantidad = Convert.ToInt32(row["cantidad"].ToString());
-            oPrenda.marca = new Marca();
-            oPrenda.marca.idMarca = Convert.ToInt32(row["marca"].ToString());
-            oPrenda.marca.nombre = row["nombre"].ToString();
+            oPrenda.CodPrenda = Convert.ToInt32(row["codPrenda"].ToString());
+            oPrenda.TipoPrenda = new TipoPrenda();
+            oPrenda.TipoPrenda.Codigo = Convert.ToInt32(row["tipoPrenda"].ToString());
+            oPrenda.TipoPrenda.Nombre = row["descripcion"].ToString();
+            oPrenda.Talle = row["talle"].ToString();
+            oPrenda.Descripcion = row["descripcion"].ToString();
+            oPrenda.Precio = Convert.ToInt32(row["precio"].ToString());
+            oPrenda.Cantidad = Convert.ToInt32(row["cantidad"].ToString());
+            oPrenda.Marca = new Marca();
+            oPrenda.Marca.IdMarca = Convert.ToInt32(row["marca"].ToString());
+            oPrenda.Marca.Nombre = row["nombre"].ToString();
 
             return oPrenda;
         }
+        
     }
 }

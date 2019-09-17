@@ -9,9 +9,47 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrabajoPractico.Entities;
 using TrabajoPractico.DataAccessLayer;
+using TrabajoPractico.BusinessLayer;
 
 
 namespace TrabajoPractico
+{
+    public partial class frmDetalle : Form
+    {
+        private PrendaService prendaService;
+        public frmDetalle()
+        {
+            InitializeComponent();
+            prendaService = new PrendaService();
+        }
+
+        public void inicializarDetalle(string iD)
+        {
+            var resultado = prendaService.ConsultarPrendaPorId(iD);
+            if (resultado != null)
+            {
+                txtCodigo.Text = resultado.CodPrenda.ToString();
+                txtTipo.Text = resultado.TipoPrenda.ToString();
+                txtTalle.Text = resultado.Talle.ToString();
+                txtDescripcion.Text = resultado.Descripcion.ToString();
+                txtPrecio.Text = resultado.Precio.ToString();
+                txtCantidad.Text = resultado.Cantidad.ToString();
+                txtMarca.Text = resultado.Marca.ToString();
+            }
+        }
+
+       
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmDetalle_Load(object sender, EventArgs e)
+        {
+        }
+    }
+}
+/*namespace TrabajoPractico
 {
     public partial class frmDetalle : Form
     {
@@ -36,10 +74,10 @@ namespace TrabajoPractico
         private void cargarTxt(DataTable tabla)
         {
             var resultado = tabla.Rows[0];
-            txtCodigo.Text = resultado["codTipoPrenda"].ToString();
+            txtCodigo.Text = resultado["codPrenda"].ToString();
             txtTipo.Text = resultado["descripcion"].ToString();
             txtTalle.Text = resultado["talle"].ToString();
-            txtDescripcion.Text = resultado["descripcion"].ToString();
+            txtDescripcion.Text = resultado["descripcion1"].ToString();
             txtPrecio.Text = resultado["precio"].ToString();
             txtCantidad.Text = resultado["cantidad"].ToString();
             txtMarca.Text = resultado["nombre"].ToString();
@@ -52,13 +90,14 @@ namespace TrabajoPractico
 
         private void frmDetalle_Load(object sender, EventArgs e)
         {
-            txtTipo.Text = pr.tipoPrenda.ToString();
-            txtCodigo.Text = pr.codPrenda.ToString();
-            txtDescripcion.Text = pr.descripcion.ToString();
-            txtMarca.Text = pr.marca.ToString();
-            txtPrecio.Text = pr.precio.ToString();
-            txtTalle.Text = pr.talle.ToString();
-            txtCantidad.Text = pr.cantidad.ToString();
+            txtTipo.Text = pr.TipoPrenda.ToString();
+            txtCodigo.Text = pr.CodPrenda.ToString();
+            txtDescripcion.Text = pr.Descripcion.ToString();
+            txtMarca.Text = pr.Marca.ToString();
+            txtPrecio.Text = pr.Precio.ToString();
+            txtTalle.Text = pr.Talle.ToString();
+            txtCantidad.Text = pr.Cantidad.ToString();
         }
     }
 }
+*/

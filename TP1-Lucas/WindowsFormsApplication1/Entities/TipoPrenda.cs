@@ -9,7 +9,7 @@ namespace TrabajoPractico.Entities
     class TipoPrenda
     {
        
-        public int TipoPrenda { get; set; }
+        public int Codigo { get; set; }
 
         public string Nombre { get; set; }
 
