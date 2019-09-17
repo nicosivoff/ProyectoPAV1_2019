@@ -39,7 +39,7 @@ namespace TrabajoPractico
         private void frmConsulta_Load(object sender, EventArgs e)
         {
             btnDetalle.Enabled = false;
-            llenarCombo(cboTipoPrenda, oBD.consultarTabla("TipoPrenda"), "descripcion", "codTipoPrenda");
+            llenarCombo(cboTipoPrenda, oBD.consultarTabla("TipoPrenda"), "descrip", "codTipoPrenda");
             llenarCombo(cboMarca, oBD.consultarTabla("Marca"), "Nombre", "idMarca");
             this.grdPrenda.Rows.Clear();
         }

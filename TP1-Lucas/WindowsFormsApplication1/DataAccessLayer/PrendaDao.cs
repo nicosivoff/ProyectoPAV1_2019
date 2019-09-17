@@ -63,10 +63,11 @@ namespace TrabajoPractico.DataAccessLayer
 
         public Prenda getPrendaID(int iD)
         {
-            string strSql = "SELECT p.codPrenda, p.tipoPrenda, t.descripcion, p.talle, p.descripcion, p.precio, p.cantidad, p.marca, m.nombre"
+            string strSql = "SELECT p.codPrenda, p.tipoPrenda, t.descrip, p.talle, p.descripcion, p.precio, p.cantidad, p.marca, m.nombre"
                             + " FROM Prenda p, TipoPrenda t, Marca m"
                             + " WHERE p.tipoPrenda=t.codTipoPrenda"
                             + " AND p.marca=m.idMarca"
+                            + " AND p.borrado = 0"
                             + " AND p.codPrenda=" + iD.ToString();
 
             return MappingPrenda(oBD.consultar(strSql).Rows[0]);
@@ -77,10 +78,11 @@ namespace TrabajoPractico.DataAccessLayer
 
             List<Prenda> listadoPrendas = new List<Prenda>();
             
-            String strSql = "SELECT p.codPrenda, p.tipoPrenda, t.descripcion, p.talle, p.descripcion, p.precio, p.cantidad, p.marca, m.nombre"
+            String strSql = "SELECT p.codPrenda, p.tipoPrenda, t.descrip, p.talle, p.descripcion, p.precio, p.cantidad, p.marca, m.nombre"
                             + " FROM Prenda p, TipoPrenda t, Marca m"
                             + " WHERE p.tipoPrenda=t.codTipoPrenda"
-                            + " AND p.marca=m.idMarca";
+                            + " AND p.marca=m.idMarca"
+                            + " AND p.borrado = 0";
             strSql += condiciones;
 
             var resultadoConsulta = (DataRowCollection)oBD.consultar(strSql).Rows;
@@ -100,7 +102,7 @@ namespace TrabajoPractico.DataAccessLayer
             oPrenda.CodPrenda = Convert.ToInt32(row["codPrenda"].ToString());
             oPrenda.TipoPrenda = new TipoPrenda();
             oPrenda.TipoPrenda.Codigo = Convert.ToInt32(row["tipoPrenda"].ToString());
-            oPrenda.TipoPrenda.Nombre = row["descripcion"].ToString();
+            oPrenda.TipoPrenda.Nombre = row["descrip"].ToString();
             oPrenda.Talle = row["talle"].ToString();
             oPrenda.Descripcion = row["descripcion"].ToString();
             oPrenda.Precio = Convert.ToInt32(row["precio"].ToString());
