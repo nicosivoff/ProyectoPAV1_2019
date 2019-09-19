@@ -100,6 +100,7 @@ namespace TrabajoPractico
 
             IList<Prenda> listadoPrendas = prendaService.ConsultarPrendasConFiltros(strSql);
             grdPrenda.DataSource = listadoPrendas;
+            chkMostrarTodos.Checked = false;
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
@@ -167,6 +168,35 @@ namespace TrabajoPractico
             // Cambia el tamaño de todas las alturas de fila para ajustar el contenido de todas las celdas que no sean de encabezado.
             grdPrenda.AutoResizeRows(
                 DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboTipoPrenda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkMostrarTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkMostrarTodos.Checked) 
+            {
+                llenarCombo(cboTipoPrenda, oBD.consultarTabla("TipoPrenda"), "descrip", "codTipoPrenda");
+                llenarCombo(cboMarca, oBD.consultarTabla("Marca"), "Nombre", "idMarca");
+            }
         }
     }
 }
