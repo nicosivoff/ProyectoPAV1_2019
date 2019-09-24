@@ -73,7 +73,7 @@ namespace TrabajoPractico.DataAccessLayer
             return MappingPrenda(oBD.consultar(strSql).Rows[0]);
         }
 
-        public IList<Prenda> getPrendasCondicionada(String condiciones)
+        public IList<Prenda> getPrendasCondicionada(string condiciones)
         {   
 
             List<Prenda> listadoPrendas = new List<Prenda>();

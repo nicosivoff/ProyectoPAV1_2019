@@ -31,6 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,15 +46,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\PrendaService.cs" />
+    <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
     <Compile Include="DataAccessLayer\PrendaDao.cs" />
+    <Compile Include="DataAccessLayer\UsuarioDao.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Empleado.cs" />
     <Compile Include="Entities\Pedido.cs" />
+    <Compile Include="Entities\Perfil.cs" />
     <Compile Include="Entities\Prenda.cs" />
     <Compile Include="Entities\Proveedor.cs" />
     <Compile Include="Entities\TipoPrenda.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="GUILayer\frmABMUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMUsuarios.Designer.cs">
+      <DependentUpon>frmABMUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,8 +89,17 @@
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Entities\Marca.cs" />
+    <Compile Include="GUILayer\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\frmABMUsuarios.resx">
+      <DependentUpon>frmABMUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
