@@ -49,8 +49,8 @@ namespace TrabajoPractico.DataAccessLayer
                              "SET idUsuario=" + "'" + oUsuario.IdUsuario + "'" + "," +
                              " contraseña=" + "'" + oUsuario.Contraseña + "'" + "," +
                              " email=" + "'" + oUsuario.Email + "'" + "," +
-                             " id_perfil=" + oUsuario.Perfil.IdPerfil +
-                             " WHERE id_usuario=" + oUsuario.IdUsuario;
+                             " perfil=" + oUsuario.Perfil.IdPerfil +
+                             " WHERE idUsuario=" + oUsuario.IdUsuario;
 
             oBD.consultar(str_sql);
             return true;
@@ -78,16 +78,16 @@ namespace TrabajoPractico.DataAccessLayer
                                               "email",
                                               "contraseña",
                                               "   FROM Usuarios u",
-                                              "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil",
+                                              "  INNER JOIN Perfil p ON u.perfil= p.idPerfil",
                                               "WHERE u.borrado = 0");
 
 
             if (parametros.ContainsKey("idPerfil"))
-            strSql += " AND (u.id_perfil = @idPerfil) ";
+            strSql += " AND (u.perfil = @idPerfil) ";
 
 
             if (parametros.ContainsKey("usuario"))
-            strSql += " AND (u.usuario LIKE '%' + @usuario + '%') ";
+            strSql += " AND (u.idUsuario LIKE '%' + @usuario + '%') ";
 
          var resultado = DBHelper.GetDBHelper().ConsultaSQLConParametros(strSql, parametros);
              
@@ -150,10 +150,10 @@ namespace TrabajoPractico.DataAccessLayer
         String strSql = string.Concat(" SELECT idUsuario, ",
                                       "        email, ",
                                       "        contraseña, ",
-                                      "        p.idperfil, ",
+                                      "        p.idPerfil, ",
                                       "        p.nombre as perfil",
                                       "   FROM Usuario u",
-                                      "  INNER JOIN Perfil p ON u.perfil= p.idperfil WHERE u.borrado=0 ");
+                                      "  INNER JOIN Perfil p ON u.perfil= p.idPerfil WHERE u.borrado=0 ");
 
         var resultadoConsulta = DBHelper.GetDBHelper().consultar(strSql);
 
@@ -182,7 +182,7 @@ namespace TrabajoPractico.DataAccessLayer
 
         //SIN PARAMETROS
 
-        string str_sql = "INSERT INTO Usuarios (idUsuario, contraseña, email, id_perfil, borrado)" +
+        string str_sql = "INSERT INTO Usuario (idUsuario, contraseña, email, perfil, borrado)" +
                         " VALUES (" +
                         "'" + oUsuario.IdUsuario + "'" + "," +
                         "'" + oUsuario.Contraseña + "'" + "," +
@@ -196,11 +196,11 @@ namespace TrabajoPractico.DataAccessLayer
     {
         //SIN PARAMETROS
 
-        string str_sql = "UPDATE Usuarios " +
+        string str_sql = "UPDATE Usuario " +
                          "SET contraseña=" + "'" + oUsuario.Contraseña + "'" + "," +
                          " email=" + "'" + oUsuario.Email + "'" + "," +
-                         " id_perfil=" + oUsuario.Perfil.IdPerfil +
-                         " WHERE id_usuario=" + oUsuario.IdUsuario;
+                         " perfil=" + oUsuario.Perfil.IdPerfil +
+                         " WHERE idUsuario=" + oUsuario.IdUsuario;
 
         return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
     }
@@ -208,11 +208,11 @@ namespace TrabajoPractico.DataAccessLayer
     {
         //Construimos la consulta sql para buscar el usuario en la base de datos.
         String strSql = string.Concat(" SELECT  email, ",
-                                      "        password, ",
-                                      "        p.id_perfil, ",
+                                      "        contraseña, ",
+                                      "        p.idPerfil, ",
                                       "        p.nombre as perfil ",
-                                      "   FROM Usuarios u",
-                                      "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil ",
+                                      "   FROM Usuario u",
+                                      "  INNER JOIN Perfil p ON u.perfil= p.idPerfil ",
                                       "  WHERE u.borrado =0 ");
 
         strSql += " AND idUsuario=" + "'" + idUsuario + "'";
