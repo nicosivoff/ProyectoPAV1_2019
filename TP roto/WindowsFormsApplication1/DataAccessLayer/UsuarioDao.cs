@@ -164,5 +164,71 @@ namespace TrabajoPractico.DataAccessLayer
 
         return listadoUsuarios;
     }
+    internal bool Create(Usuario oUsuario)
+    {
+        //CON PARAMETROS
+        //string str_sql = "     INSERT INTO Usuarios (usuario, password, email, id_perfil, estado, borrado)" +
+        //                 "     VALUES (@usuario, @password, @email, @id_perfil, 'S', 0)";
+
+        // var parametros = new Dictionary<string, object>();
+        //parametros.Add("usuario", oUsuario.NombreUsuario);
+        //parametros.Add("password", oUsuario.Password);
+        //parametros.Add("email", oUsuario.Email);
+        //parametros.Add("id_perfil", oUsuario.Perfil.IdPerfil);
+
+        // Si una fila es afectada por la inserción retorna TRUE. Caso contrario FALSE
+        //con parametros
+        //return (DBHelper.GetDBHelper().EjecutarSQLConParametros(str_sql, parametros) == 1);
+
+        //SIN PARAMETROS
+
+        string str_sql = "INSERT INTO Usuarios (idUsuario, contraseña, email, id_perfil, borrado)" +
+                        " VALUES (" +
+                        "'" + oUsuario.IdUsuario + "'" + "," +
+                        "'" + oUsuario.Contraseña + "'" + "," +
+                        "'" + oUsuario.Email + "'" + "," +
+                        oUsuario.Perfil.IdPerfil + ",0)";
+
+
+        return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+    }
+    internal bool Update(Usuario oUsuario)
+    {
+        //SIN PARAMETROS
+
+        string str_sql = "UPDATE Usuarios " +
+                         "SET contraseña=" + "'" + oUsuario.Contraseña + "'" + "," +
+                         " email=" + "'" + oUsuario.Email + "'" + "," +
+                         " id_perfil=" + oUsuario.Perfil.IdPerfil +
+                         " WHERE id_usuario=" + oUsuario.IdUsuario;
+
+        return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+    }
+    public Usuario GetUserSinParametros(string idUsuario)
+    {
+        //Construimos la consulta sql para buscar el usuario en la base de datos.
+        String strSql = string.Concat(" SELECT  email, ",
+                                      "        password, ",
+                                      "        p.id_perfil, ",
+                                      "        p.nombre as perfil ",
+                                      "   FROM Usuarios u",
+                                      "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil ",
+                                      "  WHERE u.borrado =0 ");
+
+        strSql += " AND idUsuario=" + "'" + idUsuario + "'";
+
+
+        //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()
+        var resultado = DBHelper.GetDBHelper().consultar(strSql);
+
+        // Validamos que el resultado tenga al menos una fila.
+        if (resultado.Rows.Count > 0)
+        {
+            return ObjectMapping(resultado.Rows[0]);
+        }
+
+        return null;
+    }
+
     }
 }
