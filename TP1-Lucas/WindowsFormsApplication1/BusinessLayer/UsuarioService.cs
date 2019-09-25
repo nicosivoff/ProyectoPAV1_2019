@@ -27,14 +27,17 @@ namespace TrabajoPractico.BusinessLayer
         {
             return oUsuarioDao.actualizar(usuario);
         }
-        internal IList<Usuario> ConsultarConFiltrosSinParametros(String condiciones)
-        {
-            return oUsuarioDao.GetByFiltersSinParametros(condiciones);
-        }
+     
         public IList<Usuario> ObtenerTodos()
         {
             return oUsuarioDao.GetAll();
         }
+
+        public IList<Usuario> ObtenerConFiltros(string condiciones)
+        {
+            return oUsuarioDao.GetConFiltros(condiciones);
+        }
+
         internal bool CrearUsuario(Usuario oUsuario)
         {
             return oUsuarioDao.Create(oUsuario);
@@ -46,7 +49,7 @@ namespace TrabajoPractico.BusinessLayer
 
         internal bool ModificarEstadoUsuario(Usuario oUsuarioSelected)
         {
-            throw new NotImplementedException();
+            return oUsuarioDao.Delete(oUsuarioSelected);
         }
 
         internal object ObtenerUsuario(string usuario)

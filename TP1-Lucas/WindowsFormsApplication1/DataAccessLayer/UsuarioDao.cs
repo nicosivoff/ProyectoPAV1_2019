@@ -71,25 +71,6 @@ namespace TrabajoPractico.DataAccessLayer
             return oUsuario;
         }
 
-    public IList<Usuario> GetByFiltersSinParametros(String condiciones)
-        {
-
-            List<Usuario> lst = new List<Usuario>();
-            String strSql = string.Concat(" SELECT idUsuario, ",
-                                              "email",
-                                              //"        p.idperfil, ",
-                                              //"        p.nombre as perfil ",
-                                              " FROM Usuario u",
-                                              "  INNER JOIN Perfil p ON u.perfil= p.idperfil ",
-                                              "  WHERE u.borrado =0");
-            var resultado = DBHelper.GetDBHelper().consultar(strSql);
-
-
-            foreach (DataRow row in resultado.Rows)
-                lst.Add(MappingUsuario(row));
-
-            return lst;
-        }
     public IList<Usuario> GetAll()
     {
         List<Usuario> listadoUsuarios = new List<Usuario>();
@@ -103,6 +84,30 @@ namespace TrabajoPractico.DataAccessLayer
                                       " INNER JOIN Perfil p ON u.perfil= p.idPerfil",
                                       " WHERE u.borrado=0");
 
+        var resultadoConsulta = oBD.consultar(strSql);
+
+        foreach (DataRow row in resultadoConsulta.Rows)
+        {
+            listadoUsuarios.Add(MappingUsuario(row));
+        }
+
+        return listadoUsuarios;
+    }
+
+    public IList<Usuario> GetConFiltros(string condiciones)
+    {
+        List<Usuario> listadoUsuarios = new List<Usuario>();
+
+        String strSql = string.Concat(" SELECT idUsuario, ",
+                                      "        email, ",
+                                      "        contraseña, ",
+                                      "        perfil, ",
+                                      "        p.nombre",
+                                      " FROM Usuario u",
+                                      " INNER JOIN Perfil p ON u.perfil= p.idPerfil",
+                                      " WHERE u.borrado=0");
+
+        strSql += condiciones;
         var resultadoConsulta = oBD.consultar(strSql);
 
         foreach (DataRow row in resultadoConsulta.Rows)
@@ -136,38 +141,45 @@ namespace TrabajoPractico.DataAccessLayer
                         "'" + oUsuario.Contraseña + "'" + "," +
                         "'" + oUsuario.Email + "'" + "," +
                         oUsuario.Perfil.IdPerfil + ",0)";
-
-
-        return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+        oBD.actualizar(str_sql);
+        
+        return true;
     }
     internal bool Update(Usuario oUsuario)
     {
-        //SIN PARAMETROS
-
         string str_sql = "UPDATE Usuario " +
                          "SET contraseña=" + "'" + oUsuario.Contraseña + "'" + "," +
                          " email=" + "'" + oUsuario.Email + "'" + "," +
                          " perfil=" + oUsuario.Perfil.IdPerfil +
-                         " WHERE idUsuario=" + oUsuario.IdUsuario;
+                         " WHERE idUsuario=" + "'" + oUsuario.IdUsuario + "'";
+        oBD.actualizar(str_sql);
+        return true;
+    }
 
-        return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
+    internal bool Delete(Usuario oUsuario)
+    {
+        string str_sql = "UPDATE Usuario " +
+                         "SET borrado=1" +
+                         " WHERE idUsuario=" + "'" + oUsuario.IdUsuario + "'";
+        oBD.actualizar(str_sql);
+        return true;
     }
     public Usuario GetUserSinParametros(string idUsuario)
     {
         //Construimos la consulta sql para buscar el usuario en la base de datos.
-        String strSql = string.Concat(" SELECT  email, ",
-                                      "        contraseña, ",
-                                      "        p.idPerfil, ",
-                                      "        p.nombre as perfil ",
-                                      "   FROM Usuario u",
-                                      "  INNER JOIN Perfil p ON u.perfil= p.idPerfil ",
-                                      "  WHERE u.borrado =0 ");
+        String strSql = string.Concat(" SELECT email,",
+                                      " contraseña,",
+                                      " perfil,",
+                                      " p.nombre",
+                                      " FROM Usuario u",
+                                      " INNER JOIN Perfil p ON u.perfil= p.idPerfil ",
+                                      " WHERE u.borrado =0 ");
 
         strSql += " AND idUsuario=" + "'" + idUsuario + "'";
 
 
         //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()
-        var resultado = DBHelper.GetDBHelper().consultar(strSql);
+        var resultado = oBD.consultar(strSql);
 
         // Validamos que el resultado tenga al menos una fila.
         if (resultado.Rows.Count > 0)
