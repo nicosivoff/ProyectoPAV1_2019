@@ -150,6 +150,14 @@ namespace TrabajoPractico
             formulario.ShowDialog();
             btnConsultar_Click(sender, e);
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            frmABMUsuarios formulario = new frmABMUsuarios();
+            var usuario = (Usuario)grdUsuarios.CurrentRow.DataBoundItem;
+            formulario.SeleccionarUsuario(frmABMUsuarios.FormMode.delete, usuario);
+            formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
         }
     }
-}
+ }

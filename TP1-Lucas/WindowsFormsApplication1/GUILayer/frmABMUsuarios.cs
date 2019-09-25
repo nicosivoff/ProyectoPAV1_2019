@@ -191,6 +191,10 @@ namespace TrabajoPractico
         {
             this.Close();
         }
-
+        public void SeleccionarUsuario(FormMode op, Usuario usuarioSelected)
+        {
+            formMode = op;
+            oUsuarioSelected = usuarioSelected;
+        }
     }
 }
