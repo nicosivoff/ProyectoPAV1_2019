@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TrabajoPractico.Entities;
 using System.Data;
 using TrabajoPractico.DataAccessLayer;
+using System.Windows.Forms;
 
 
 namespace TrabajoPractico.DataAccessLayer
@@ -14,24 +15,35 @@ namespace TrabajoPractico.DataAccessLayer
     class PrendaDao
     {
         DBHelper oBD = new DBHelper();
-        /*public void grabarPrenda()
+        
+        public void grabarPrenda(int tipo, string talle, string descripcion, int precio, int cantidad, int marca)
         {
-            string sqlInsert = "";
+            try
+            {
+                string sqlInsert = "";
 
-            sqlInsert = @"INSERT INTO Prenda (codPrenda,tipoPrenda,talle,descripcion,precio,cantidad,marca) VALUES ('" +
-                         this.codigo + "', '" +
-                         this.tipo + "', '" +
-                         this.talle + "', '" +
-                         this.descripcion + "', '" +
-                         this.precio + "', '" +
-                         this.cantidad + "', '" +
-                         this.marca + "')";
+                sqlInsert = @"INSERT INTO Prenda (tipoPrenda,talle,descripcion,precio,cantidad,marca) VALUES ('" +
+                             tipo + "', '" +
+                             talle + "', '" +
+                             descripcion + "', '" +
+                             precio + "', '" +
+                             cantidad + "', '" +
+                             marca + "')";
 
-            oBD.actualizar(sqlInsert);
+                oBD.actualizar(sqlInsert);
+                MessageBox.Show("La prenda se agrego con exito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo agregar.");
+                throw ex;
+            }
+            
+           
 
         }
 
-        public void actualizarPrenda()
+        /*public void actualizarPrenda()
         {
             string sqlUpdate = "";
             // (codPrenda,tipoPrenda,talle,descripcion,precio,cantidad)

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 
 namespace TrabajoPractico.DataAccessLayer
 {
@@ -24,7 +25,29 @@ namespace TrabajoPractico.DataAccessLayer
         {
             conexion.Close();
         }
-        public DataTable consultar(string consultaSQL)
+
+        public DataTable ConsultaSQL(string strSql)
+        {
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                this.conectar();
+                comando.CommandText = strSql;
+                tabla.Load(comando.ExecuteReader());
+                return tabla;
+            }
+            catch (SqlException ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                this.desconectar();
+            }
+        }
+
+        /*public DataTable consultar(string consultaSQL)
         {
             DataTable tabla = new DataTable();
             this.conectar();
@@ -33,6 +56,7 @@ namespace TrabajoPractico.DataAccessLayer
             this.desconectar();
             return tabla;
         }
+         */
         public DataTable consultarTabla(string nombreTabla)
         {
             DataTable tabla = new DataTable();
@@ -48,6 +72,12 @@ namespace TrabajoPractico.DataAccessLayer
             comando.CommandText = consultaSQL;
             comando.ExecuteNonQuery();
             this.desconectar();
+        }
+        public static DBHelper GetDBHelper()
+        {
+            if (instance == null)
+                instance = new DBHelper();
+            return instance;
         }
     }
 }
