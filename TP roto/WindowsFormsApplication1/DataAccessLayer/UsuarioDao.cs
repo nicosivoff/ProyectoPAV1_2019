@@ -121,8 +121,8 @@ namespace TrabajoPractico.DataAccessLayer
             List<Usuario> lst = new List<Usuario>();
             String strSql = string.Concat(" SELECT idUsuario, ",
                                               "        email",
-                                              "        p.idperfil, ",
-                                              "        p.nombre as perfil ",
+                                              //"        p.idperfil, ",
+                                              //"        p.nombre as perfil ",
                                               "   FROM Usuario u",
                                               "  INNER JOIN Perfil p ON u.perfil= p.idperfil ",
                                               "  WHERE u.borrado =0");

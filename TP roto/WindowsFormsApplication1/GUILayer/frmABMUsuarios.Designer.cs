@@ -35,7 +35,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboPerfil = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtRepContra = new System.Windows.Forms.TextBox();
             this.textContraseña = new System.Windows.Forms.TextBox();
             this.textEmail = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -92,7 +92,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cboPerfil);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtRepContra);
             this.groupBox1.Controls.Add(this.textContraseña);
             this.groupBox1.Controls.Add(this.textEmail);
             this.groupBox1.Controls.Add(this.txtNombre);
@@ -116,12 +116,12 @@
             this.cboPerfil.Size = new System.Drawing.Size(116, 21);
             this.cboPerfil.TabIndex = 9;
             // 
-            // textBox4
+            // txtRepContra
             // 
-            this.textBox4.Location = new System.Drawing.Point(124, 114);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(116, 20);
-            this.textBox4.TabIndex = 8;
+            this.txtRepContra.Location = new System.Drawing.Point(124, 114);
+            this.txtRepContra.Name = "txtRepContra";
+            this.txtRepContra.Size = new System.Drawing.Size(116, 20);
+            this.txtRepContra.TabIndex = 8;
             // 
             // textContraseña
             // 
@@ -152,6 +152,7 @@
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -188,7 +189,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cboPerfil;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtRepContra;
         private System.Windows.Forms.TextBox textContraseña;
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.TextBox txtNombre;
