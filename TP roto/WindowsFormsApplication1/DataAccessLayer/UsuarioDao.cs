@@ -73,10 +73,13 @@ namespace TrabajoPractico.DataAccessLayer
         {
                         
             List<Usuario> lst = new List<Usuario>();
-            String strSql = string.Concat(" SELECT id_usuario, ",
-                                              "legajo",
+            String strSql = string.Concat(" SELECT idUsuario, ",
+                                              " legajo",
+                                              "email",
+                                              "contraseña",
                                               "   FROM Usuarios u",
-                                              "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil ");
+                                              "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil",
+                                              "WHERE u.borrado = 0");
 
 
             if (parametros.ContainsKey("idPerfil"))
@@ -95,33 +98,34 @@ namespace TrabajoPractico.DataAccessLayer
             return lst;
     }
 
-private Usuario ObjectMapping(DataRow row)
-{
-    Usuario oUsuario = new Usuario
+    private Usuario ObjectMapping(DataRow row)
     {
-        IdUsuario = Convert.ToInt32(row["id_usuario"].ToString()),
-        Legajo = row["legajo"].ToString(),
-        Password = row.Table.Columns.Contains("password") ? row["password"].ToString() : null,
-        Perfil = new Perfil()
+        Usuario oUsuario = new Usuario
         {
-            IdPerfil = Convert.ToInt32(row["id_perfil"].ToString()),
-            Nombre = row["perfil"].ToString(),
-        }
-    };
+            IdUsuario = Convert.ToInt32(row["idUsuario"].ToString()),
+            Email = row["email"].ToString(),
+            Contraseña = row.Table.Columns.Contains("contraseña") ? row["contraseña"].ToString() : null,
+            Perfil = new Perfil()
+            {
+                IdPerfil = Convert.ToInt32(row["idPerfil"].ToString()),
+                Nombre = row["nombre"].ToString(),
+            }
+        };
+    
 
-    return oUsuario;
-}
+        return oUsuario;
+    }
     public IList<Usuario> GetByFiltersSinParametros(String condiciones)
         {
 
             List<Usuario> lst = new List<Usuario>();
-            String strSql = string.Concat(" SELECT id_usuario, ",
-                                              "        legajo",
-                                              "        p.id_perfil, ",
+            String strSql = string.Concat(" SELECT idUsuario, ",
+                                              "        email",
+                                              "        p.idperfil, ",
                                               "        p.nombre as perfil ",
-                                              "   FROM Usuarios u",
-                                              "  INNER JOIN Perfiles p ON u.id_perfil= p.id_perfil ",
-                                              "  WHERE u.borrado =0 AND u.estado = 'S'");
+                                              "   FROM Usuario u",
+                                              "  INNER JOIN Perfil p ON u.perfil= p.idperfil ",
+                                              "  WHERE u.borrado =0");
 
 
            // if (parametros.ContainsKey("idPerfil"))
@@ -139,5 +143,26 @@ private Usuario ObjectMapping(DataRow row)
 
             return lst;
         }
+    public IList<Usuario> GetAll()
+    {
+        List<Usuario> listadoUsuarios = new List<Usuario>();
+
+        String strSql = string.Concat(" SELECT idUsuario, ",
+                                      "        email, ",
+                                      "        contraseña, ",
+                                      "        p.idperfil, ",
+                                      "        p.nombre as perfil",
+                                      "   FROM Usuario u",
+                                      "  INNER JOIN Perfil p ON u.perfil= p.idperfil WHERE u.borrado=0 ");
+
+        var resultadoConsulta = DBHelper.GetDBHelper().consultar(strSql);
+
+        foreach (DataRow row in resultadoConsulta.Rows)
+        {
+            listadoUsuarios.Add(ObjectMapping(row));
+        }
+
+        return listadoUsuarios;
+    }
     }
 }

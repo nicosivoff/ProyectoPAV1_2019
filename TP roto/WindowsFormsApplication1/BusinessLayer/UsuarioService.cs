@@ -31,5 +31,9 @@ namespace TrabajoPractico.BusinessLayer
         {
             return oUsuarioDao.GetByFiltersSinParametros(condiciones);
         }
+        public IList<Usuario> ObtenerTodos()
+        {
+            return oUsuarioDao.GetAll();
+        }
     }
 }
