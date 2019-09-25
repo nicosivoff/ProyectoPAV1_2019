@@ -70,7 +70,7 @@ namespace TrabajoPractico
             grdUsuarios.Columns[1].DataPropertyName = "email";
 
             grdUsuarios.Columns[2].Name = "Perfil";
-            grdUsuarios.Columns[2].DataPropertyName = "nombre";
+            grdUsuarios.Columns[2].DataPropertyName = "perfil";
 
             // Cambia el tamaño de la altura de los encabezados de columna.
             grdUsuarios.AutoResizeColumnHeadersHeight();
@@ -146,10 +146,10 @@ namespace TrabajoPractico
         {
             frmABMUsuarios formulario = new frmABMUsuarios();
             var usuario = (Usuario)grdUsuarios.CurrentRow.DataBoundItem;
-            formulario.SeleccionarUsuario(frmABMUsuarios.FormMode.update, usuario);
+            //formulario.SeleccionarUsuario(frmABMUsuarios.FormMode.update, usuario);
             formulario.ShowDialog();
             btnConsultar_Click(sender, e);
         }
         }
     }
-}
+

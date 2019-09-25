@@ -89,7 +89,7 @@ namespace TrabajoPractico
                             if (ValidarCampos())
                             {
                                 var oUsuario = new Usuario();
-                                oUsuario.IdUsuario = Convert.ToInt32(txtIdUsuario.Text);
+                                oUsuario.IdUsuario = txtIdUsuario.Text;
                                 oUsuario.Contraseña = textContraseña.Text;
                                 oUsuario.Email = textEmail.Text;
                                 oUsuario.Perfil = new Perfil();
@@ -111,7 +111,7 @@ namespace TrabajoPractico
                     {
                         if (ValidarCampos())
                         {
-                            oUsuarioSelected.IdUsuario = Convert.ToInt32(txtIdUsuario.Text);
+                            oUsuarioSelected.IdUsuario = txtIdUsuario.Text;
                             oUsuarioSelected.Contraseña = textContraseña.Text;
                             oUsuarioSelected.Email = textEmail.Text;
                             oUsuarioSelected.Perfil = new Perfil();

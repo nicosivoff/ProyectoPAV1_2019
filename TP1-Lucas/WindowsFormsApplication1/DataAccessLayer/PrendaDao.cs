@@ -85,9 +85,10 @@ namespace TrabajoPractico.DataAccessLayer
                             + " AND p.borrado = 0";
             strSql += condiciones;
 
-            var resultadoConsulta = (DataRowCollection)oBD.consultar(strSql).Rows;
+            //var resultadoConsulta = (DataRowCollection)oBD.consultar(strSql).Rows;
+            var resultado = oBD.consultar(strSql);
 
-            foreach (DataRow row in resultadoConsulta)
+            foreach (DataRow row in resultado.Rows)
             {
                 listadoPrendas.Add(MappingPrenda(row));
             }

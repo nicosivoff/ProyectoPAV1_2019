@@ -61,85 +61,32 @@ namespace TrabajoPractico.DataAccessLayer
         private Usuario MappingUsuario(DataRow row)
         {
             Usuario oUsuario = new Usuario();
-            oUsuario.IdUsuario = Convert.ToInt32(row["idUsuario"].ToString());
-            oUsuario.Perfil = new Perfil();
-            oUsuario.Perfil.IdPerfil = Convert.ToInt32(row["idPerfil"].ToString());
-            oUsuario.Perfil.Nombre = row["nombre"].ToString();
+            oUsuario.IdUsuario = row["idUsuario"].ToString();
             oUsuario.Email = row["email"].ToString();
-
+            oUsuario.Contraseña = row["contraseña"].ToString();
+            oUsuario.Perfil = new Perfil();
+            oUsuario.Perfil.IdPerfil = Convert.ToInt32(row["perfil"].ToString());
+            oUsuario.Perfil.Nombre = row["nombre"].ToString();
+      
             return oUsuario;
         }
-        public IList<Usuario> GetByFiltersConParametros(Dictionary<string, object> parametros)
-        {
-                        
-            List<Usuario> lst = new List<Usuario>();
-            String strSql = string.Concat(" SELECT idUsuario, ",
-                                              " legajo",
-                                              "email",
-                                              "contraseña",
-                                              "   FROM Usuarios u",
-                                              "  INNER JOIN Perfil p ON u.perfil= p.idPerfil",
-                                              "WHERE u.borrado = 0");
 
-
-            if (parametros.ContainsKey("idPerfil"))
-            strSql += " AND (u.perfil = @idPerfil) ";
-
-
-            if (parametros.ContainsKey("usuario"))
-            strSql += " AND (u.idUsuario LIKE '%' + @usuario + '%') ";
-
-         var resultado = DBHelper.GetDBHelper().ConsultaSQLConParametros(strSql, parametros);
-             
-           
-            foreach (DataRow row in resultado.Rows)
-                lst.Add(ObjectMapping(row));
-
-            return lst;
-    }
-
-    private Usuario ObjectMapping(DataRow row)
-    {
-        Usuario oUsuario = new Usuario
-        {
-            IdUsuario = Convert.ToInt32(row["idUsuario"].ToString()),
-            Email = row["email"].ToString(),
-            Contraseña = row.Table.Columns.Contains("contraseña") ? row["contraseña"].ToString() : null,
-            Perfil = new Perfil()
-            {
-                IdPerfil = Convert.ToInt32(row["idPerfil"].ToString()),
-                Nombre = row["nombre"].ToString(),
-            }
-        };
-    
-
-        return oUsuario;
-    }
     public IList<Usuario> GetByFiltersSinParametros(String condiciones)
         {
 
             List<Usuario> lst = new List<Usuario>();
             String strSql = string.Concat(" SELECT idUsuario, ",
-                                              "        email",
+                                              "email",
                                               //"        p.idperfil, ",
                                               //"        p.nombre as perfil ",
-                                              "   FROM Usuario u",
+                                              " FROM Usuario u",
                                               "  INNER JOIN Perfil p ON u.perfil= p.idperfil ",
                                               "  WHERE u.borrado =0");
-
-
-           // if (parametros.ContainsKey("idPerfil"))
-             //   strSql += " AND (u.id_perfil = @idPerfil) ";
-
-
-           // if (parametros.ContainsKey("usuario"))
-            //    strSql += " AND (u.usuario LIKE '%' + @usuario + '%') ";
-
             var resultado = DBHelper.GetDBHelper().consultar(strSql);
 
 
             foreach (DataRow row in resultado.Rows)
-                lst.Add(ObjectMapping(row));
+                lst.Add(MappingUsuario(row));
 
             return lst;
         }
@@ -150,16 +97,17 @@ namespace TrabajoPractico.DataAccessLayer
         String strSql = string.Concat(" SELECT idUsuario, ",
                                       "        email, ",
                                       "        contraseña, ",
-                                      "        p.idPerfil, ",
-                                      "        p.nombre as perfil",
-                                      "   FROM Usuario u",
-                                      "  INNER JOIN Perfil p ON u.perfil= p.idPerfil WHERE u.borrado=0 ");
+                                      "        perfil, ",
+                                      "        p.nombre",
+                                      " FROM Usuario u",
+                                      " INNER JOIN Perfil p ON u.perfil= p.idPerfil",
+                                      " WHERE u.borrado=0");
 
-        var resultadoConsulta = DBHelper.GetDBHelper().consultar(strSql);
+        var resultadoConsulta = oBD.consultar(strSql);
 
         foreach (DataRow row in resultadoConsulta.Rows)
         {
-            listadoUsuarios.Add(ObjectMapping(row));
+            listadoUsuarios.Add(MappingUsuario(row));
         }
 
         return listadoUsuarios;
@@ -224,7 +172,7 @@ namespace TrabajoPractico.DataAccessLayer
         // Validamos que el resultado tenga al menos una fila.
         if (resultado.Rows.Count > 0)
         {
-            return ObjectMapping(resultado.Rows[0]);
+            return MappingUsuario(resultado.Rows[0]);
         }
 
         return null;
