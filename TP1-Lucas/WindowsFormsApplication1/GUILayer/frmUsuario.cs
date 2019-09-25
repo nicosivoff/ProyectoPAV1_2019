@@ -88,9 +88,9 @@ namespace TrabajoPractico
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            String strSql = "";
+            /*String strSql = "";
 
-            /*if (txtNombre.Text == "")
+            if (txtNombre.Text == "")
             {
                 strSql += " AND u.idUsuario = " + txtNombre.Text;
             }
@@ -98,9 +98,53 @@ namespace TrabajoPractico
             {
                 strSql += " AND u.perfil = " + cboPerfil.SelectedValue.ToString();
             }
-            */
+            
             IList<Usuario> listadoUsuarios = oUsuarioService.ConsultarUsuarios(strSql);
-            grdUsuarios.DataSource = listadoUsuarios;
+            grdUsuarios.DataSource = listadoUsuarios;*/
+            String condiciones="";
+            var filters = new Dictionary<string, object>();
+
+            if (!chkTodos.Checked)
+            {
+                // Validar si el combo 'Perfiles' esta seleccionado.
+                if (cboPerfil.Text != string.Empty)
+                {
+                    // Si el cbo tiene un texto no vacìo entonces recuperamos el valor de la propiedad ValueMember
+                    filters.Add("idPerfil", cboPerfil.SelectedValue);
+                    condiciones += " AND u.idperfil=" + cboPerfil.SelectedValue.ToString();
+                    
+                }
+
+                // Validar si el textBox 'Nombre' esta vacio.
+                if (txtNombre.Text != string.Empty)
+                {
+                    // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
+                    filters.Add("usuario", txtNombre.Text);
+                    condiciones += "AND u.usuario=" + "'" + txtNombre.Text+"'";
+                }
+
+                if (filters.Count > 0)
+                    //SIN PARAMETROS
+                    grdUsuarios.DataSource = oUsuarioService.ConsultarConFiltrosSinParametros(condiciones);
+
+                    //CON PARAMETROS
+                    //dgvUsers.DataSource = oUsuarioService.ConsultarConFiltrosConParametros(filters);
+
+                else
+                    MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+                grdUsuarios.DataSource = oUsuarioService.ObtenerTodos();
+        }
+
+        private void grdUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkTodos = new System.Windows.Forms.CheckBox();
             this.grdUsuarios = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.cboPerfil = new System.Windows.Forms.ComboBox();
@@ -45,6 +46,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkTodos);
             this.groupBox1.Controls.Add(this.grdUsuarios);
             this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Controls.Add(this.cboPerfil);
@@ -58,6 +60,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "filtros";
             // 
+            // chkTodos
+            // 
+            this.chkTodos.AutoSize = true;
+            this.chkTodos.Location = new System.Drawing.Point(277, 37);
+            this.chkTodos.Name = "chkTodos";
+            this.chkTodos.Size = new System.Drawing.Size(56, 17);
+            this.chkTodos.TabIndex = 6;
+            this.chkTodos.Text = "Todos";
+            this.chkTodos.UseVisualStyleBackColor = true;
+            // 
             // grdUsuarios
             // 
             this.grdUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -65,6 +77,7 @@
             this.grdUsuarios.Name = "grdUsuarios";
             this.grdUsuarios.Size = new System.Drawing.Size(504, 150);
             this.grdUsuarios.TabIndex = 5;
+            this.grdUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdUsuarios_CellContentClick);
             // 
             // btnConsultar
             // 
@@ -126,6 +139,7 @@
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -179,5 +193,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.CheckBox chkTodos;
     }
 }

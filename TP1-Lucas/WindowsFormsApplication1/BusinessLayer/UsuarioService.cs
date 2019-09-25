@@ -27,5 +27,35 @@ namespace TrabajoPractico.BusinessLayer
         {
             return oUsuarioDao.actualizar(usuario);
         }
+        internal IList<Usuario> ConsultarConFiltrosSinParametros(String condiciones)
+        {
+            return oUsuarioDao.GetByFiltersSinParametros(condiciones);
+        }
+        public IList<Usuario> ObtenerTodos()
+        {
+            return oUsuarioDao.GetAll();
+        }
+        internal bool CrearUsuario(Usuario oUsuario)
+        {
+            return oUsuarioDao.Create(oUsuario);
+        }
+        internal bool ActualizarUsuario(Usuario oUsuarioSelected)
+        {
+            return oUsuarioDao.Update(oUsuarioSelected);
+        }
+
+        internal bool ModificarEstadoUsuario(Usuario oUsuarioSelected)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal object ObtenerUsuario(string usuario)
+        {
+            //SIN PARAMETROS
+            return oUsuarioDao.GetUserSinParametros(usuario);
+
+            //CON PARAMETROS
+            // return oUsuarioDao.GetUserConParametros(usuario);
+        }
     }
 }

@@ -141,5 +141,10 @@ namespace TrabajoPractico
         {
         
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
