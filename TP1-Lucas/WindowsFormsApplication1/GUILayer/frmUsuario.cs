@@ -101,7 +101,7 @@ namespace TrabajoPractico
             
             IList<Usuario> listadoUsuarios = oUsuarioService.ConsultarUsuarios(strSql);
             grdUsuarios.DataSource = listadoUsuarios;*/
-            String condiciones="";
+            String condiciones = "";
             var filters = new Dictionary<string, object>();
 
             if (!chkTodos.Checked)
@@ -112,7 +112,7 @@ namespace TrabajoPractico
                     // Si el cbo tiene un texto no vacìo entonces recuperamos el valor de la propiedad ValueMember
                     filters.Add("idPerfil", cboPerfil.SelectedValue);
                     condiciones += " AND u.idperfil=" + cboPerfil.SelectedValue.ToString();
-                    
+
                 }
 
                 // Validar si el textBox 'Nombre' esta vacio.
@@ -120,7 +120,7 @@ namespace TrabajoPractico
                 {
                     // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
                     filters.Add("usuario", txtNombre.Text);
-                    condiciones += "AND u.usuario=" + "'" + txtNombre.Text+"'";
+                    condiciones += "AND u.usuario=" + "'" + txtNombre.Text + "'";
                 }
 
                 if (filters.Count > 0)
@@ -128,7 +128,7 @@ namespace TrabajoPractico
                     grdUsuarios.DataSource = oUsuarioService.ConsultarConFiltrosSinParametros(condiciones);
 
                     //CON PARAMETROS
-                    //dgvUsers.DataSource = oUsuarioService.ConsultarConFiltrosConParametros(filters);
+                //dgvUsers.DataSource = oUsuarioService.ConsultarConFiltrosConParametros(filters);
 
                 else
                     MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -139,7 +139,7 @@ namespace TrabajoPractico
 
         private void grdUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-        
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -150,6 +150,14 @@ namespace TrabajoPractico
             formulario.ShowDialog();
             btnConsultar_Click(sender, e);
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            frmABMUsuarios formulario = new frmABMUsuarios();
+            var usuario = (Usuario)grdUsuarios.CurrentRow.DataBoundItem;
+            formulario.SeleccionarUsuario(frmABMUsuarios.FormMode.delete, usuario);
+            formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
         }
     }
-
+}
