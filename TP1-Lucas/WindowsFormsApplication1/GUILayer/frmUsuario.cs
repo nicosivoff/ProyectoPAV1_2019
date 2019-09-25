@@ -144,7 +144,12 @@ namespace TrabajoPractico
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            frmABMUsuarios formulario = new frmABMUsuarios();
+            var usuario = (Usuario)grdUsuarios.CurrentRow.DataBoundItem;
+            formulario.SeleccionarUsuario(frmABMUsuarios.FormMode.update, usuario);
+            formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
+        }
         }
     }
 }
