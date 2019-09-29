@@ -174,6 +174,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUsuario";
             this.Load += new System.EventHandler(this.frmUsuario_Load);
             this.groupBox1.ResumeLayout(false);

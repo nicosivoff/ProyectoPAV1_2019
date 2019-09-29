@@ -164,7 +164,7 @@ namespace TrabajoPractico.DataAccessLayer
         oBD.actualizar(str_sql);
         return true;
     }
-    public Usuario GetUserSinParametros(string idUsuario)
+    public bool GetUserSinParametros(string idUsuario)
     {
         //Construimos la consulta sql para buscar el usuario en la base de datos.
         String strSql = string.Concat(" SELECT email,",
@@ -173,9 +173,8 @@ namespace TrabajoPractico.DataAccessLayer
                                       " p.nombre",
                                       " FROM Usuario u",
                                       " INNER JOIN Perfil p ON u.perfil= p.idPerfil ",
-                                      " WHERE u.borrado =0 ");
-
-        strSql += " AND idUsuario=" + "'" + idUsuario + "'";
+                                      " WHERE u.borrado =0 ",
+                                      "AND u.idUsuario= '", idUsuario , "'" );
 
 
         //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()
@@ -184,10 +183,10 @@ namespace TrabajoPractico.DataAccessLayer
         // Validamos que el resultado tenga al menos una fila.
         if (resultado.Rows.Count > 0)
         {
-            return MappingUsuario(resultado.Rows[0]);
+            return true;
         }
 
-        return null;
+        return false;
     }
 
     }

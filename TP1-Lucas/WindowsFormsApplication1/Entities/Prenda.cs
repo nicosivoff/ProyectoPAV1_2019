@@ -9,7 +9,7 @@ using System.Data;
 
 namespace TrabajoPractico.Entities
 {
-    public class Prenda
+    class Prenda
     {
         
         public int CodPrenda { get; set; }

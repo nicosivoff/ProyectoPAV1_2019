@@ -45,11 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLayer\MarcaService.cs" />
     <Compile Include="BusinessLayer\PrendaService.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
-    <Compile Include="DataAccessLayer\MarcaDao.cs" />
     <Compile Include="DataAccessLayer\PrendaDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
     <Compile Include="Entities\Cliente.cs" />
@@ -60,12 +58,6 @@
     <Compile Include="Entities\Proveedor.cs" />
     <Compile Include="Entities\TipoPrenda.cs" />
     <Compile Include="Entities\Usuario.cs" />
-    <Compile Include="GUILayer\frmABMPrenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUILayer\frmABMPrenda.Designer.cs">
-      <DependentUpon>frmABMPrenda.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUILayer\frmABMUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,9 +97,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUILayer\frmABMPrenda.resx">
-      <DependentUpon>frmABMPrenda.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmABMUsuarios.resx">
       <DependentUpon>frmABMUsuarios.cs</DependentUpon>
     </EmbeddedResource>
