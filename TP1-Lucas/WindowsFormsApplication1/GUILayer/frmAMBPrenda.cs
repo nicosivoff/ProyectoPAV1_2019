@@ -184,11 +184,10 @@ namespace TrabajoPractico.GUILayer
                                     this.Close();
                                 }
                             }
-                            else
-                                MessageBox.Show("Prenda encontrada!. Ingrese una **** ", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         }
-                        
+                        else
+                            MessageBox.Show("Prenda encontrada!. Ingrese una **** ", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     }
                 case FormMode.update:
@@ -226,91 +225,13 @@ namespace TrabajoPractico.GUILayer
                             else
                                 MessageBox.Show("Error al actualizar la prenda", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        break;
+
                     }
+                    break;
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnAceptar_Click_1(object sender, EventArgs e)
-        {
-            switch (formMode)
-            {
-                case FormMode.insert:
-                    {
-                        if (ValidarCampos())
-                        {
-                            if (ExistePrenda() == false)
-                            {
-                                var oPrenda = new Prenda();
-                                oPrenda.CodPrenda = Convert.ToInt32(txtCodPrenda.Text);
-                                oPrenda.TipoPrenda = new TipoPrenda();
-                                oPrenda.TipoPrenda.Codigo = (int)cboTipoPrenda.SelectedValue;
-                                oPrenda.Talle = txtTalle.Text;
-                                oPrenda.Precio = Convert.ToInt32(txtPrecio.Text);
-                                oPrenda.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                                oPrenda.Marca = new Marca();
-                                oPrenda.Marca.IdMarca = (int)cboMarca.SelectedValue;
-                                oPrenda.Descripcion = txtDescripcion.Text;
-
-                                if (oPrendaService.crearPrenda(oPrenda))
-                                {
-                                    MessageBox.Show("Prenda Insertada!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    this.Close();
-                                }
-                            }
-                            else
-                                MessageBox.Show("Prenda encontrada!. Ingrese una **** ", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        }
-
-                        break;
-                    }
-                case FormMode.update:
-                    {
-                        if (ValidarCampos())
-                        {
-                            oPrendaSelected.TipoPrenda = new TipoPrenda();
-                            oPrendaSelected.TipoPrenda.Codigo = (int)cboTipoPrenda.SelectedValue;
-                            oPrendaSelected.Talle = txtTalle.Text;
-                            oPrendaSelected.Precio = Convert.ToInt32(txtPrecio.Text);
-                            oPrendaSelected.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                            oPrendaSelected.Marca = new Marca();
-                            oPrendaSelected.Marca.IdMarca = (int)cboMarca.SelectedValue;
-                            oPrendaSelected.Descripcion = txtDescripcion.Text;
-
-                            if (oPrendaService.actualizarPrenda(oPrendaSelected))
-                            {
-                                MessageBox.Show("Prenda actualizada!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Dispose();
-                            }
-                            else
-                                MessageBox.Show("Error al actualizar la prenda!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        break;
-                    }
-                case FormMode.delete:
-                    {
-                        if (MessageBox.Show("Seguro que desea habilitar/deshabilitar la prenda seleccionada?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
-                        {
-                            if (oPrendaService.modificarEstadoPrenda(oPrendaSelected))
-                            {
-                                MessageBox.Show("Prenda habilitado/deshabilitado!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
-                            }
-                            else
-                                MessageBox.Show("Error al actualizar la prenda", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        break;
-                    }
-            }
-        }
-
-        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -43,8 +43,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodPrenda = new System.Windows.Forms.TextBox();
             this.lblCodPrenda = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.grbPrenda.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +77,7 @@
             this.cboTipoPrenda.Location = new System.Drawing.Point(126, 65);
             this.cboTipoPrenda.Name = "cboTipoPrenda";
             this.cboTipoPrenda.Size = new System.Drawing.Size(121, 21);
-            this.cboTipoPrenda.TabIndex = 2;
+            this.cboTipoPrenda.TabIndex = 28;
             // 
             // cboMarca
             // 
@@ -85,7 +85,7 @@
             this.cboMarca.Location = new System.Drawing.Point(126, 170);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(121, 21);
-            this.cboMarca.TabIndex = 6;
+            this.cboMarca.TabIndex = 27;
             // 
             // lblMarca
             // 
@@ -101,7 +101,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(126, 144);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(121, 20);
-            this.txtCantidad.TabIndex = 5;
+            this.txtCantidad.TabIndex = 25;
             // 
             // lblCantidad
             // 
@@ -117,7 +117,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(126, 118);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(121, 20);
-            this.txtPrecio.TabIndex = 4;
+            this.txtPrecio.TabIndex = 23;
             // 
             // lblPrecio
             // 
@@ -133,7 +133,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(126, 197);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(121, 20);
-            this.txtDescripcion.TabIndex = 7;
+            this.txtDescripcion.TabIndex = 21;
             // 
             // lblDescripcion
             // 
@@ -149,7 +149,7 @@
             this.txtTalle.Location = new System.Drawing.Point(126, 92);
             this.txtTalle.Name = "txtTalle";
             this.txtTalle.Size = new System.Drawing.Size(121, 20);
-            this.txtTalle.TabIndex = 3;
+            this.txtTalle.TabIndex = 19;
             // 
             // lblTalle
             // 
@@ -174,7 +174,7 @@
             this.txtCodPrenda.Location = new System.Drawing.Point(126, 39);
             this.txtCodPrenda.Name = "txtCodPrenda";
             this.txtCodPrenda.Size = new System.Drawing.Size(121, 20);
-            this.txtCodPrenda.TabIndex = 1;
+            this.txtCodPrenda.TabIndex = 16;
             // 
             // lblCodPrenda
             // 
@@ -185,35 +185,38 @@
             this.lblCodPrenda.TabIndex = 15;
             this.lblCodPrenda.Text = "* Codigo de prenda ";
             // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(12, 278);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 8;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(213, 278);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(12, 278);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 18;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // frmAMBPrenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(300, 317);
+            this.Controls.Add(this.grbPrenda);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.grbPrenda);
+            this.MaximizeBox = false;
             this.Name = "frmAMBPrenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAMBPrenda";
             this.Load += new System.EventHandler(this.frmAMBPrenda_Load);
             this.grbPrenda.ResumeLayout(false);
@@ -239,7 +242,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCodPrenda;
         private System.Windows.Forms.Label lblCodPrenda;
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAceptar;
     }
 }

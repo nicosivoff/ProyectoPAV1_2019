@@ -14,6 +14,7 @@ namespace TrabajoPractico
     {
         frmConsulta consulta = new frmConsulta();
         frmUsuario usuario = new frmUsuario();
+        frmPerfil perfil = new frmPerfil();
         public frmMenu()
         {
             InitializeComponent();
@@ -27,6 +28,11 @@ namespace TrabajoPractico
         private void aBMToolStripMenuItem_Click(object sender, EventArgs e)
         {
             usuario.ShowDialog();
+        }
+
+        private void tipoDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            perfil.ShowDialog();
         }
     }
 }

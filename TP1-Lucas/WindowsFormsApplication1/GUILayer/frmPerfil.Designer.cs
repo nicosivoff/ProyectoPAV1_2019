@@ -1,6 +1,6 @@
 ﻿namespace TrabajoPractico
 {
-    partial class frmUsuario
+    partial class frmPerfil
     {
         /// <summary>
         /// Required designer variable.
@@ -30,28 +30,24 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkTodos = new System.Windows.Forms.CheckBox();
-            this.grdUsuarios = new System.Windows.Forms.DataGridView();
+            this.grdPerfiles = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.cboPerfil = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPerfiles)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.chkTodos);
-            this.groupBox1.Controls.Add(this.grdUsuarios);
+            this.groupBox1.Controls.Add(this.grdPerfiles);
             this.groupBox1.Controls.Add(this.btnConsultar);
-            this.groupBox1.Controls.Add(this.cboPerfil);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -63,7 +59,7 @@
             // chkTodos
             // 
             this.chkTodos.AutoSize = true;
-            this.chkTodos.Location = new System.Drawing.Point(277, 37);
+            this.chkTodos.Location = new System.Drawing.Point(159, 77);
             this.chkTodos.Name = "chkTodos";
             this.chkTodos.Size = new System.Drawing.Size(56, 17);
             this.chkTodos.TabIndex = 6;
@@ -71,18 +67,19 @@
             this.chkTodos.UseVisualStyleBackColor = true;
             this.chkTodos.CheckedChanged += new System.EventHandler(this.chkTodos_CheckedChanged);
             // 
-            // grdUsuarios
+            // grdPerfiles
             // 
-            this.grdUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdUsuarios.Location = new System.Drawing.Point(9, 112);
-            this.grdUsuarios.Name = "grdUsuarios";
-            this.grdUsuarios.Size = new System.Drawing.Size(504, 150);
-            this.grdUsuarios.TabIndex = 5;
-            this.grdUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdUsuarios_CellContentClick);
+            this.grdPerfiles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdPerfiles.Location = new System.Drawing.Point(9, 112);
+            this.grdPerfiles.Name = "grdPerfiles";
+            this.grdPerfiles.Size = new System.Drawing.Size(504, 150);
+            this.grdPerfiles.TabIndex = 5;
+            this.grdPerfiles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdUsuarios_CellContentClick);
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(277, 69);
+            this.btnConsultar.Location = new System.Drawing.Point(325, 49);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(75, 23);
             this.btnConsultar.TabIndex = 4;
@@ -90,34 +87,17 @@
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // cboPerfil
-            // 
-            this.cboPerfil.FormattingEnabled = true;
-            this.cboPerfil.Location = new System.Drawing.Point(78, 69);
-            this.cboPerfil.Name = "cboPerfil";
-            this.cboPerfil.Size = new System.Drawing.Size(160, 21);
-            this.cboPerfil.TabIndex = 3;
-            // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(78, 38);
+            this.txtNombre.Location = new System.Drawing.Point(159, 51);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(160, 20);
             this.txtNombre.TabIndex = 2;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Perfil:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 41);
+            this.label1.Location = new System.Drawing.Point(106, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
@@ -163,23 +143,24 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // frmUsuario
+            // frmPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(543, 399);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmUsuario";
+            this.Name = "frmPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmUsuario";
-            this.Load += new System.EventHandler(this.frmUsuario_Load);
+            this.Text = "frmPerfil";
+            this.Load += new System.EventHandler(this.frmPerfil_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPerfiles)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,11 +168,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView grdUsuarios;
+        private System.Windows.Forms.DataGridView grdPerfiles;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.ComboBox cboPerfil;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;

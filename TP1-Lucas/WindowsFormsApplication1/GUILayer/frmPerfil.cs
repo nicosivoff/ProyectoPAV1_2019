@@ -13,21 +13,21 @@ using TrabajoPractico.Entities;
 
 namespace TrabajoPractico
 {
-    public partial class frmUsuario : Form
+    public partial class frmPerfil : Form
     {
-        private readonly UsuarioService oUsuarioService;
+        private readonly PerfilService oPerfilService;
         DBHelper oBD = new DBHelper();
 
-        public frmUsuario()
+        public frmPerfil()
         {
             InitializeComponent();
             InitializeDataGridView();
-            oUsuarioService = new UsuarioService();
+            oPerfilService = new PerfilService();
         }
 
-        private void frmUsuario_Load(object sender, EventArgs e)
+        private void frmPerfil_Load(object sender, EventArgs e)
         {
-            LlenarCombo(cboPerfil, oBD.consultarTabla("Perfil"), "nombre", "idPerfil");
+            
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -48,41 +48,38 @@ namespace TrabajoPractico
         private void InitializeDataGridView()
         {
             // Cree un DataGridView no vinculado declarando un recuento de columnas.
-            grdUsuarios.ColumnCount = 3;
-            grdUsuarios.ColumnHeadersVisible = true;
+            grdPerfiles.ColumnCount = 2;
+            grdPerfiles.ColumnHeadersVisible = true;
 
             // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
-            grdUsuarios.AutoGenerateColumns = false;
+            grdPerfiles.AutoGenerateColumns = false;
 
             // Cambia el estilo de la cabecera de la grilla.
             DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
 
             columnHeaderStyle.BackColor = Color.Beige;
             columnHeaderStyle.Font = new Font("Verdana", 8, FontStyle.Bold);
-            grdUsuarios.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+            grdPerfiles.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
-            grdUsuarios.Columns[0].Name = "Usuario";
-            grdUsuarios.Columns[0].DataPropertyName = "idUsuario";
+            grdPerfiles.Columns[0].Name = "Perfil";
+            grdPerfiles.Columns[0].DataPropertyName = "idPerfil";
             // Definimos el ancho de la columna.
 
-            grdUsuarios.Columns[1].Name = "Email";
-            grdUsuarios.Columns[1].DataPropertyName = "email";
-
-            grdUsuarios.Columns[2].Name = "Perfil";
-            grdUsuarios.Columns[2].DataPropertyName = "perfil";
+            grdPerfiles.Columns[1].Name = "Nombre";
+            grdPerfiles.Columns[1].DataPropertyName = "nombre";
 
             // Cambia el tamaño de la altura de los encabezados de columna.
-            grdUsuarios.AutoResizeColumnHeadersHeight();
+            grdPerfiles.AutoResizeColumnHeadersHeight();
 
             // Cambia el tamaño de todas las alturas de fila para ajustar el contenido de todas las celdas que no sean de encabezado.
-            grdUsuarios.AutoResizeRows(
+            grdPerfiles.AutoResizeRows(
                 DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmABMUsuarios formulario = new frmABMUsuarios();
+            frmABMPerfil formulario = new frmABMPerfil();
             formulario.ShowDialog();
         }
 
@@ -93,26 +90,26 @@ namespace TrabajoPractico
             if (!chkTodos.Checked)
             {
                 // Validar si el combo 'Perfiles' esta seleccionado.
-                if (cboPerfil.Text != string.Empty)
+                /*if (cboPerfil.Text != string.Empty)
                 {
                     condiciones += " AND u.perfil=" + cboPerfil.SelectedValue.ToString();
 
-                }
+                }**/
 
                 // Validar si el textBox 'Nombre' esta vacio.
                 if (txtNombre.Text != string.Empty)
                 {
-                    condiciones += "AND u.idUsuario=" + "'" + txtNombre.Text + "'";
+                    condiciones += "AND nombre=" + "'" + txtNombre.Text + "'";
                 }
 
             if (condiciones != "")
-                    grdUsuarios.DataSource = oUsuarioService.ObtenerConFiltros(condiciones);
+                grdPerfiles.DataSource = oPerfilService.ObtenerConFiltros(condiciones);
 
              else
                 MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
-                grdUsuarios.DataSource = oUsuarioService.ObtenerTodos();
+                grdPerfiles.DataSource = oPerfilService.ObtenerTodos();
         }
 
         private void grdUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -122,18 +119,18 @@ namespace TrabajoPractico
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmABMUsuarios formulario = new frmABMUsuarios();
-            var usuario = (Usuario)grdUsuarios.CurrentRow.DataBoundItem;
-            formulario.SeleccionarUsuario(frmABMUsuarios.FormMode.update, usuario);
+            frmABMPerfil formulario = new frmABMPerfil();
+            var perfil = (Perfil)grdPerfiles.CurrentRow.DataBoundItem;
+            formulario.SeleccionarPerfil(frmABMPerfil.FormMode.update, perfil);
             formulario.ShowDialog();
             btnConsultar_Click(sender, e);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            frmABMUsuarios formulario = new frmABMUsuarios();
-            var usuario = (Usuario)grdUsuarios.CurrentRow.DataBoundItem;
-            formulario.SeleccionarUsuario(frmABMUsuarios.FormMode.delete, usuario);
+            frmABMPerfil formulario = new frmABMPerfil();
+            var perfil = (Perfil)grdPerfiles.CurrentRow.DataBoundItem;
+            formulario.SeleccionarPerfil(frmABMPerfil.FormMode.delete, perfil);
             formulario.ShowDialog();
             btnConsultar_Click(sender, e);
         }
@@ -143,12 +140,12 @@ namespace TrabajoPractico
             if (chkTodos.Checked)
             {
                 txtNombre.Enabled = false;
-                cboPerfil.Enabled = false;
+               
             }
             else
             {
                 txtNombre.Enabled = true;
-                cboPerfil.Enabled = true;
+                
             }
         }
 
