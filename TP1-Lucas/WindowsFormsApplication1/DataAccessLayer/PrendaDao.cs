@@ -136,7 +136,7 @@ namespace TrabajoPractico.DataAccessLayer
                              + "VALUES ("
                              + "'" + prenda.CodPrenda +  "' , "
                              + "'" + prenda.TipoPrenda.Codigo + "' , "
-                             + "'" + prenda.Talle + "' , "
+                             + "'" + prenda.Talle + "', "
                              + "'" + prenda.Descripcion + "' , "
                              + prenda.Precio + " , "
                              + prenda.Cantidad + " , "
