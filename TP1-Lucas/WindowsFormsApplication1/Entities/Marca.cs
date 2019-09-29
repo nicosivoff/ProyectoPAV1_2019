@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico
 {
-    class Marca
+    public class Marca
     {
         public int IdMarca { get; set; }
 

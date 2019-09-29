@@ -64,6 +64,12 @@
     <Compile Include="GUILayer\frmABMUsuarios.Designer.cs">
       <DependentUpon>frmABMUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\frmAMBPrenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmAMBPrenda.Designer.cs">
+      <DependentUpon>frmAMBPrenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUILayer\frmABMUsuarios.resx">
       <DependentUpon>frmABMUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmAMBPrenda.resx">
+      <DependentUpon>frmAMBPrenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

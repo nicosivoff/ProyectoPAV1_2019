@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsulta));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkMostrarTodos = new System.Windows.Forms.CheckBox();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,13 +38,18 @@
             this.grdPrenda = new System.Windows.Forms.DataGridView();
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.cboTipoPrenda = new System.Windows.Forms.ComboBox();
-            this.chkMostrarTodos = new System.Windows.Forms.CheckBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPrenda)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminar);
+            this.groupBox1.Controls.Add(this.btnEditar);
+            this.groupBox1.Controls.Add(this.btnNuevo);
             this.groupBox1.Controls.Add(this.chkMostrarTodos);
             this.groupBox1.Controls.Add(this.btnDetalle);
             this.groupBox1.Controls.Add(this.btnConsultar);
@@ -58,6 +64,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            // 
+            // chkMostrarTodos
+            // 
+            this.chkMostrarTodos.AutoSize = true;
+            this.chkMostrarTodos.Location = new System.Drawing.Point(289, 89);
+            this.chkMostrarTodos.Name = "chkMostrarTodos";
+            this.chkMostrarTodos.Size = new System.Drawing.Size(90, 17);
+            this.chkMostrarTodos.TabIndex = 7;
+            this.chkMostrarTodos.Text = "Mostrar todos";
+            this.chkMostrarTodos.UseVisualStyleBackColor = true;
+            this.chkMostrarTodos.CheckedChanged += new System.EventHandler(this.chkMostrarTodos_CheckedChanged);
             // 
             // btnDetalle
             // 
@@ -130,16 +147,35 @@
             this.cboTipoPrenda.TabIndex = 0;
             this.cboTipoPrenda.SelectedIndexChanged += new System.EventHandler(this.cboTipoPrenda_SelectedIndexChanged);
             // 
-            // chkMostrarTodos
+            // btnEliminar
             // 
-            this.chkMostrarTodos.AutoSize = true;
-            this.chkMostrarTodos.Location = new System.Drawing.Point(289, 89);
-            this.chkMostrarTodos.Name = "chkMostrarTodos";
-            this.chkMostrarTodos.Size = new System.Drawing.Size(90, 17);
-            this.chkMostrarTodos.TabIndex = 7;
-            this.chkMostrarTodos.Text = "Mostrar todos";
-            this.chkMostrarTodos.UseVisualStyleBackColor = true;
-            this.chkMostrarTodos.CheckedChanged += new System.EventHandler(this.chkMostrarTodos_CheckedChanged);
+            this.btnEliminar.Location = new System.Drawing.Point(193, 371);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(112, 371);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 12;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(30, 370);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 11;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // frmConsulta
             // 
@@ -174,5 +210,8 @@
         private System.Windows.Forms.ComboBox cboTipoPrenda;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.CheckBox chkMostrarTodos;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }

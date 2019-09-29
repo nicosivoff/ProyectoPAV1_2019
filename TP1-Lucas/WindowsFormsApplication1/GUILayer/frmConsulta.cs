@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TrabajoPractico.Entities;
 using TrabajoPractico.DataAccessLayer;
 using TrabajoPractico.BusinessLayer;
+using TrabajoPractico.GUILayer;
 
 
 namespace TrabajoPractico
@@ -198,5 +199,31 @@ namespace TrabajoPractico
                 llenarCombo(cboMarca, oBD.consultarTabla("Marca"), "Nombre", "idMarca");
             }
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmAMBPrenda abmPrenda = new frmAMBPrenda();
+            abmPrenda.ShowDialog();
+            btnConsultar_Click_1(sender, e);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            frmAMBPrenda abmPrenda = new frmAMBPrenda();
+            var prenda = (Prenda)grdPrenda.CurrentRow.DataBoundItem;
+            abmPrenda.seleccionarPrenda(frmAMBPrenda.FormMode.update, prenda);
+            abmPrenda.ShowDialog();
+            btnConsultar_Click_1(sender, e);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            frmAMBPrenda abmPrenda = new frmAMBPrenda();
+            var prenda = (Prenda)grdPrenda.CurrentRow.DataBoundItem;
+            abmPrenda.seleccionarPrenda(frmAMBPrenda.FormMode.delete, prenda);
+            abmPrenda.ShowDialog();
+            btnConsultar_Click_1(sender, e);
+        }
+
     }
 }

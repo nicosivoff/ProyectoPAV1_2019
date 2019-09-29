@@ -20,5 +20,21 @@ namespace TrabajoPractico.BusinessLayer
         {
             return oPrendaDao.getPrendaID(Int32.Parse(id));
         }
+        public object ObtenerPrenda(string codPrenda)
+        {
+            return oPrendaDao.GetPrendaSinParametros(codPrenda);
+        }
+        public bool crearPrenda(Prenda prenda)
+        {
+            return oPrendaDao.crearPrenda(prenda);
+        }
+        public bool actualizarPrenda(Prenda prenda)
+        {
+            return oPrendaDao.actualizarPrenda(prenda);
+        }
+        public bool modificarEstadoPrenda(Prenda prenda)
+        {
+            return oPrendaDao.delete(prenda);
+        }
     }
 }
