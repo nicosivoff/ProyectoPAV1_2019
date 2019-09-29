@@ -9,15 +9,14 @@ using TrabajoPractico.DataAccessLayer;
 
 
 namespace TrabajoPractico.DataAccessLayer
-{   
-    
+{
+
     class PrendaDao
     {
         DBHelper oBD = new DBHelper();
         /*public void grabarPrenda()
         {
             string sqlInsert = "";
-
             sqlInsert = @"INSERT INTO Prenda (codPrenda,tipoPrenda,talle,descripcion,precio,cantidad,marca) VALUES ('" +
                          this.codigo + "', '" +
                          this.tipo + "', '" +
@@ -26,11 +25,8 @@ namespace TrabajoPractico.DataAccessLayer
                          this.precio + "', '" +
                          this.cantidad + "', '" +
                          this.marca + "')";
-
             oBD.actualizar(sqlInsert);
-
         }
-
         public void actualizarPrenda()
         {
             string sqlUpdate = "";
@@ -41,16 +37,13 @@ namespace TrabajoPractico.DataAccessLayer
                         "precio='" + this.precio + "', " +
                         "cantidad='" + this.cantidad + "'" +
                         " WHERE codPrenda=" + this.codigo;
-
             oBD.actualizar(sqlUpdate);
-
         }
         public void eliminarPrenda()
         {
             string sqlDelete = @"DELETE FROM Prenda WHERE codPrenda='" + this.codigo + "'";
             oBD.actualizar(sqlDelete);
         }
-
         public DataTable recuperarPrenda()
         {
             string strSql = "SELECT p.codPrenda, t.descripcion, p.talle, p.descripcion, p.precio, p.cantidad, m.nombre"
@@ -74,10 +67,10 @@ namespace TrabajoPractico.DataAccessLayer
         }
 
         public IList<Prenda> getPrendasCondicionada(string condiciones)
-        {   
+        {
 
             List<Prenda> listadoPrendas = new List<Prenda>();
-            
+
             String strSql = "SELECT p.codPrenda, p.tipoPrenda, t.descrip, p.talle, p.descripcion, p.precio, p.cantidad, p.marca, m.nombre"
                             + " FROM Prenda p, TipoPrenda t, Marca m"
                             + " WHERE p.tipoPrenda=t.codTipoPrenda"
@@ -124,7 +117,7 @@ namespace TrabajoPractico.DataAccessLayer
                             + " AND p.codPrenda=" + codPrenda.ToString();
             var resultado = DBHelper.GetDBHelper().consultar(strSql);
 
-            if(resultado.Rows.Count > 0)
+            if (resultado.Rows.Count > 0)
             {
                 return MappingPrenda(resultado.Rows[0]);
             }
@@ -134,9 +127,9 @@ namespace TrabajoPractico.DataAccessLayer
         {
             string strSql = "INSERT INTO Prenda(codPrenda, tipoPrenda, talle, descripcion, precio, cantidad, marca, borrado)"
                              + "VALUES ("
-                             + "'" + prenda.CodPrenda +  "' , "
+                             + "'" + prenda.CodPrenda + "' , "
                              + "'" + prenda.TipoPrenda.Codigo + "' , "
-                             + "'" + prenda.Talle + "', "
+                             + "'" + prenda.Talle + "' , "
                              + "'" + prenda.Descripcion + "' , "
                              + prenda.Precio + " , "
                              + prenda.Cantidad + " , "
