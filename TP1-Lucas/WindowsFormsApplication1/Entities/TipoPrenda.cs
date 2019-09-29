@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico.Entities
 {
-    public class TipoPrenda
+    class TipoPrenda
     {
-
+       
         public int Codigo { get; set; }
 
         public string Nombre { get; set; }
