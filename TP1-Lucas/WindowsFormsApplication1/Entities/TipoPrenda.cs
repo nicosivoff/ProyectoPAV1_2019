@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico.Entities
 {
-    class TipoPrenda
+    public class TipoPrenda
     {
        
         public int Codigo { get; set; }

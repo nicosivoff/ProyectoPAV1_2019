@@ -114,6 +114,56 @@ namespace TrabajoPractico.DataAccessLayer
 
             return oPrenda;
         }
-        
+        public Prenda GetPrendaSinParametros(string codPrenda)
+        {
+            string strSql = "SELECT p.codPrenda, p.tipoPrenda, t.descrip, p.talle, p.descripcion, p.precio, p.cantidad, p.marca, m.nombre"
+                            + " FROM Prenda p, TipoPrenda t, Marca m"
+                            + " WHERE p.tipoPrenda=t.codTipoPrenda"
+                            + " AND p.marca=m.idMarca"
+                            + " AND p.borrado = 0"
+                            + " AND p.codPrenda=" + codPrenda.ToString();
+            var resultado = DBHelper.GetDBHelper().consultar(strSql);
+
+            if(resultado.Rows.Count > 0)
+            {
+                return MappingPrenda(resultado.Rows[0]);
+            }
+            return null;
+        }
+        public bool crearPrenda(Prenda prenda)
+        {
+            string strSql = "INSERT INTO Prenda(codPrenda, tipoPrenda, talle, descripcion, precio, cantidad, marca, borrado)"
+                             + "VALUES ("
+                             + "'" + prenda.CodPrenda +  "' , "
+                             + "'" + prenda.TipoPrenda.Codigo + "' , "
+                             + "'" + prenda.Talle + "' , "
+                             + "'" + prenda.Descripcion + "' , "
+                             + prenda.Precio + " , "
+                             + prenda.Cantidad + " , "
+                             + prenda.Marca.IdMarca + " , "
+                             + "0)";
+            return (DBHelper.GetDBHelper().EjecutarSQL(strSql) == 1);
+        }
+        public bool actualizarPrenda(Prenda prenda)
+        {
+            string strSql = "UPDATE Prenda" +
+                            " SET tipoPrenda=" + prenda.TipoPrenda.Codigo +
+                            ", talle='" + prenda.Talle + "'" +
+                            ", descripcion='" + prenda.Descripcion + "'" +
+                            ", precio=" + prenda.Precio +
+                            ", cantidad=" + prenda.Cantidad +
+                            ", marca=" + prenda.Marca.IdMarca +
+                            ", borrado=0" +
+                            "WHERE codPrenda= " + (int)prenda.CodPrenda;
+            return (DBHelper.GetDBHelper().EjecutarSQL(strSql) == 1);
+        }
+        public bool delete(Prenda prenda)
+        {
+            string strSql = "UPDATE Prenda " +
+                            "SET borrado=1" +
+                            " WHERE codPrenda= " + prenda.CodPrenda;
+            oBD.actualizar(strSql);
+            return true;
+        }
     }
 }
