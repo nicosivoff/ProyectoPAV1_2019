@@ -163,7 +163,6 @@
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // frmABMUsuarios
             // 
@@ -174,7 +173,6 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmABMUsuarios";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmABMUsuarios";
             this.Load += new System.EventHandler(this.frmABMUsuarios_Load);
             this.groupBox1.ResumeLayout(false);

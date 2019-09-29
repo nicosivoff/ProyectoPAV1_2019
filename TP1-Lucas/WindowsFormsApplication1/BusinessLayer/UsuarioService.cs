@@ -52,11 +52,13 @@ namespace TrabajoPractico.BusinessLayer
             return oUsuarioDao.Delete(oUsuarioSelected);
         }
 
-        internal bool ObtenerUsuario(string usuario)
+        internal object ObtenerUsuario(string usuario)
         {
             //SIN PARAMETROS
             return oUsuarioDao.GetUserSinParametros(usuario);
 
+            //CON PARAMETROS
+            // return oUsuarioDao.GetUserConParametros(usuario);
         }
     }
 }

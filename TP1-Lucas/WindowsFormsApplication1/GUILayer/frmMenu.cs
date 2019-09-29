@@ -13,7 +13,7 @@ namespace TrabajoPractico
     public partial class frmMenu : Form
     {
         frmConsulta consulta = new frmConsulta();
-        frmUsuario usuario = new frmUsuario();
+        
         public frmMenu()
         {
             InitializeComponent();
@@ -22,11 +22,6 @@ namespace TrabajoPractico
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             consulta.ShowDialog();
-        }
-
-        private void aBMToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            usuario.ShowDialog();
         }
     }
 }

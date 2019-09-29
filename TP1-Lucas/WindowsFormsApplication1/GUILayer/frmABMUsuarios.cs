@@ -48,7 +48,7 @@ namespace TrabajoPractico
                         this.Text = "Actualizar Usuario";
                         // Recuperar usuario seleccionado en la grilla 
                         MostrarDatos();
-                        txtIdUsuario.Enabled = false;
+                        txtIdUsuario.Enabled = true;
                         txtEmail.Enabled = true;
                         txtContraseña.Enabled = true;
                         txtRepContra.Enabled = true;
@@ -84,7 +84,7 @@ namespace TrabajoPractico
             {
                 case FormMode.insert:
                     {
-                        if (!ExisteUsuario())
+                        if (ExisteUsuario())
                         {
                             if (ValidarCampos())
                             {
@@ -95,16 +95,11 @@ namespace TrabajoPractico
                                 oUsuario.Perfil = new Perfil();
                                 oUsuario.Perfil.IdPerfil = (int)cboPerfil.SelectedValue;
 
-                                
-                                
                                 if (oUsuarioService.CrearUsuario(oUsuario))
-                                    {
-                                        MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        this.Close();
-                                    }
-                                
-
-                                
+                                {
+                                    MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
                             }
                         }
                         else
@@ -179,23 +174,15 @@ namespace TrabajoPractico
             }
             else
                 txtIdUsuario.BackColor = Color.White;
-            if (txtContraseña.Text != txtRepContra.Text)
-            {
-                MessageBox.Show("Las contraseñas no coinciden")
-                txtContraseña.BackColor = Color.Red;
-                txtRepContra.BackColor = Color.Red;
-                txtContraseña.Focus();
-                return false;
-            }
-            else
-                txtIdUsuario.BackColor = Color.White;
+
             return true;
         }
         private bool ExisteUsuario()
         {
-
-            return oUsuarioService.ObtenerUsuario(txtIdUsuario.Text);
-            
+            if (oUsuarioService.ObtenerUsuario(txtIdUsuario.Text) != null)
+                return true;
+            else
+                return false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -211,11 +198,6 @@ namespace TrabajoPractico
         {
             formMode = op;
             oUsuarioSelected = usuarioSelected;
-        }
-
-        private void btnCancelar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
