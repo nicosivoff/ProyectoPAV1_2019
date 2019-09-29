@@ -34,6 +34,9 @@
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aMBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +44,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.prendaToolStripMenuItem,
-            this.usuarioToolStripMenuItem});
+            this.usuarioToolStripMenuItem,
+            this.aMBToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(595, 24);
@@ -59,7 +63,7 @@
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
@@ -78,12 +82,34 @@
             this.aBMToolStripMenuItem.Text = "ABM";
             this.aBMToolStripMenuItem.Click += new System.EventHandler(this.aBMToolStripMenuItem_Click);
             // 
+            // aMBToolStripMenuItem
+            // 
+            this.aMBToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tipoDeUsuarioToolStripMenuItem,
+            this.marcaToolStripMenuItem});
+            this.aMBToolStripMenuItem.Name = "aMBToolStripMenuItem";
+            this.aMBToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.aMBToolStripMenuItem.Text = "ABM";
+            // 
+            // tipoDeUsuarioToolStripMenuItem
+            // 
+            this.tipoDeUsuarioToolStripMenuItem.Name = "tipoDeUsuarioToolStripMenuItem";
+            this.tipoDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tipoDeUsuarioToolStripMenuItem.Text = "Perfil";
+            this.tipoDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.tipoDeUsuarioToolStripMenuItem_Click);
+            // 
+            // marcaToolStripMenuItem
+            // 
+            this.marcaToolStripMenuItem.Name = "marcaToolStripMenuItem";
+            this.marcaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.marcaToolStripMenuItem.Text = "Marca";
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.ClientSize = new System.Drawing.Size(595, 362);
+            this.ClientSize = new System.Drawing.Size(595, 361);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -106,5 +132,8 @@
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aMBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoDeUsuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem marcaToolStripMenuItem;
     }
 }
