@@ -1,4 +1,4 @@
-﻿namespace TrabajoPractico
+﻿namespace TrabajoPractico.GUILayer
 {
     partial class frmABMPerfil
     {
@@ -28,34 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtIdPerfil = new System.Windows.Forms.TextBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // btnCancelar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Id:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.btnCancelar.Location = new System.Drawing.Point(193, 149);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // label3
+            // btnAceptar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre del perfil:";
+            this.btnAceptar.Location = new System.Drawing.Point(94, 149);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 9;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // groupBox1
             // 
@@ -63,10 +64,10 @@
             this.groupBox1.Controls.Add(this.txtIdPerfil);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 18);
+            this.groupBox1.Location = new System.Drawing.Point(6, 22);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(332, 121);
-            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Perfil";
             // 
@@ -84,25 +85,23 @@
             this.txtIdPerfil.Size = new System.Drawing.Size(31, 20);
             this.txtIdPerfil.TabIndex = 5;
             // 
-            // btnAceptar
+            // label3
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(96, 145);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 6;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(37, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Nombre del perfil:";
             // 
-            // btnCancelar
+            // label1
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(195, 145);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(107, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(19, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Id:";
             // 
             // frmABMPerfil
             // 
@@ -113,12 +112,9 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(361, 233);
-            this.MinimumSize = new System.Drawing.Size(361, 233);
             this.Name = "frmABMPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPerfil";
+            this.Text = "frmABMPerfil";
             this.Load += new System.EventHandler(this.frmABMPerfil_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -128,12 +124,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtIdPerfil;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -45,12 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLayer\PrendaService.cs" />
+    <Compile Include="BusinessLayer\MarcaService.cs" />
     <Compile Include="BusinessLayer\PerfilService.cs" />
+    <Compile Include="BusinessLayer\PrendaService.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
-    <Compile Include="DataAccessLayer\PrendaDao.cs" />
+    <Compile Include="DataAccessLayer\MarcaDao.cs" />
     <Compile Include="DataAccessLayer\PerfilDao.cs" />
+    <Compile Include="DataAccessLayer\PrendaDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Empleado.cs" />
@@ -60,6 +62,12 @@
     <Compile Include="Entities\Proveedor.cs" />
     <Compile Include="Entities\TipoPrenda.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="GUILayer\frmABMMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMMarca.Designer.cs">
+      <DependentUpon>frmABMMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\frmABMPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +104,12 @@
     <Compile Include="GUILayer\frmDetalle.Designer.cs">
       <DependentUpon>frmDetalle.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\frmMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmMarca.Designer.cs">
+      <DependentUpon>frmMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +131,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\frmABMMarca.resx">
+      <DependentUpon>frmABMMarca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmABMPerfil.resx">
       <DependentUpon>frmABMPerfil.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmDetalle.resx">
       <DependentUpon>frmDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmMarca.resx">
+      <DependentUpon>frmMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>

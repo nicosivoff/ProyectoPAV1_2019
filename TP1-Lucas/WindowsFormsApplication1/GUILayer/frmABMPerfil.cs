@@ -11,7 +11,8 @@ using TrabajoPractico.BusinessLayer;
 using TrabajoPractico.DataAccessLayer;
 using TrabajoPractico.Entities;
 
-namespace TrabajoPractico
+
+namespace TrabajoPractico.GUILayer
 {
     public partial class frmABMPerfil : Form
     {
@@ -31,41 +32,6 @@ namespace TrabajoPractico
             delete
         }
 
-
-        private void frmABMPerfil_Load(object sender, EventArgs e)
-        {
-            switch (formMode)
-            {
-                case FormMode.insert:
-                    {
-                        this.Text = "Nuevo Perfil";
-                        txtIdPerfil.Enabled = false;
-                        txtNombre.Enabled = true;
-                        break;
-                    }
-
-                case FormMode.update:
-                    {
-                        this.Text = "Actualizar Usuario";
-                        // Recuperar usuario seleccionado en la grilla 
-                        MostrarDatos();
-                        txtIdPerfil.Enabled = false;
-                        txtNombre.Enabled = true;
-                        break;
-                    }
-
-                case FormMode.delete:
-                    {
-                        MostrarDatos();
-                        this.Text = "Habilitar/Deshabilitar Usuario";
-                        txtIdPerfil.Enabled = false;
-                        txtNombre.Enabled = false;
-                        break;
-                    }
-            }
-        }
-
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             switch (formMode)
@@ -77,18 +43,18 @@ namespace TrabajoPractico
                             if (ValidarCampos())
                             {
                                 Perfil oPerfil = new Perfil();
-                                oPerfil.Nombre= txtNombre.Text;
+                                oPerfil.Nombre = txtNombre.Text;
 
 
 
                                 if (oPerfilService.CrearPerfil(oPerfil))
-                                    {
-                                        MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        this.Close();
-                                    }
-                                
+                                {
+                                    MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
 
-                                
+
+
                             }
                         }
                         else
@@ -131,6 +97,45 @@ namespace TrabajoPractico
                         break;
                     }
             }
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmABMPerfil_Load(object sender, EventArgs e)
+        {
+            switch (formMode)
+            {
+                case FormMode.insert:
+                    {
+                        this.Text = "Nuevo Perfil";
+                        txtIdPerfil.Enabled = false;
+                        txtNombre.Enabled = true;
+                        break;
+                    }
+
+                case FormMode.update:
+                    {
+                        this.Text = "Actualizar Usuario";
+                        // Recuperar usuario seleccionado en la grilla 
+                        MostrarDatos();
+                        txtIdPerfil.Enabled = false;
+                        txtNombre.Enabled = true;
+                        break;
+                    }
+
+                case FormMode.delete:
+                    {
+                        MostrarDatos();
+                        this.Text = "Habilitar/Deshabilitar Usuario";
+                        txtIdPerfil.Enabled = false;
+                        txtNombre.Enabled = false;
+                        break;
+                    }
+            }
         }
         private void MostrarDatos()
         {
@@ -139,11 +144,6 @@ namespace TrabajoPractico
                 txtIdPerfil.Text = oPerfilSelected.IdPerfil.ToString();
                 txtNombre.Text = oPerfilSelected.Nombre.ToString();
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
         private bool ValidarCampos()
         {
@@ -156,34 +156,19 @@ namespace TrabajoPractico
             }
             else
                 txtIdPerfil.BackColor = Color.White;
-            
+
             return true;
         }
         private bool ExistePerfil()
         {
 
             return oPerfilService.ObtenerPerfil(txtIdPerfil.Text);
-            
-        }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnSalir_Click(System.Object sender, System.EventArgs e)
-        {
-            this.Close();
         }
         public void SeleccionarPerfil(FormMode op, Perfil perfilSelected)
         {
             formMode = op;
             oPerfilSelected = perfilSelected;
-        }
-
-        private void btnCancelar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

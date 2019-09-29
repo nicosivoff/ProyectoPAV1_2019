@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TrabajoPractico.GUILayer;
 
 namespace TrabajoPractico
 {
@@ -15,6 +16,7 @@ namespace TrabajoPractico
         frmConsulta consulta = new frmConsulta();
         frmUsuario usuario = new frmUsuario();
         frmPerfil perfil = new frmPerfil();
+        frmMarca marca = new frmMarca();
         public frmMenu()
         {
             InitializeComponent();
@@ -30,9 +32,14 @@ namespace TrabajoPractico
             usuario.ShowDialog();
         }
 
-        private void tipoDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void perfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
             perfil.ShowDialog();
+        }
+
+        private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            marca.ShowDialog();
         }
     }
 }

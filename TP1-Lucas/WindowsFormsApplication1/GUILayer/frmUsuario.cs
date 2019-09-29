@@ -105,11 +105,11 @@ namespace TrabajoPractico
                     condiciones += "AND u.idUsuario=" + "'" + txtNombre.Text + "'";
                 }
 
-            if (condiciones != "")
-                    grdUsuarios.DataSource = oUsuarioService.ObtenerConFiltros(condiciones);
+                if (condiciones != "")
+                        grdUsuarios.DataSource = oUsuarioService.ObtenerConFiltros(condiciones);
 
-             else
-                MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                else
+                    MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
                 grdUsuarios.DataSource = oUsuarioService.ObtenerTodos();

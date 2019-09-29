@@ -37,6 +37,7 @@
             this.cboPerfil = new System.Windows.Forms.ComboBox();
             this.txtRepContra = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -87,15 +88,15 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Usuario:";
+            this.label5.Text = "Perfil:";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cboPerfil);
             this.groupBox1.Controls.Add(this.txtRepContra);
             this.groupBox1.Controls.Add(this.txtContraseña);
-            this.groupBox1.Controls.Add(this.txtIdUsuario);
             this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.txtIdUsuario);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);

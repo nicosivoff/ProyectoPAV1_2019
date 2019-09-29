@@ -34,8 +34,8 @@
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aMBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.perfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.prendaToolStripMenuItem,
             this.usuarioToolStripMenuItem,
-            this.aMBToolStripMenuItem});
+            this.aBMToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(595, 24);
@@ -63,7 +63,7 @@
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
@@ -82,27 +82,28 @@
             this.aBMToolStripMenuItem.Text = "ABM";
             this.aBMToolStripMenuItem.Click += new System.EventHandler(this.aBMToolStripMenuItem_Click);
             // 
-            // aMBToolStripMenuItem
+            // aBMToolStripMenuItem1
             // 
-            this.aMBToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tipoDeUsuarioToolStripMenuItem,
+            this.aBMToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.perfilToolStripMenuItem,
             this.marcaToolStripMenuItem});
-            this.aMBToolStripMenuItem.Name = "aMBToolStripMenuItem";
-            this.aMBToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
-            this.aMBToolStripMenuItem.Text = "ABM";
+            this.aBMToolStripMenuItem1.Name = "aBMToolStripMenuItem1";
+            this.aBMToolStripMenuItem1.Size = new System.Drawing.Size(45, 20);
+            this.aBMToolStripMenuItem1.Text = "ABM";
             // 
-            // tipoDeUsuarioToolStripMenuItem
+            // perfilToolStripMenuItem
             // 
-            this.tipoDeUsuarioToolStripMenuItem.Name = "tipoDeUsuarioToolStripMenuItem";
-            this.tipoDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.tipoDeUsuarioToolStripMenuItem.Text = "Perfil";
-            this.tipoDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.tipoDeUsuarioToolStripMenuItem_Click);
+            this.perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
+            this.perfilToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.perfilToolStripMenuItem.Text = "Perfil";
+            this.perfilToolStripMenuItem.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
             // 
             // marcaToolStripMenuItem
             // 
             this.marcaToolStripMenuItem.Name = "marcaToolStripMenuItem";
             this.marcaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.marcaToolStripMenuItem.Text = "Marca";
+            this.marcaToolStripMenuItem.Click += new System.EventHandler(this.marcaToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -132,8 +133,8 @@
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aMBToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipoDeUsuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem perfilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem marcaToolStripMenuItem;
     }
 }
