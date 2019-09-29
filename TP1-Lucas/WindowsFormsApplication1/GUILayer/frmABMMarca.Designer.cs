@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.grbMarca = new System.Windows.Forms.GroupBox();
+            this.txtNombreMarca = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtIdMarca = new System.Windows.Forms.TextBox();
             this.lblIdMarca = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtNombreMarca = new System.Windows.Forms.TextBox();
             this.grbMarca.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,13 @@
             this.grbMarca.TabIndex = 0;
             this.grbMarca.TabStop = false;
             this.grbMarca.Text = "Marca";
+            // 
+            // txtNombreMarca
+            // 
+            this.txtNombreMarca.Location = new System.Drawing.Point(125, 69);
+            this.txtNombreMarca.Name = "txtNombreMarca";
+            this.txtNombreMarca.Size = new System.Drawing.Size(121, 20);
+            this.txtNombreMarca.TabIndex = 1;
             // 
             // lblNombre
             // 
@@ -96,17 +103,11 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // txtNombreMarca
-            // 
-            this.txtNombreMarca.Location = new System.Drawing.Point(125, 69);
-            this.txtNombreMarca.Name = "txtNombreMarca";
-            this.txtNombreMarca.Size = new System.Drawing.Size(121, 20);
-            this.txtNombreMarca.TabIndex = 1;
-            // 
             // frmABMMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(300, 176);
             this.Controls.Add(this.grbMarca);
             this.Controls.Add(this.btnCancelar);
