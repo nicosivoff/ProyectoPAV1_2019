@@ -215,6 +215,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.grbPrenda);
             this.Name = "frmAMBPrenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAMBPrenda";
             this.Load += new System.EventHandler(this.frmAMBPrenda_Load);
             this.grbPrenda.ResumeLayout(false);

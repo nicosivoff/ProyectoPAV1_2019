@@ -17,6 +17,7 @@ namespace TrabajoPractico
         frmUsuario usuario = new frmUsuario();
         frmPerfil perfil = new frmPerfil();
         frmMarca marca = new frmMarca();
+        frmEmpleados empleado = new frmEmpleados();
         public frmMenu()
         {
             InitializeComponent();
@@ -40,6 +41,11 @@ namespace TrabajoPractico
         private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             marca.ShowDialog();
+        }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            empleado.ShowDialog();
         }
     }
 }

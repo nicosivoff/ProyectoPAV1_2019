@@ -46,11 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\MarcaService.cs" />
+    <Compile Include="BusinessLayer\EmpleadoService.cs" />
     <Compile Include="BusinessLayer\PerfilService.cs" />
     <Compile Include="BusinessLayer\PrendaService.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
     <Compile Include="DataAccessLayer\MarcaDao.cs" />
+    <Compile Include="DataAccessLayer\EmpleadoDao.cs" />
     <Compile Include="DataAccessLayer\PerfilDao.cs" />
     <Compile Include="DataAccessLayer\PrendaDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
@@ -62,6 +64,12 @@
     <Compile Include="Entities\Proveedor.cs" />
     <Compile Include="Entities\TipoPrenda.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="GUILayer\frmABMEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMEmpleado.Designer.cs">
+      <DependentUpon>frmABMEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\frmABMMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +93,12 @@
     </Compile>
     <Compile Include="GUILayer\frmAMBPrenda.Designer.cs">
       <DependentUpon>frmAMBPrenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmEmpleados.Designer.cs">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\frmLogin.cs">
       <SubType>Form</SubType>
@@ -131,6 +145,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\frmABMEmpleado.resx">
+      <DependentUpon>frmABMEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmABMMarca.resx">
       <DependentUpon>frmABMMarca.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmAMBPrenda.resx">
       <DependentUpon>frmAMBPrenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

@@ -43,7 +43,7 @@ namespace TrabajoPractico.GUILayer
                             if (ValidarCampos())
                             {
                                 Perfil oPerfil = new Perfil();
-                                oPerfil.Nombre = txtNombre.Text;
+                                oPerfil.Nombre = txtNombrePerfil.Text;
 
 
 
@@ -66,7 +66,7 @@ namespace TrabajoPractico.GUILayer
                     {
                         if (ValidarCampos())
                         {
-                            oPerfilSelected.Nombre = txtNombre.Text;
+                            oPerfilSelected.Nombre = txtNombrePerfil.Text;
 
                             if (oPerfilService.ActualizarPerfil(oPerfilSelected))
                             {
@@ -113,7 +113,7 @@ namespace TrabajoPractico.GUILayer
                     {
                         this.Text = "Nuevo Perfil";
                         txtIdPerfil.Enabled = false;
-                        txtNombre.Enabled = true;
+                        txtNombrePerfil.Enabled = true;
                         break;
                     }
 
@@ -123,7 +123,7 @@ namespace TrabajoPractico.GUILayer
                         // Recuperar usuario seleccionado en la grilla 
                         MostrarDatos();
                         txtIdPerfil.Enabled = false;
-                        txtNombre.Enabled = true;
+                        txtNombrePerfil.Enabled = true;
                         break;
                     }
 
@@ -132,7 +132,7 @@ namespace TrabajoPractico.GUILayer
                         MostrarDatos();
                         this.Text = "Habilitar/Deshabilitar Usuario";
                         txtIdPerfil.Enabled = false;
-                        txtNombre.Enabled = false;
+                        txtNombrePerfil.Enabled = false;
                         break;
                     }
             }
@@ -142,7 +142,7 @@ namespace TrabajoPractico.GUILayer
             if (oPerfilSelected != null)
             {
                 txtIdPerfil.Text = oPerfilSelected.IdPerfil.ToString();
-                txtNombre.Text = oPerfilSelected.Nombre.ToString();
+                txtNombrePerfil.Text = oPerfilSelected.Nombre.ToString();
             }
         }
         private bool ValidarCampos()

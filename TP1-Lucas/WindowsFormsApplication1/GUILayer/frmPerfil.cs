@@ -14,7 +14,7 @@ using TrabajoPractico.Entities;
 
 namespace TrabajoPractico.GUILayer
 {
-    public partial class frmPerfil : Form
+    public partial class frmPerfil: Form
     {
         private readonly PerfilService oPerfilService;
         DBHelper oBD = new DBHelper();
