@@ -100,7 +100,8 @@ namespace TrabajoPractico.GUILayer
 
         private void frmPerfil_Load(object sender, EventArgs e)
         {
-
+            grdPerfiles.DataSource = oPerfilService.ObtenerTodos();
+            chkTodos.Checked = true;
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
