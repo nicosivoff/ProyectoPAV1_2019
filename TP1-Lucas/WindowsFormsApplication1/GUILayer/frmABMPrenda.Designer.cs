@@ -1,6 +1,6 @@
 ﻿namespace TrabajoPractico.GUILayer
 {
-    partial class frmAMBPrenda
+    partial class frmABMPrenda
     {
         /// <summary>
         /// Required designer variable.

@@ -202,25 +202,25 @@ namespace TrabajoPractico
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmAMBPrenda abmPrenda = new frmAMBPrenda();
+            frmABMPrenda abmPrenda = new frmABMPrenda();
             abmPrenda.ShowDialog();
             btnConsultar_Click_1(sender, e);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmAMBPrenda abmPrenda = new frmAMBPrenda();
+            frmABMPrenda abmPrenda = new frmABMPrenda();
             var prenda = (Prenda)grdPrenda.CurrentRow.DataBoundItem;
-            abmPrenda.seleccionarPrenda(frmAMBPrenda.FormMode.update, prenda);
+            abmPrenda.seleccionarPrenda(frmABMPrenda.FormMode.update, prenda);
             abmPrenda.ShowDialog();
             btnConsultar_Click_1(sender, e);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            frmAMBPrenda abmPrenda = new frmAMBPrenda();
+            frmABMPrenda abmPrenda = new frmABMPrenda();
             var prenda = (Prenda)grdPrenda.CurrentRow.DataBoundItem;
-            abmPrenda.seleccionarPrenda(frmAMBPrenda.FormMode.delete, prenda);
+            abmPrenda.seleccionarPrenda(frmABMPrenda.FormMode.delete, prenda);
             abmPrenda.ShowDialog();
             btnConsultar_Click_1(sender, e);
         }

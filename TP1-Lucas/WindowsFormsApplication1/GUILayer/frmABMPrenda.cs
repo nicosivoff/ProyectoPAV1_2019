@@ -14,13 +14,13 @@ using TrabajoPractico.Entities;
 
 namespace TrabajoPractico.GUILayer
 {
-    public partial class frmAMBPrenda : Form
+    public partial class frmABMPrenda : Form
     {
         private DBHelper oBD = new DBHelper();
         private FormMode formMode = FormMode.insert;
         private Prenda oPrendaSelected = new Prenda();
         private PrendaService oPrendaService = new PrendaService();
-        public frmAMBPrenda()
+        public frmABMPrenda()
         {
             InitializeComponent();
             PrendaService oPrendaService = new PrendaService();
