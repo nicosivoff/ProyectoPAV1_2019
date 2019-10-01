@@ -65,7 +65,7 @@
             this.btnConsultar.Location = new System.Drawing.Point(277, 105);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultar.TabIndex = 5;
+            this.btnConsultar.TabIndex = 3;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
@@ -84,7 +84,7 @@
             this.chkCliente.Location = new System.Drawing.Point(33, 111);
             this.chkCliente.Name = "chkCliente";
             this.chkCliente.Size = new System.Drawing.Size(56, 17);
-            this.chkCliente.TabIndex = 4;
+            this.chkCliente.TabIndex = 2;
             this.chkCliente.Text = "Todos";
             this.chkCliente.UseVisualStyleBackColor = true;
             this.chkCliente.CheckedChanged += new System.EventHandler(this.chkCliente_CheckedChanged);
@@ -94,14 +94,14 @@
             this.txtApellido.Location = new System.Drawing.Point(134, 78);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
-            this.txtApellido.TabIndex = 3;
+            this.txtApellido.TabIndex = 1;
             // 
             // txtDoc
             // 
             this.txtDoc.Location = new System.Drawing.Point(134, 43);
             this.txtDoc.Name = "txtDoc";
             this.txtDoc.Size = new System.Drawing.Size(100, 20);
-            this.txtDoc.TabIndex = 2;
+            this.txtDoc.TabIndex = 0;
             // 
             // label2
             // 
@@ -126,7 +126,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(12, 307);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -136,7 +136,7 @@
             this.btnSalir.Location = new System.Drawing.Point(295, 307);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 2;
+            this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -146,7 +146,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(174, 307);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -156,7 +156,7 @@
             this.btnEditar.Location = new System.Drawing.Point(93, 307);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 4;
+            this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);

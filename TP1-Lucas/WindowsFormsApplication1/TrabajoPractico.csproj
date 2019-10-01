@@ -50,6 +50,7 @@
     <Compile Include="BusinessLayer\EmpleadoService.cs" />
     <Compile Include="BusinessLayer\PerfilService.cs" />
     <Compile Include="BusinessLayer\PrendaService.cs" />
+    <Compile Include="BusinessLayer\ProveedorService.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\ClienteDao.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="DataAccessLayer\EmpleadoDao.cs" />
     <Compile Include="DataAccessLayer\PerfilDao.cs" />
     <Compile Include="DataAccessLayer\PrendaDao.cs" />
+    <Compile Include="DataAccessLayer\ProveedorDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Empleado.cs" />
@@ -71,6 +73,12 @@
     </Compile>
     <Compile Include="GUILayer\frmABMCliente.Designer.cs">
       <DependentUpon>frmABMCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmABMProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmABMProveedor.Designer.cs">
+      <DependentUpon>frmABMProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\frmCliente.cs">
       <SubType>Form</SubType>
@@ -151,6 +159,12 @@
     <Compile Include="GUILayer\frmPerfil.Designer.cs">
       <DependentUpon>frmPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\frmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmProveedor.Designer.cs">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +175,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUILayer\frmABMCliente.resx">
       <DependentUpon>frmABMCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmABMProveedor.resx">
+      <DependentUpon>frmABMProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
@@ -200,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmPerfil.resx">
       <DependentUpon>frmPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmProveedor.resx">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>

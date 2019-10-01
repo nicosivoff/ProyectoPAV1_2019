@@ -72,7 +72,7 @@
             this.txtEmail.Location = new System.Drawing.Point(123, 195);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(150, 20);
-            this.txtEmail.TabIndex = 11;
+            this.txtEmail.TabIndex = 5;
             // 
             // txtDomicilio
             // 
@@ -80,35 +80,35 @@
             this.txtDomicilio.MaximumSize = new System.Drawing.Size(150, 150);
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(150, 20);
-            this.txtDomicilio.TabIndex = 10;
+            this.txtDomicilio.TabIndex = 3;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(123, 164);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(150, 20);
-            this.txtTelefono.TabIndex = 9;
+            this.txtTelefono.TabIndex = 4;
             // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(123, 101);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(150, 20);
-            this.txtApellido.TabIndex = 8;
+            this.txtApellido.TabIndex = 2;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(123, 70);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(150, 20);
-            this.txtNombre.TabIndex = 7;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtDoc
             // 
             this.txtDoc.Location = new System.Drawing.Point(123, 39);
             this.txtDoc.Name = "txtDoc";
             this.txtDoc.Size = new System.Drawing.Size(150, 20);
-            this.txtDoc.TabIndex = 6;
+            this.txtDoc.TabIndex = 0;
             // 
             // label6
             // 
@@ -182,8 +182,9 @@
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // frmAMBCliente
+            // frmABMCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -191,7 +192,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmAMBCliente";
+            this.Name = "frmABMCliente";
             this.Text = "frmAMBCliente";
             this.Load += new System.EventHandler(this.frmAMBCliente_Load);
             this.groupBox1.ResumeLayout(false);

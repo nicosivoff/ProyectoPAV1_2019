@@ -19,6 +19,8 @@ namespace TrabajoPractico
         frmMarca marca = new frmMarca();
         frmEmpleados empleado = new frmEmpleados();
         frmCliente cliente = new frmCliente();
+        frmProveedor proveedor = new frmProveedor();
+
         public frmMenu()
         {
             InitializeComponent();
@@ -29,10 +31,7 @@ namespace TrabajoPractico
             consulta.ShowDialog();
         }
 
-        private void aBMToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            usuario.ShowDialog();
-        }
+        
 
         private void perfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -52,6 +51,22 @@ namespace TrabajoPractico
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cliente.ShowDialog();
+        }
+
+        private void aBMToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            usuario.ShowDialog();
+        
+        }
+
+        private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            proveedor.ShowDialog();
         }
     }
 }
