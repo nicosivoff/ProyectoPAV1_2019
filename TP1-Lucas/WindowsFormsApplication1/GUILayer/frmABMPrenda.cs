@@ -264,7 +264,7 @@ namespace TrabajoPractico.GUILayer
                                 }
                             }
                             else
-                                MessageBox.Show("Prenda encontrada!. Ingrese una **** ", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Prenda encontrada!. Ingrese un id diferente ", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         }
 

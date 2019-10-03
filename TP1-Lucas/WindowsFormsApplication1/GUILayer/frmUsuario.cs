@@ -28,6 +28,8 @@ namespace TrabajoPractico
         private void frmUsuario_Load(object sender, EventArgs e)
         {
             LlenarCombo(cboPerfil, oBD.consultarTabla("Perfil"), "nombre", "idPerfil");
+            chkTodos.Checked = true;
+            btnConsultar_Click(sender, e);
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -84,6 +86,7 @@ namespace TrabajoPractico
         {
             frmABMUsuarios formulario = new frmABMUsuarios();
             formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)

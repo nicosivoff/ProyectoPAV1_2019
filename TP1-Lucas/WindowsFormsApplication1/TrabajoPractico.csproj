@@ -165,6 +165,12 @@
     <Compile Include="GUILayer\frmProveedor.Designer.cs">
       <DependentUpon>frmProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\frmTransaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmTransaccion.Designer.cs">
+      <DependentUpon>frmTransaccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmTransaccion.resx">
+      <DependentUpon>frmTransaccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>

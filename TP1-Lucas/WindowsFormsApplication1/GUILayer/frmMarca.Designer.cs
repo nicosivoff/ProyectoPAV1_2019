@@ -103,7 +103,7 @@
             // chkTodos
             // 
             this.chkTodos.AutoSize = true;
-            this.chkTodos.Location = new System.Drawing.Point(227, 34);
+            this.chkTodos.Location = new System.Drawing.Point(77, 82);
             this.chkTodos.Name = "chkTodos";
             this.chkTodos.Size = new System.Drawing.Size(56, 17);
             this.chkTodos.TabIndex = 2;
@@ -113,6 +113,7 @@
             // 
             // grdMarcas
             // 
+            this.grdMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMarcas.Location = new System.Drawing.Point(6, 115);
             this.grdMarcas.Name = "grdMarcas";
@@ -123,7 +124,7 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(219, 67);
+            this.btnConsultar.Location = new System.Drawing.Point(205, 38);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(64, 23);
             this.btnConsultar.TabIndex = 3;
@@ -134,14 +135,14 @@
             // cboNombre
             // 
             this.cboNombre.FormattingEnabled = true;
-            this.cboNombre.Location = new System.Drawing.Point(78, 69);
+            this.cboNombre.Location = new System.Drawing.Point(77, 55);
             this.cboNombre.Name = "cboNombre";
             this.cboNombre.Size = new System.Drawing.Size(111, 21);
             this.cboNombre.TabIndex = 1;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(78, 38);
+            this.txtId.Location = new System.Drawing.Point(77, 29);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(111, 20);
             this.txtId.TabIndex = 0;
@@ -149,7 +150,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(6, 69);
+            this.lblNombre.Location = new System.Drawing.Point(24, 58);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 1;
@@ -158,7 +159,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(34, 38);
+            this.lblCodigo.Location = new System.Drawing.Point(52, 32);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(19, 13);
             this.lblCodigo.TabIndex = 0;
@@ -175,7 +176,10 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(336, 375);
+            this.MinimumSize = new System.Drawing.Size(336, 375);
             this.Name = "frmMarca";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMarca";
             this.Load += new System.EventHandler(this.frmMarca_Load);
             this.groupBox1.ResumeLayout(false);

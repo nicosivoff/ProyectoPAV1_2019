@@ -205,7 +205,7 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
-            // frmAMBPrenda
+            // frmABMPrenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -214,7 +214,10 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.grbPrenda);
-            this.Name = "frmAMBPrenda";
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(316, 355);
+            this.MinimumSize = new System.Drawing.Size(316, 355);
+            this.Name = "frmABMPrenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAMBPrenda";
             this.Load += new System.EventHandler(this.frmAMBPrenda_Load);

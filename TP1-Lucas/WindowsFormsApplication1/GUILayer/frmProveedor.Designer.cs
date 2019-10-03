@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCUIL = new System.Windows.Forms.TextBox();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.grdProveedor = new System.Windows.Forms.DataGridView();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.txtCUIL = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -54,21 +54,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
-            // label1
+            // grdProveedor
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CUIL:";
-            // 
-            // txtCUIL
-            // 
-            this.txtCUIL.Location = new System.Drawing.Point(46, 48);
-            this.txtCUIL.Name = "txtCUIL";
-            this.txtCUIL.Size = new System.Drawing.Size(100, 20);
-            this.txtCUIL.TabIndex = 1;
+            this.grdProveedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdProveedor.Location = new System.Drawing.Point(9, 86);
+            this.grdProveedor.Name = "grdProveedor";
+            this.grdProveedor.Size = new System.Drawing.Size(319, 150);
+            this.grdProveedor.TabIndex = 3;
             // 
             // btnConsultar
             // 
@@ -80,13 +73,21 @@
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // grdProveedor
+            // txtCUIL
             // 
-            this.grdProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdProveedor.Location = new System.Drawing.Point(9, 86);
-            this.grdProveedor.Name = "grdProveedor";
-            this.grdProveedor.Size = new System.Drawing.Size(319, 150);
-            this.grdProveedor.TabIndex = 3;
+            this.txtCUIL.Location = new System.Drawing.Point(46, 48);
+            this.txtCUIL.Name = "txtCUIL";
+            this.txtCUIL.Size = new System.Drawing.Size(100, 20);
+            this.txtCUIL.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CUIL:";
             // 
             // btnNuevo
             // 
@@ -132,13 +133,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(369, 309);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "frmProveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProveedor";
             this.Load += new System.EventHandler(this.frmProveedor_Load);
             this.groupBox1.ResumeLayout(false);

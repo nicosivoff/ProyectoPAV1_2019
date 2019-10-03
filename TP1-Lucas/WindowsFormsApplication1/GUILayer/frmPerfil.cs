@@ -59,6 +59,7 @@ namespace TrabajoPractico.GUILayer
         {
             frmABMPerfil formulario = new frmABMPerfil();
             formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

@@ -19,9 +19,11 @@ namespace TrabajoPractico.GUILayer
         private readonly EmpleadoService oEmpleadoService;
         DBHelper oBD = new DBHelper();
 
+
         public frmEmpleados()
         {
             InitializeComponent();
+            chkTodos.Checked = true;
             InitializeDataGridView();
             oEmpleadoService = new EmpleadoService();
         }
@@ -67,8 +69,9 @@ namespace TrabajoPractico.GUILayer
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
             grdEmpleados.DataSource = oEmpleadoService.ObtenerTodos();
-            chkTodos.Checked = true;
+            
         }
+        
 
         private void InitializeDataGridView()
         {
@@ -126,6 +129,7 @@ namespace TrabajoPractico.GUILayer
         {
             frmABMEmpleado formulario = new frmABMEmpleado();
             formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

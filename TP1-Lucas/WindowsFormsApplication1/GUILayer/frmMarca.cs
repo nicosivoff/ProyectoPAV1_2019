@@ -24,6 +24,8 @@ namespace TrabajoPractico.GUILayer
         private void frmMarca_Load(object sender, EventArgs e)
         {
             LlenarCombo(cboNombre, oBD.consultarTabla("Marca"), "nombre", "nombre");
+            chkTodos.Checked = true;
+            btnConsultar_Click(sender, e);
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)

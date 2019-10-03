@@ -115,6 +115,7 @@ namespace TrabajoPractico.GUILayer
         {
             frmABMCliente frmcliente = new frmABMCliente();
             frmcliente.ShowDialog();
+            btnConsultar_Click(sender, e);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

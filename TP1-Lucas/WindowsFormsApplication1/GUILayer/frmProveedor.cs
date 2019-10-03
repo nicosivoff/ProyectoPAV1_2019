@@ -75,6 +75,7 @@ namespace TrabajoPractico.GUILayer
         {
             frmABMProveedor formulario = new frmABMProveedor();
             formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

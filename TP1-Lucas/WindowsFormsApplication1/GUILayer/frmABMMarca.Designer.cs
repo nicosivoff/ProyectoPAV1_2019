@@ -53,7 +53,7 @@
             // 
             // txtNombreMarca
             // 
-            this.txtNombreMarca.Location = new System.Drawing.Point(125, 69);
+            this.txtNombreMarca.Location = new System.Drawing.Point(93, 69);
             this.txtNombreMarca.Name = "txtNombreMarca";
             this.txtNombreMarca.Size = new System.Drawing.Size(121, 20);
             this.txtNombreMarca.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             // txtIdMarca
             // 
-            this.txtIdMarca.Location = new System.Drawing.Point(125, 40);
+            this.txtIdMarca.Location = new System.Drawing.Point(93, 40);
             this.txtIdMarca.Name = "txtIdMarca";
             this.txtIdMarca.Size = new System.Drawing.Size(121, 20);
             this.txtIdMarca.TabIndex = 0;
@@ -112,7 +112,11 @@
             this.Controls.Add(this.grbMarca);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(316, 214);
+            this.MinimumSize = new System.Drawing.Size(316, 214);
             this.Name = "frmABMMarca";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmABMMarca";
             this.Load += new System.EventHandler(this.frmABMMarca_Load);
             this.grbMarca.ResumeLayout(false);

@@ -49,7 +49,7 @@ namespace TrabajoPractico.GUILayer
 
                                 if (oPerfilService.CrearPerfil(oPerfil))
                                 {
-                                    MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Perfil insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
 
@@ -58,7 +58,7 @@ namespace TrabajoPractico.GUILayer
                             }
                         }
                         else
-                            MessageBox.Show("Nombre de usuario encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Nombre de perfil encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     }
 
@@ -148,14 +148,14 @@ namespace TrabajoPractico.GUILayer
         private bool ValidarCampos()
         {
             // campos obligatorios
-            if (txtIdPerfil.Text == string.Empty)
+            if (txtNombrePerfil.Text == string.Empty)
             {
-                txtIdPerfil.BackColor = Color.Red;
-                txtIdPerfil.Focus();
+                txtNombrePerfil.BackColor = Color.Red;
+                txtNombrePerfil.Focus();
                 return false;
             }
             else
-                txtIdPerfil.BackColor = Color.White;
+                txtNombrePerfil.BackColor = Color.White;
 
             return true;
         }
