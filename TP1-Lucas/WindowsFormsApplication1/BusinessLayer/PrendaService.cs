@@ -36,5 +36,9 @@ namespace TrabajoPractico.BusinessLayer
         {
             return oPrendaDao.delete(prenda);
         }
+        /*public string ConsultarTipoPrenda(string id)
+        { 
+            return oPrendaDao.getTipoPrenda(id);
+        }*/
     }
 }

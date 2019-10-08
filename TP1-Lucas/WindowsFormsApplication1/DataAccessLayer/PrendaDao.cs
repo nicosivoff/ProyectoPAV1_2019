@@ -73,6 +73,17 @@ namespace TrabajoPractico.DataAccessLayer
             return MappingPrenda(oBD.consultar(strSql).Rows[0]);
         }
 
+        /*public string getTipoPrenda(string iD)
+        {
+            int id = Convert.ToInt32(iD);
+            string strSql = "SELECT t.descrip"
+                            + " FROM Prenda p, TipoPrenda t" 
+                            + " WHERE p.tipoPrenda=t.codTipoPrenda" 
+                            + " AND p.borrado = 0" 
+                            + " AND p.codPrenda='" + id + "'";
+            return (oBD.consultar(strSql).Rows[0]).ToString();
+        }*/
+
         public IList<Prenda> getPrendasCondicionada(string condiciones)
         {   
 

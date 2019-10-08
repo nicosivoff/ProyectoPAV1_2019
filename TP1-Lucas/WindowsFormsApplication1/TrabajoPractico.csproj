@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\ClienteService.cs" />
+    <Compile Include="BusinessLayer\FacturaService.cs" />
     <Compile Include="BusinessLayer\MarcaService.cs" />
     <Compile Include="BusinessLayer\EmpleadoService.cs" />
     <Compile Include="BusinessLayer\PerfilService.cs" />
@@ -54,20 +55,25 @@
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\ClienteDao.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
+    <Compile Include="DataAccessLayer\FacturaDao.cs" />
     <Compile Include="DataAccessLayer\MarcaDao.cs" />
     <Compile Include="DataAccessLayer\EmpleadoDao.cs" />
     <Compile Include="DataAccessLayer\PerfilDao.cs" />
     <Compile Include="DataAccessLayer\PrendaDao.cs" />
     <Compile Include="DataAccessLayer\ProveedorDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
+    <Compile Include="Entities\DetalleFactura.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Empleado.cs" />
     <Compile Include="Entities\Pedido.cs" />
     <Compile Include="Entities\Perfil.cs" />
     <Compile Include="Entities\Prenda.cs" />
     <Compile Include="Entities\Proveedor.cs" />
+    <Compile Include="Entities\TipoFactura.cs" />
+    <Compile Include="Entities\TipoPago.cs" />
     <Compile Include="Entities\TipoPrenda.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Entities\Factura.cs" />
     <Compile Include="GUILayer\frmABMCliente.cs">
       <SubType>Form</SubType>
     </Compile>

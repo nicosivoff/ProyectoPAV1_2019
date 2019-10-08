@@ -5,15 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.OleDb;
+using System.Windows.Forms;
 
 namespace TrabajoPractico.DataAccessLayer
 {
     class DBHelper
     {
+        enum ResultadoTransaccion
+        {
+            exito, fracaso
+        }
+
         private OleDbConnection conexion = new OleDbConnection();
         private OleDbCommand comando = new OleDbCommand();
         private static DBHelper instance = new DBHelper();
-        private string cadenaConexion = @"Provider=SQLNCLI11;Data Source=MARTIN-PC;Integrated Security=SSPI;Initial Catalog=Canario";
+        private OleDbTransaction transaccion = null;
+        private ResultadoTransaccion miEstado = ResultadoTransaccion.exito;
+
+        private string cadenaConexion = @"Provider=SQLNCLI11;Data Source=LAPTOP-TCTA87VI\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Canario";
         private void conectar()
         {
             conexion.ConnectionString = cadenaConexion;
@@ -127,7 +136,8 @@ namespace TrabajoPractico.DataAccessLayer
             }
         }
         public int EjecutarSQL(string strSql)
-        {
+        {   
+            
             // Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”
             OleDbTransaction t = null/* TODO Change to default(_) if this is not a reference type */;
             int rtdo = 0;
@@ -164,6 +174,56 @@ namespace TrabajoPractico.DataAccessLayer
             }
             return rtdo;
         }
+
+
+        public void EjecutarSQLConTransaccion(string strSql)
+    {   
+        //  Se utiliza para sentencias SQL del tipo Insert, Update, Delete con transaccion.
+        try
+        {
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = strSql;
+            comando.ExecuteNonQuery();
+        }
+        catch 
+        {
+            miEstado = ResultadoTransaccion.fracaso;
+        }
     }
+
+        public void conectarConTransaccion()
+        {
+            miEstado = ResultadoTransaccion.exito;
+            conexion.ConnectionString = cadenaConexion;
+            conexion.Open();
+            transaccion = conexion.BeginTransaction();
+            comando.Transaction = transaccion;
+            comando.Connection = conexion;
+        }
+
+        public void desconectarConTransaccion()
+        {
+                if (miEstado == ResultadoTransaccion.exito)
+                {
+                    transaccion.Commit();
+                    MessageBox.Show("La trasacción resultó con éxito...");
+                }
+                else
+                {
+                    transaccion.Rollback();
+                    MessageBox.Show("La trasacción no pudo realizarce...");
+                }
+
+            if ((conexion.State == ConnectionState.Open))
+            {
+                conexion.Close();
+            }
+
+            // Dispose() libera los recursos asociados a la conexón
+            conexion.Dispose();
+
+        }
+    }
+    
     
 }
