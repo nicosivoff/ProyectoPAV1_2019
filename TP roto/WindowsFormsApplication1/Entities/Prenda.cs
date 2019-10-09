@@ -20,7 +20,10 @@ namespace TrabajoPractico.Entities
         public int Cantidad { get; set; }
         public Marca Marca { get; set; }
 
-        
+        public override string ToString()
+        {
+            return CodPrenda.ToString();
+        }
        /* public bool validarDatosPrenda()
         {
             if (this.Codigo == null)

@@ -68,6 +68,7 @@
     <Compile Include="Entities\Perfil.cs" />
     <Compile Include="Entities\Prenda.cs" />
     <Compile Include="Entities\Proveedor.cs" />
+    <Compile Include="Entities\TipoFactura.cs" />
     <Compile Include="Entities\TipoPrenda.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Entities\Venta.cs" />

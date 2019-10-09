@@ -65,7 +65,7 @@ namespace TrabajoPractico.DataAccessLayer
     {
         List<Empleado> listadoEmpleado = new List<Empleado>();
 
-        String strSql = string.Concat("SELECT legajo,nombre,apellido FROM Empleado WHERE borrado=0");
+        String strSql = string.Concat("SELECT legajo,nombre,apellido FROM Empleado WHERE borrado = 0 ");
 
         var resultadoConsulta = oBD.consultar(strSql);
 

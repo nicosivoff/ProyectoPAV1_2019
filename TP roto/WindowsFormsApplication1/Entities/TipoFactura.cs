@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico.Entities
 {
-    class TipoPago
+    class TipoFactura
     {
-        public int codTipoPago { get; set; }
-        public string nombre { get; set; }
+        
     }
 }

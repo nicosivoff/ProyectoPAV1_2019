@@ -73,17 +73,6 @@ namespace TrabajoPractico.DataAccessLayer
             return MappingPrenda(oBD.consultar(strSql).Rows[0]);
         }
 
-        /*public string getTipoPrenda(string iD)
-        {
-            int id = Convert.ToInt32(iD);
-            string strSql = "SELECT t.descrip"
-                            + " FROM Prenda p, TipoPrenda t" 
-                            + " WHERE p.tipoPrenda=t.codTipoPrenda" 
-                            + " AND p.borrado = 0" 
-                            + " AND p.codPrenda='" + id + "'";
-            return (oBD.consultar(strSql).Rows[0]).ToString();
-        }*/
-
         public IList<Prenda> getPrendasCondicionada(string condiciones)
         {   
 
@@ -175,6 +164,25 @@ namespace TrabajoPractico.DataAccessLayer
                             " WHERE codPrenda= " + prenda.CodPrenda;
             oBD.actualizar(strSql);
             return true;
+        }
+
+        public IList<Prenda> GetAll()
+        {
+            List<Prenda> listadoPrendas = new List<Prenda>();
+            var strSql = "SELECT p.codPrenda, p.tipoPrenda, t.descrip, p.talle, p.descripcion, p.precio, p.cantidad, p.marca, m.nombre"
+                            + " FROM Prenda p, TipoPrenda t, Marca m"
+                            + " WHERE p.tipoPrenda=t.codTipoPrenda"
+                            + " AND p.marca=m.idMarca"
+                            + " AND p.borrado = 0";
+
+            var resultado = oBD.consultar(strSql);
+
+            foreach (DataRow row in resultado.Rows)
+            {
+                listadoPrendas.Add(MappingPrenda(row));
+            }
+
+            return listadoPrendas;
         }
         
     }

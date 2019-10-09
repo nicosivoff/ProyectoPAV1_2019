@@ -44,6 +44,9 @@ namespace TrabajoPractico.BusinessLayer
             return oClienteDao.GetClienteDoc(doc);
 
         }
-
+        public IList<Cliente> ObtenerTodos()
+        {
+            return oClienteDao.GetAll();
+        }
     }       
 }

@@ -16,13 +16,25 @@ namespace TrabajoPractico.GUILayer
 {
     public partial class frmTransaccion : Form
     {
-        FacturaService facturaService = new FacturaService();
-        private readonly BindingList<DetalleFactura> listaDetalle;
         DBHelper oBD = new DBHelper();
-        PrendaService oPrenda = new PrendaService();
+        private readonly BindingList<VentaDetalle> listaFacturaDetalle;
+        private readonly TransaccionService transaccionService;
+        private readonly ClienteService clienteService;
+        private readonly PrendaService prendaService;
+        private readonly EmpleadoService empleadoService;
+
         public frmTransaccion()
         {
             InitializeComponent();
+            grdDetalle.AutoGenerateColumns = false;
+
+            transaccionService = new TransaccionService();
+            clienteService = new ClienteService();
+            prendaService = new PrendaService();
+            empleadoService = new EmpleadoService();
+
+
+            listaFacturaDetalle = new BindingList<VentaDetalle>();
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -35,61 +47,155 @@ namespace TrabajoPractico.GUILayer
 
         private void frmTransaccion_Load(object sender, EventArgs e)
         {
-            LlenarCombo(cboCliente, oBD.consultarTabla("Cliente"), "apellido", "nroDoc");
-            LlenarCombo(cboVendedor, oBD.consultarTabla("Empleado"), "apellido", "legajo");
+            LlenarCombo(cboCliente, clienteService.ObtenerTodos(), "apellido", "nroDoc");
+            LlenarCombo(cboVendedor, empleadoService.ObtenerTodos(), "apellido", "legajo");
             LlenarCombo(cboFormaPago, oBD.consultarTabla("TipoPago"), "nombre", "codTipoPago");
-            LlenarCombo(cboPrenda, oBD.consultarTabla("Prenda"), "codPrenda", "codPrenda");
-            LlenarCombo(cboTipoFactura, oBD.consultarTabla("TipoFactura"), "codTipoFactura", "codTipoFactura");
-            txtTipoPrenda.Enabled = false;
+            LlenarCombo(cboPrenda, prendaService.ObtenerTodos(), "descripcion", "codPrenda");
+            
 
+            grdDetalle.DataSource = listaFacturaDetalle;
+            this.cboCliente.SelectedIndexChanged += new System.EventHandler(this.cboCliente_SelectedIndexChanged);
+            this.cboPrenda.SelectedIndexChanged += new System.EventHandler(this.cboPrenda_SelectedIndexChanged);
+
+
+        }
+
+        private void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            frmABMCliente frmCliente = new frmABMCliente();
+            frmCliente.ShowDialog();
+            LlenarCombo(cboCliente, oBD.consultarTabla("Cliente"), "apellido", "nroDoc");
+        }
+
+        private void cboCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboPrenda.SelectedItem != null)
+            {
+                var cliente = (Cliente)cboCliente.SelectedItem;
+              
+            }
+        }
+
+        private void cboPrenda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboPrenda.SelectedItem != null)
+            {
+                var prenda = (Prenda) cboPrenda.SelectedItem;
+                txtPrecio.Text = prenda.Precio.ToString("C");
+                txtCantidad.Enabled = true;
+                int cantidad = 0;
+                int.TryParse(txtCantidad.Text, out cantidad);
+                txtImporte.Text = (prenda.Precio * cantidad).ToString("C");
+                btnAgregar.Enabled = true;
+
+            }
+            else
+            {
+                btnAgregar.Enabled = false;
+                txtCantidad.Enabled = false;
+                txtCantidad.Text = "";
+                txtPrecio.Text = "";
+                txtImporte.Text = "";
+            }
+        }
+
+        private void txtCantidad_Leave(object sender, EventArgs e)
+        {
+            if (cboPrenda.SelectedItem != null)
+            {
+                int cantidad = 0;
+                int.TryParse(txtCantidad.Text, out cantidad);
+                var prenda = (Prenda)cboPrenda.SelectedItem;
+                txtImporte.Text = (prenda.Precio * cantidad).ToString("C");
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            listaDetalle.Add(new DetalleFactura()
-            {
-                codPrenda = (int)cboPrenda.SelectedValue,
-                cantidad = txtCantidad.Text,
+            int cantidad = 0;
+            int.TryParse(txtCantidad.Text, out cantidad);
+
+            var prenda = (Prenda)cboPrenda.SelectedItem;
+            
+            listaFacturaDetalle.Add(new VentaDetalle(){
+                NroItem = listaFacturaDetalle.Count + 1,
+                Prenda = prenda,
+                Cantidad = cantidad,
+                PrecioUnitario = prenda.Precio
             });
-
-            //cargar grillaaa
+            CalcularTotales();
+            InicializarDetalle();
+            
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void CalcularTotales()
         {
-            var factura = new Factura
-            {   
-                idUsuario = cboVendedor.SelectedValue.ToString(),
-                tipoFactura = (TipoFactura)cboTipoFactura.SelectedItem,
-                FacturaDetalle = listaDetalle,
-                tipoPago = (TipoPago)cboFormaPago.SelectedItem,
-                fecha = dtpFecha.Value,
-            };
+            var subtotal = listaFacturaDetalle.Sum(p => p.Importe);
+            txtTotal.Text = subtotal.ToString();
 
-            if (facturaService.ValidarDatos(factura))
+
+        }
+
+        private void InicializarFormulario()
+        {
+            btnAgregar.Enabled = false;
+            cboCliente.SelectedIndex = -1;
+
+            InicializarDetalle();
+
+            grdDetalle.DataSource = null;
+            
+            
+        }
+
+        private void InicializarDetalle()
+        {
+            cboPrenda.SelectedItem = -1;
+            txtCantidad.Text = "";
+            txtPrecio.Text = 0.ToString("N2");
+            txtImporte.Text = 0.ToString("N2");
+
+        }
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (grdDetalle.CurrentRow != null)
             {
-                facturaService.Crear(factura);
-
-                MessageBox.Show(string.Concat("La factura nro: ", factura.codFactura, " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                var detalleSeleccionado = (VentaDetalle)grdDetalle.CurrentRow.DataBoundItem;
+                listaFacturaDetalle.Remove(detalleSeleccionado);
             }
         }
 
-       
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            InicializarDetalle();
+        }
 
-       
-
-        /*private void cboPrenda_SelectedIndexChanged(object sender, EventArgs e)
-        {   
-            if (cboPrenda.SelectedValue != null)
-            {
-                string id = cboPrenda.SelectedValue.ToString();
-                var prenda = oPrenda.ConsultarPrendaPorId(id);
-                txtTipoPrenda.Text = prenda.TipoPrenda.Nombre;
-            }
-
-
-        }*/
     }
 }
 

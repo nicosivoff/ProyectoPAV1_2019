@@ -36,9 +36,10 @@ namespace TrabajoPractico.BusinessLayer
         {
             return oPrendaDao.delete(prenda);
         }
-        /*public string ConsultarTipoPrenda(string id)
-        { 
-            return oPrendaDao.getTipoPrenda(id);
-        }*/
+
+        public IList<Prenda> ObtenerTodos()
+        {
+            return oPrendaDao.GetAll();
+        }
     }
 }

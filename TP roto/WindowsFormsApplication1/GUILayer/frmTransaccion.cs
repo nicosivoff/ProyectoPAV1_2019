@@ -51,6 +51,7 @@ namespace TrabajoPractico.GUILayer
             LlenarCombo(cboVendedor, empleadoService.ObtenerTodos(), "apellido", "legajo");
             LlenarCombo(cboFormaPago, oBD.consultarTabla("TipoPago"), "nombre", "codTipoPago");
             LlenarCombo(cboPrenda, prendaService.ObtenerTodos(), "descripcion", "codPrenda");
+            
 
             grdDetalle.DataSource = listaFacturaDetalle;
             this.cboCliente.SelectedIndexChanged += new System.EventHandler(this.cboCliente_SelectedIndexChanged);
@@ -115,6 +116,7 @@ namespace TrabajoPractico.GUILayer
             int.TryParse(txtCantidad.Text, out cantidad);
 
             var prenda = (Prenda)cboPrenda.SelectedItem;
+            
             listaFacturaDetalle.Add(new VentaDetalle(){
                 NroItem = listaFacturaDetalle.Count + 1,
                 Prenda = prenda,
@@ -152,6 +154,7 @@ namespace TrabajoPractico.GUILayer
             txtCantidad.Text = "";
             txtPrecio.Text = 0.ToString("N2");
             txtImporte.Text = 0.ToString("N2");
+
         }
 
         
@@ -177,6 +180,20 @@ namespace TrabajoPractico.GUILayer
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (grdDetalle.CurrentRow != null)
+            {
+                var detalleSeleccionado = (VentaDetalle)grdDetalle.CurrentRow.DataBoundItem;
+                listaFacturaDetalle.Remove(detalleSeleccionado);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            InicializarDetalle();
         }
 
     }

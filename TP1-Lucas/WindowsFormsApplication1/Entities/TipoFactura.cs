@@ -8,7 +8,6 @@ namespace TrabajoPractico.Entities
 {
     class TipoFactura
     {
-        public string codTipoFactura { get; set; }
-        public string descripcion { get; set; }
+        
     }
 }

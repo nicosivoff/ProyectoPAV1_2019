@@ -29,13 +29,29 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtImporte = new System.Windows.Forms.TextBox();
+            this.lblImporte = new System.Windows.Forms.Label();
             this.grdDetalle = new System.Windows.Forms.DataGridView();
+            this.NroItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPrenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prendaDescrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.lblPrecio = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cboPrenda = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblNroFactura = new System.Windows.Forms.Label();
+            this.txtNroFactura = new System.Windows.Forms.TextBox();
             this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.txtTipoFactura = new System.Windows.Forms.TextBox();
             this.lblTipoFactura = new System.Windows.Forms.Label();
@@ -47,22 +63,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.txtImporte = new System.Windows.Forms.TextBox();
-            this.lblImporte = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.txtNroFactura = new System.Windows.Forms.TextBox();
-            this.lblNroFactura = new System.Windows.Forms.Label();
-            this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.NroItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPrenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prendaDescrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalle)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -92,6 +92,42 @@
             this.groupBox2.Text = "Prenda";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(529, 75);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(71, 23);
+            this.btnCancelar.TabIndex = 22;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(529, 46);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(71, 23);
+            this.btnBorrar.TabIndex = 21;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(500, 295);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtTotal.TabIndex = 20;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(422, 298);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(72, 13);
+            this.lblTotal.TabIndex = 19;
+            this.lblTotal.Text = "Importe Total:";
+            // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(529, 17);
@@ -101,6 +137,23 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // txtImporte
+            // 
+            this.txtImporte.Enabled = false;
+            this.txtImporte.Location = new System.Drawing.Point(462, 19);
+            this.txtImporte.Name = "txtImporte";
+            this.txtImporte.Size = new System.Drawing.Size(55, 20);
+            this.txtImporte.TabIndex = 18;
+            // 
+            // lblImporte
+            // 
+            this.lblImporte.AutoSize = true;
+            this.lblImporte.Location = new System.Drawing.Point(412, 22);
+            this.lblImporte.Name = "lblImporte";
+            this.lblImporte.Size = new System.Drawing.Size(45, 13);
+            this.lblImporte.TabIndex = 17;
+            this.lblImporte.Text = "Importe:";
             // 
             // grdDetalle
             // 
@@ -116,6 +169,64 @@
             this.grdDetalle.Name = "grdDetalle";
             this.grdDetalle.Size = new System.Drawing.Size(594, 175);
             this.grdDetalle.TabIndex = 14;
+            // 
+            // NroItem
+            // 
+            this.NroItem.DataPropertyName = "NroItem";
+            this.NroItem.HeaderText = "Nro Item";
+            this.NroItem.Name = "NroItem";
+            this.NroItem.Width = 50;
+            // 
+            // idPrenda
+            // 
+            this.idPrenda.DataPropertyName = "IdProducto";
+            this.idPrenda.HeaderText = "Cod Art";
+            this.idPrenda.Name = "idPrenda";
+            this.idPrenda.Width = 50;
+            // 
+            // prendaDescrip
+            // 
+            this.prendaDescrip.DataPropertyName = "PrendaDescripcion";
+            this.prendaDescrip.HeaderText = "Descripcion";
+            this.prendaDescrip.Name = "prendaDescrip";
+            this.prendaDescrip.Width = 250;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "Cantidad";
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 50;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "PrecioUnitario";
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 50;
+            // 
+            // importe
+            // 
+            this.importe.DataPropertyName = "Importe";
+            this.importe.HeaderText = "Importe";
+            this.importe.Name = "importe";
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Enabled = false;
+            this.txtPrecio.Location = new System.Drawing.Point(351, 19);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(55, 20);
+            this.txtPrecio.TabIndex = 16;
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(301, 22);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(40, 13);
+            this.lblPrecio.TabIndex = 15;
+            this.lblPrecio.Text = "Precio:";
             // 
             // txtCantidad
             // 
@@ -136,6 +247,7 @@
             // 
             // cboPrenda
             // 
+            this.cboPrenda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPrenda.FormattingEnabled = true;
             this.cboPrenda.Location = new System.Drawing.Point(60, 19);
             this.cboPrenda.Name = "cboPrenda";
@@ -174,6 +286,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Factura";
             // 
+            // lblNroFactura
+            // 
+            this.lblNroFactura.AutoSize = true;
+            this.lblNroFactura.Location = new System.Drawing.Point(8, 64);
+            this.lblNroFactura.Name = "lblNroFactura";
+            this.lblNroFactura.Size = new System.Drawing.Size(66, 13);
+            this.lblNroFactura.TabIndex = 14;
+            this.lblNroFactura.Text = "Nro Factura:";
+            // 
+            // txtNroFactura
+            // 
+            this.txtNroFactura.Location = new System.Drawing.Point(75, 61);
+            this.txtNroFactura.Name = "txtNroFactura";
+            this.txtNroFactura.Size = new System.Drawing.Size(48, 20);
+            this.txtNroFactura.TabIndex = 13;
+            // 
             // btnNuevoCliente
             // 
             this.btnNuevoCliente.Location = new System.Drawing.Point(176, 120);
@@ -202,6 +330,7 @@
             // 
             // cboFormaPago
             // 
+            this.cboFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFormaPago.FormattingEnabled = true;
             this.cboFormaPago.Location = new System.Drawing.Point(383, 66);
             this.cboFormaPago.Name = "cboFormaPago";
@@ -211,7 +340,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(292, 74);
+            this.label4.Location = new System.Drawing.Point(296, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 7;
@@ -219,6 +348,7 @@
             // 
             // cboCliente
             // 
+            this.cboCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCliente.FormattingEnabled = true;
             this.cboCliente.Location = new System.Drawing.Point(75, 93);
             this.cboCliente.Name = "cboCliente";
@@ -237,8 +367,9 @@
             // 
             // cboVendedor
             // 
+            this.cboVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboVendedor.FormattingEnabled = true;
-            this.cboVendedor.Location = new System.Drawing.Point(383, 33);
+            this.cboVendedor.Location = new System.Drawing.Point(383, 39);
             this.cboVendedor.Name = "cboVendedor";
             this.cboVendedor.Size = new System.Drawing.Size(170, 21);
             this.cboVendedor.TabIndex = 3;
@@ -246,7 +377,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(292, 38);
+            this.label2.Location = new System.Drawing.Point(320, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 2;
@@ -269,139 +400,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha:";
             // 
-            // lblPrecio
-            // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(301, 22);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(40, 13);
-            this.lblPrecio.TabIndex = 15;
-            this.lblPrecio.Text = "Precio:";
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Enabled = false;
-            this.txtPrecio.Location = new System.Drawing.Point(351, 19);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(55, 20);
-            this.txtPrecio.TabIndex = 16;
-            // 
-            // txtImporte
-            // 
-            this.txtImporte.Enabled = false;
-            this.txtImporte.Location = new System.Drawing.Point(462, 19);
-            this.txtImporte.Name = "txtImporte";
-            this.txtImporte.Size = new System.Drawing.Size(55, 20);
-            this.txtImporte.TabIndex = 18;
-            // 
-            // lblImporte
-            // 
-            this.lblImporte.AutoSize = true;
-            this.lblImporte.Location = new System.Drawing.Point(412, 22);
-            this.lblImporte.Name = "lblImporte";
-            this.lblImporte.Size = new System.Drawing.Size(45, 13);
-            this.lblImporte.TabIndex = 17;
-            this.lblImporte.Text = "Importe:";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(422, 298);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(72, 13);
-            this.lblTotal.TabIndex = 19;
-            this.lblTotal.Text = "Importe Total:";
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(500, 295);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(100, 20);
-            this.txtTotal.TabIndex = 20;
-            // 
-            // txtNroFactura
-            // 
-            this.txtNroFactura.Location = new System.Drawing.Point(75, 61);
-            this.txtNroFactura.Name = "txtNroFactura";
-            this.txtNroFactura.Size = new System.Drawing.Size(48, 20);
-            this.txtNroFactura.TabIndex = 13;
-            // 
-            // lblNroFactura
-            // 
-            this.lblNroFactura.AutoSize = true;
-            this.lblNroFactura.Location = new System.Drawing.Point(8, 64);
-            this.lblNroFactura.Name = "lblNroFactura";
-            this.lblNroFactura.Size = new System.Drawing.Size(66, 13);
-            this.lblNroFactura.TabIndex = 14;
-            this.lblNroFactura.Text = "Nro Factura:";
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Location = new System.Drawing.Point(529, 46);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(71, 23);
-            this.btnBorrar.TabIndex = 21;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(529, 75);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(71, 23);
-            this.btnCancelar.TabIndex = 22;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // NroItem
-            // 
-            this.NroItem.DataPropertyName = "NroItem";
-            this.NroItem.HeaderText = "Nro Item";
-            this.NroItem.Name = "NroItem";
-            this.NroItem.Width = 50;
-            // 
-            // idPrenda
-            // 
-            this.idPrenda.DataPropertyName = "IdPrenda";
-            this.idPrenda.HeaderText = "Cod Art";
-            this.idPrenda.Name = "idPrenda";
-            this.idPrenda.Width = 50;
-            // 
-            // prendaDescrip
-            // 
-            this.prendaDescrip.DataPropertyName = "PrendaDescripcion";
-            this.prendaDescrip.HeaderText = "Descripcion";
-            this.prendaDescrip.Name = "prendaDescrip";
-            this.prendaDescrip.Width = 250;
-            // 
-            // cantidad
-            // 
-            this.cantidad.DataPropertyName = "Cantidad";
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Width = 50;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "PrecioUnitario";
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.Width = 50;
-            // 
-            // importe
-            // 
-            this.importe.DataPropertyName = "Importe";
-            this.importe.HeaderText = "Importe";
-            this.importe.Name = "importe";
-            // 
             // frmTransaccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(628, 547);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(644, 586);
+            this.MinimumSize = new System.Drawing.Size(644, 586);
             this.Name = "frmTransaccion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTransaccion";
             this.Load += new System.EventHandler(this.frmTransaccion_Load);
             this.groupBox2.ResumeLayout(false);
