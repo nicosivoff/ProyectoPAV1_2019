@@ -13,15 +13,16 @@ namespace TrabajoPractico.DataAccessLayer
         private OleDbConnection conexion = new OleDbConnection();
         private OleDbCommand comando = new OleDbCommand();
         private static DBHelper instance = new DBHelper();
-        private string cadenaConexion = @"Provider=SQLNCLI11;Data Source=(localdb)\Servidor;User ID=lucas;Initial Catalog=Canario;password=39622720a";
-        private void conectar()
+        private OleDbTransaction dbTransacion;
+        private string cadenaConexion = @"Provider=SQLNCLI11;Data Source=(localdb)\Servidor;User ID=lucas;Initial Catalog=Canario;Password=39622720a";
+        public void conectar()
         {
             conexion.ConnectionString = cadenaConexion;
             conexion.Open();
             comando.Connection = conexion;
             comando.CommandType = CommandType.Text;
         }
-        private void desconectar()
+        public void desconectar()
         {
             conexion.Close();
         }
@@ -163,6 +164,44 @@ namespace TrabajoPractico.DataAccessLayer
                 conexion.Dispose();
             }
             return rtdo;
+        }
+
+        public void BeginTransaction()
+        {
+            if (conexion.State == ConnectionState.Open)
+            {
+                dbTransacion = conexion.BeginTransaction();
+            }
+        }
+
+        public void Commit()
+        {
+            if (dbTransacion != null)
+                dbTransacion.Commit();
+        }
+
+        public object ConsultaSQLScalar(string strSql)
+        {
+            try
+            {
+                comando.Connection = conexion;
+                comando.Transaction = dbTransacion;
+                comando.CommandType = CommandType.Text;
+
+                comando.CommandText = strSql;
+                return comando.ExecuteScalar();
+            }
+            catch(OleDbException ex)
+            {
+                throw (ex);
+            }
+        }
+        public void RollBack()
+        {
+            if (dbTransacion != null)
+            {
+                dbTransacion.Rollback();
+            }
         }
     }
     

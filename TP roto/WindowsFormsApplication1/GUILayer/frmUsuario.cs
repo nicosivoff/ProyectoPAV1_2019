@@ -28,6 +28,8 @@ namespace TrabajoPractico
         private void frmUsuario_Load(object sender, EventArgs e)
         {
             LlenarCombo(cboPerfil, oBD.consultarTabla("Perfil"), "nombre", "idPerfil");
+            chkTodos.Checked = true;
+            btnConsultar_Click(sender, e);
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -70,7 +72,7 @@ namespace TrabajoPractico
             grdUsuarios.Columns[1].DataPropertyName = "email";
 
             grdUsuarios.Columns[2].Name = "Perfil";
-            grdUsuarios.Columns[2].DataPropertyName = "nombre";
+            grdUsuarios.Columns[2].DataPropertyName = "perfil";
 
             // Cambia el tamaño de la altura de los encabezados de columna.
             grdUsuarios.AutoResizeColumnHeadersHeight();
@@ -84,51 +86,30 @@ namespace TrabajoPractico
         {
             frmABMUsuarios formulario = new frmABMUsuarios();
             formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            /*String strSql = "";
-
-            if (txtNombre.Text == "")
-            {
-                strSql += " AND u.idUsuario = " + txtNombre.Text;
-            }
-            if (cboPerfil.SelectedIndex != -1)
-            {
-                strSql += " AND u.perfil = " + cboPerfil.SelectedValue.ToString();
-            }
-            
-            IList<Usuario> listadoUsuarios = oUsuarioService.ConsultarUsuarios(strSql);
-            grdUsuarios.DataSource = listadoUsuarios;*/
-            String condiciones="";
-            var filters = new Dictionary<string, object>();
+            String condiciones = "";
 
             if (!chkTodos.Checked)
             {
                 // Validar si el combo 'Perfiles' esta seleccionado.
                 if (cboPerfil.Text != string.Empty)
                 {
-                    // Si el cbo tiene un texto no vacìo entonces recuperamos el valor de la propiedad ValueMember
-                    filters.Add("idPerfil", cboPerfil.SelectedValue);
-                    condiciones += " AND u.idperfil=" + cboPerfil.SelectedValue.ToString();
-                    
+                    condiciones += " AND u.perfil=" + cboPerfil.SelectedValue.ToString();
+
                 }
 
                 // Validar si el textBox 'Nombre' esta vacio.
                 if (txtNombre.Text != string.Empty)
                 {
-                    // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
-                    filters.Add("usuario", txtNombre.Text);
-                    condiciones += "AND u.usuario=" + "'" + txtNombre.Text+"'";
+                    condiciones += "AND u.idUsuario=" + "'" + txtNombre.Text + "'";
                 }
 
-                if (filters.Count > 0)
-                    //SIN PARAMETROS
-                    grdUsuarios.DataSource = oUsuarioService.ConsultarConFiltrosSinParametros(condiciones);
-
-                    //CON PARAMETROS
-                    //dgvUsers.DataSource = oUsuarioService.ConsultarConFiltrosConParametros(filters);
+                if (condiciones != "")
+                        grdUsuarios.DataSource = oUsuarioService.ObtenerConFiltros(condiciones);
 
                 else
                     MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -139,12 +120,44 @@ namespace TrabajoPractico
 
         private void grdUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-        
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            frmABMUsuarios formulario = new frmABMUsuarios();
+            var usuario = (Usuario)grdUsuarios.CurrentRow.DataBoundItem;
+            formulario.SeleccionarUsuario(frmABMUsuarios.FormMode.update, usuario);
+            formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
+        }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            frmABMUsuarios formulario = new frmABMUsuarios();
+            var usuario = (Usuario)grdUsuarios.CurrentRow.DataBoundItem;
+            formulario.SeleccionarUsuario(frmABMUsuarios.FormMode.delete, usuario);
+            formulario.ShowDialog();
+            btnConsultar_Click(sender, e);
+        }
+
+        private void chkTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkTodos.Checked)
+            {
+                txtNombre.Enabled = false;
+                cboPerfil.Enabled = false;
+            }
+            else
+            {
+                txtNombre.Enabled = true;
+                cboPerfil.Enabled = true;
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

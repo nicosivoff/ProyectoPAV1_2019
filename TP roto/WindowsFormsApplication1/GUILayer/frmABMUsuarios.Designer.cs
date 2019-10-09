@@ -36,8 +36,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboPerfil = new System.Windows.Forms.ComboBox();
             this.txtRepContra = new System.Windows.Forms.TextBox();
-            this.textContraseña = new System.Windows.Forms.TextBox();
-            this.textEmail = new System.Windows.Forms.TextBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -94,8 +94,8 @@
             // 
             this.groupBox1.Controls.Add(this.cboPerfil);
             this.groupBox1.Controls.Add(this.txtRepContra);
-            this.groupBox1.Controls.Add(this.textContraseña);
-            this.groupBox1.Controls.Add(this.textEmail);
+            this.groupBox1.Controls.Add(this.txtContraseña);
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.txtIdUsuario);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -124,19 +124,19 @@
             this.txtRepContra.Size = new System.Drawing.Size(116, 20);
             this.txtRepContra.TabIndex = 8;
             // 
-            // textContraseña
+            // txtContraseña
             // 
-            this.textContraseña.Location = new System.Drawing.Point(124, 86);
-            this.textContraseña.Name = "textContraseña";
-            this.textContraseña.Size = new System.Drawing.Size(116, 20);
-            this.textContraseña.TabIndex = 7;
+            this.txtContraseña.Location = new System.Drawing.Point(124, 86);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(116, 20);
+            this.txtContraseña.TabIndex = 7;
             // 
-            // textEmail
+            // txtEmail
             // 
-            this.textEmail.Location = new System.Drawing.Point(124, 58);
-            this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(116, 20);
-            this.textEmail.TabIndex = 6;
+            this.txtEmail.Location = new System.Drawing.Point(124, 58);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(116, 20);
+            this.txtEmail.TabIndex = 6;
             // 
             // txtIdUsuario
             // 
@@ -163,16 +163,22 @@
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // frmABMUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(345, 246);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(361, 284);
+            this.MinimumSize = new System.Drawing.Size(361, 284);
             this.Name = "frmABMUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmABMUsuarios";
             this.Load += new System.EventHandler(this.frmABMUsuarios_Load);
             this.groupBox1.ResumeLayout(false);
@@ -191,8 +197,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cboPerfil;
         private System.Windows.Forms.TextBox txtRepContra;
-        private System.Windows.Forms.TextBox textContraseña;
-        private System.Windows.Forms.TextBox textEmail;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;

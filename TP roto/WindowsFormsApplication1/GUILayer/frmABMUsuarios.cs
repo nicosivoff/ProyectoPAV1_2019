@@ -48,9 +48,9 @@ namespace TrabajoPractico
                         this.Text = "Actualizar Usuario";
                         // Recuperar usuario seleccionado en la grilla 
                         MostrarDatos();
-                        txtIdUsuario.Enabled = true;
-                        textEmail.Enabled = true;
-                        textContraseña.Enabled = true;
+                        txtIdUsuario.Enabled = false;
+                        txtEmail.Enabled = true;
+                        txtContraseña.Enabled = true;
                         txtRepContra.Enabled = true;
                         cboPerfil.Enabled = true;
                         break;
@@ -61,8 +61,8 @@ namespace TrabajoPractico
                         MostrarDatos();
                         this.Text = "Habilitar/Deshabilitar Usuario";
                         txtIdUsuario.Enabled = false;
-                        textEmail.Enabled = false;
-                        textContraseña.Enabled = false;
+                        txtEmail.Enabled = false;
+                        txtContraseña.Enabled = false;
                         txtRepContra.Enabled = false;
                         cboPerfil.Enabled = false;
                         break;
@@ -84,22 +84,27 @@ namespace TrabajoPractico
             {
                 case FormMode.insert:
                     {
-                        if (ExisteUsuario() == false)
+                        if (!ExisteUsuario())
                         {
                             if (ValidarCampos())
                             {
-                                var oUsuario = new Usuario();
-                                oUsuario.IdUsuario = Convert.ToInt32(txtIdUsuario.Text);
-                                oUsuario.Contraseña = textContraseña.Text;
-                                oUsuario.Email = textEmail.Text;
+                                Usuario oUsuario = new Usuario();
+                                oUsuario.IdUsuario = txtIdUsuario.Text;
+                                oUsuario.Contraseña = txtContraseña.Text;
+                                oUsuario.Email = txtEmail.Text;
                                 oUsuario.Perfil = new Perfil();
                                 oUsuario.Perfil.IdPerfil = (int)cboPerfil.SelectedValue;
 
+                                
+                                
                                 if (oUsuarioService.CrearUsuario(oUsuario))
-                                {
-                                    MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    this.Close();
-                                }
+                                    {
+                                        MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        this.Close();
+                                    }
+                                
+
+                                
                             }
                         }
                         else
@@ -111,9 +116,9 @@ namespace TrabajoPractico
                     {
                         if (ValidarCampos())
                         {
-                            oUsuarioSelected.IdUsuario = Convert.ToInt32(txtIdUsuario.Text);
-                            oUsuarioSelected.Contraseña = textContraseña.Text;
-                            oUsuarioSelected.Email = textEmail.Text;
+                            oUsuarioSelected.IdUsuario = txtIdUsuario.Text;
+                            oUsuarioSelected.Contraseña = txtContraseña.Text;
+                            oUsuarioSelected.Email = txtEmail.Text;
                             oUsuarioSelected.Perfil = new Perfil();
                             oUsuarioSelected.Perfil.IdPerfil = (int)cboPerfil.SelectedValue;
 
@@ -151,10 +156,10 @@ namespace TrabajoPractico
         {
             if (oUsuarioSelected != null)
             {
-                txtIdUsuario.Text = oUsuarioSelected.IdUsuario.ToString();
-                textEmail.Text = oUsuarioSelected.Email;
-                textContraseña.Text = oUsuarioSelected.Contraseña;
-                txtRepContra.Text = textContraseña.Text;
+                txtIdUsuario.Text = oUsuarioSelected.IdUsuario;
+                txtEmail.Text = oUsuarioSelected.Email;
+                txtContraseña.Text = oUsuarioSelected.Contraseña;
+                txtRepContra.Text = txtContraseña.Text;
                 cboPerfil.Text = oUsuarioSelected.Perfil.Nombre;
             }
         }
@@ -174,12 +179,23 @@ namespace TrabajoPractico
             }
             else
                 txtIdUsuario.BackColor = Color.White;
-
+            if (txtContraseña.Text != txtRepContra.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden");
+                txtContraseña.BackColor = Color.Red;
+                txtRepContra.BackColor = Color.Red;
+                txtContraseña.Focus();
+                return false;
+            }
+            else
+                txtIdUsuario.BackColor = Color.White;
             return true;
         }
         private bool ExisteUsuario()
         {
-            return oUsuarioService.ObtenerUsuario(txtIdUsuario.Text) != null;
+
+            return oUsuarioService.ObtenerUsuario(txtIdUsuario.Text);
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -191,6 +207,15 @@ namespace TrabajoPractico
         {
             this.Close();
         }
+        public void SeleccionarUsuario(FormMode op, Usuario usuarioSelected)
+        {
+            formMode = op;
+            oUsuarioSelected = usuarioSelected;
+        }
 
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
