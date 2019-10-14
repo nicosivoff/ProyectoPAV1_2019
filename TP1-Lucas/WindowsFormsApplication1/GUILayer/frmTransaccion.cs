@@ -51,7 +51,7 @@ namespace TrabajoPractico.GUILayer
             LlenarCombo(cboVendedor, empleadoService.ObtenerTodos(), "apellido", "legajo");
             LlenarCombo(cboFormaPago, oBD.consultarTabla("TipoPago"), "nombre", "codTipoPago");
             LlenarCombo(cboPrenda, prendaService.ObtenerTodos(), "descripcion", "codPrenda");
-            
+            LlenarCombo(cboTipoFac, oBD.consultarTabla("TipoFactura"), "codTipoFac", "codTipoFac");
 
             grdDetalle.DataSource = listaFacturaDetalle;
             this.cboCliente.SelectedIndexChanged += new System.EventHandler(this.cboCliente_SelectedIndexChanged);
@@ -194,6 +194,50 @@ namespace TrabajoPractico.GUILayer
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             InicializarDetalle();
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var venta = new Venta
+                {
+                    Fecha = dtpFecha.Value,
+                    Cliente = (Cliente)cboCliente.SelectedItem,
+                    TipoFactura = (TipoFactura)cboTipoFac.SelectedItem,
+                    VentaDetalle = listaFacturaDetalle,
+                    SubTotal = double.Parse(txtTotal.Text),
+                };
+
+                if (transaccionService.ValidarDatos(venta))
+                {
+                    transaccionService.Crear(venta);
+
+                    MessageBox.Show(string.Concat("La factura nro: ", venta.IdVenta, " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    InicializarFormulario();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar la factura! " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }

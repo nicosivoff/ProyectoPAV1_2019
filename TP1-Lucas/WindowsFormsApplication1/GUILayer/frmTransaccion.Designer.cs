@@ -50,10 +50,7 @@
             this.cboPrenda = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblNroFactura = new System.Windows.Forms.Label();
-            this.txtNroFactura = new System.Windows.Forms.TextBox();
             this.btnNuevoCliente = new System.Windows.Forms.Button();
-            this.txtTipoFactura = new System.Windows.Forms.TextBox();
             this.lblTipoFactura = new System.Windows.Forms.Label();
             this.cboFormaPago = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,6 +60,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.cboTipoFac = new System.Windows.Forms.ComboBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalle)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -70,6 +70,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnSalir);
+            this.groupBox2.Controls.Add(this.btnGuardar);
             this.groupBox2.Controls.Add(this.btnCancelar);
             this.groupBox2.Controls.Add(this.btnBorrar);
             this.groupBox2.Controls.Add(this.txtTotal);
@@ -118,6 +120,7 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 20;
+            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             // 
             // lblTotal
             // 
@@ -266,10 +269,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblNroFactura);
-            this.groupBox1.Controls.Add(this.txtNroFactura);
+            this.groupBox1.Controls.Add(this.cboTipoFac);
             this.groupBox1.Controls.Add(this.btnNuevoCliente);
-            this.groupBox1.Controls.Add(this.txtTipoFactura);
             this.groupBox1.Controls.Add(this.lblTipoFactura);
             this.groupBox1.Controls.Add(this.cboFormaPago);
             this.groupBox1.Controls.Add(this.label4);
@@ -286,22 +287,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Factura";
             // 
-            // lblNroFactura
-            // 
-            this.lblNroFactura.AutoSize = true;
-            this.lblNroFactura.Location = new System.Drawing.Point(8, 64);
-            this.lblNroFactura.Name = "lblNroFactura";
-            this.lblNroFactura.Size = new System.Drawing.Size(66, 13);
-            this.lblNroFactura.TabIndex = 14;
-            this.lblNroFactura.Text = "Nro Factura:";
-            // 
-            // txtNroFactura
-            // 
-            this.txtNroFactura.Location = new System.Drawing.Point(75, 61);
-            this.txtNroFactura.Name = "txtNroFactura";
-            this.txtNroFactura.Size = new System.Drawing.Size(48, 20);
-            this.txtNroFactura.TabIndex = 13;
-            // 
             // btnNuevoCliente
             // 
             this.btnNuevoCliente.Location = new System.Drawing.Point(176, 120);
@@ -312,17 +297,10 @@
             this.btnNuevoCliente.UseVisualStyleBackColor = true;
             this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
             // 
-            // txtTipoFactura
-            // 
-            this.txtTipoFactura.Location = new System.Drawing.Point(220, 61);
-            this.txtTipoFactura.Name = "txtTipoFactura";
-            this.txtTipoFactura.Size = new System.Drawing.Size(55, 20);
-            this.txtTipoFactura.TabIndex = 10;
-            // 
             // lblTipoFactura
             // 
             this.lblTipoFactura.AutoSize = true;
-            this.lblTipoFactura.Location = new System.Drawing.Point(129, 64);
+            this.lblTipoFactura.Location = new System.Drawing.Point(6, 68);
             this.lblTipoFactura.Name = "lblTipoFactura";
             this.lblTipoFactura.Size = new System.Drawing.Size(85, 13);
             this.lblTipoFactura.TabIndex = 9;
@@ -350,16 +328,16 @@
             // 
             this.cboCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(75, 93);
+            this.cboCliente.Location = new System.Drawing.Point(99, 93);
             this.cboCliente.Name = "cboCliente";
-            this.cboCliente.Size = new System.Drawing.Size(200, 21);
+            this.cboCliente.Size = new System.Drawing.Size(176, 21);
             this.cboCliente.TabIndex = 5;
             this.cboCliente.SelectedIndexChanged += new System.EventHandler(this.cboCliente_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 96);
+            this.label3.Location = new System.Drawing.Point(6, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 4;
@@ -386,9 +364,9 @@
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(75, 35);
+            this.dtpFecha.Location = new System.Drawing.Point(99, 35);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(176, 20);
             this.dtpFecha.TabIndex = 1;
             // 
             // label1
@@ -399,6 +377,36 @@
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha:";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(6, 312);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 23;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnCrear_Click);
+            // 
+            // cboTipoFac
+            // 
+            this.cboTipoFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoFac.FormattingEnabled = true;
+            this.cboTipoFac.Location = new System.Drawing.Point(99, 63);
+            this.cboTipoFac.Name = "cboTipoFac";
+            this.cboTipoFac.Size = new System.Drawing.Size(176, 21);
+            this.cboTipoFac.TabIndex = 15;
+            this.cboTipoFac.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(87, 312);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 24;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmTransaccion
             // 
@@ -434,7 +442,6 @@
         private System.Windows.Forms.ComboBox cboPrenda;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtTipoFactura;
         private System.Windows.Forms.Label lblTipoFactura;
         private System.Windows.Forms.ComboBox cboFormaPago;
         private System.Windows.Forms.Label label4;
@@ -451,8 +458,6 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.TextBox txtNroFactura;
-        private System.Windows.Forms.Label lblNroFactura;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroItem;
@@ -461,5 +466,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn importe;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ComboBox cboTipoFac;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
