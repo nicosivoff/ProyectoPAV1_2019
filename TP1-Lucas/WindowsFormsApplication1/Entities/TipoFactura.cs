@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico.Entities
 {
-    class TipoFactura
+    public class TipoFactura
     {
         public string codTipoFac {get; set; }
         public string descripcion {get; set;}

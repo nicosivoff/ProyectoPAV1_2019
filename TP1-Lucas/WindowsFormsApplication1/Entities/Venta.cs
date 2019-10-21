@@ -12,7 +12,7 @@ namespace TrabajoPractico.Entities
         public int NroFactura { get; set; }
         public DateTime Fecha { get; set; }
         public Cliente Cliente { get; set; }
-        public TipoFactura TipoFactura { get; set; }
+        public string TipoFactura { get; set; }
         public IList<VentaDetalle> VentaDetalle {get; set;}
         public double SubTotal { get; set; }
 

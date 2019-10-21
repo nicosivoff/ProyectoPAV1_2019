@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.txtImporte = new System.Windows.Forms.TextBox();
-            this.lblImporte = new System.Windows.Forms.Label();
             this.grdDetalle = new System.Windows.Forms.DataGridView();
             this.NroItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPrenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +50,7 @@
             this.cboPrenda = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboTipoFac = new System.Windows.Forms.ComboBox();
             this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.lblTipoFactura = new System.Windows.Forms.Label();
             this.cboFormaPago = new System.Windows.Forms.ComboBox();
@@ -60,9 +61,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.cboTipoFac = new System.Windows.Forms.ComboBox();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalle)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -77,8 +75,6 @@
             this.groupBox2.Controls.Add(this.txtTotal);
             this.groupBox2.Controls.Add(this.lblTotal);
             this.groupBox2.Controls.Add(this.btnAgregar);
-            this.groupBox2.Controls.Add(this.txtImporte);
-            this.groupBox2.Controls.Add(this.lblImporte);
             this.groupBox2.Controls.Add(this.grdDetalle);
             this.groupBox2.Controls.Add(this.txtPrecio);
             this.groupBox2.Controls.Add(this.lblPrecio);
@@ -93,6 +89,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Prenda";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(87, 312);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 24;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(6, 312);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 23;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // btnCancelar
             // 
@@ -140,23 +156,6 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // txtImporte
-            // 
-            this.txtImporte.Enabled = false;
-            this.txtImporte.Location = new System.Drawing.Point(462, 19);
-            this.txtImporte.Name = "txtImporte";
-            this.txtImporte.Size = new System.Drawing.Size(55, 20);
-            this.txtImporte.TabIndex = 18;
-            // 
-            // lblImporte
-            // 
-            this.lblImporte.AutoSize = true;
-            this.lblImporte.Location = new System.Drawing.Point(412, 22);
-            this.lblImporte.Name = "lblImporte";
-            this.lblImporte.Size = new System.Drawing.Size(45, 13);
-            this.lblImporte.TabIndex = 17;
-            this.lblImporte.Text = "Importe:";
             // 
             // grdDetalle
             // 
@@ -217,7 +216,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Enabled = false;
-            this.txtPrecio.Location = new System.Drawing.Point(351, 19);
+            this.txtPrecio.Location = new System.Drawing.Point(402, 19);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(55, 20);
             this.txtPrecio.TabIndex = 16;
@@ -225,7 +224,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(301, 22);
+            this.lblPrecio.Location = new System.Drawing.Point(352, 22);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(40, 13);
             this.lblPrecio.TabIndex = 15;
@@ -233,7 +232,7 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(243, 19);
+            this.txtCantidad.Location = new System.Drawing.Point(271, 19);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(52, 20);
             this.txtCantidad.TabIndex = 11;
@@ -242,7 +241,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(181, 22);
+            this.label7.Location = new System.Drawing.Point(209, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 13;
@@ -286,6 +285,16 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Factura";
+            // 
+            // cboTipoFac
+            // 
+            this.cboTipoFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoFac.FormattingEnabled = true;
+            this.cboTipoFac.Location = new System.Drawing.Point(99, 63);
+            this.cboTipoFac.Name = "cboTipoFac";
+            this.cboTipoFac.Size = new System.Drawing.Size(176, 21);
+            this.cboTipoFac.TabIndex = 15;
+            this.cboTipoFac.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnNuevoCliente
             // 
@@ -378,36 +387,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha:";
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(6, 312);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 23;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnCrear_Click);
-            // 
-            // cboTipoFac
-            // 
-            this.cboTipoFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoFac.FormattingEnabled = true;
-            this.cboTipoFac.Location = new System.Drawing.Point(99, 63);
-            this.cboTipoFac.Name = "cboTipoFac";
-            this.cboTipoFac.Size = new System.Drawing.Size(176, 21);
-            this.cboTipoFac.TabIndex = 15;
-            this.cboTipoFac.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(87, 312);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 24;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // frmTransaccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,8 +431,6 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnNuevoCliente;
-        private System.Windows.Forms.TextBox txtImporte;
-        private System.Windows.Forms.Label lblImporte;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.TextBox txtTotal;

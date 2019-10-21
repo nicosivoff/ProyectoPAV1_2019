@@ -85,7 +85,6 @@ namespace TrabajoPractico.GUILayer
                 txtCantidad.Enabled = true;
                 int cantidad = 0;
                 int.TryParse(txtCantidad.Text, out cantidad);
-                txtImporte.Text = (prenda.Precio * cantidad).ToString("C");
                 btnAgregar.Enabled = true;
 
             }
@@ -95,7 +94,6 @@ namespace TrabajoPractico.GUILayer
                 txtCantidad.Enabled = false;
                 txtCantidad.Text = "";
                 txtPrecio.Text = "";
-                txtImporte.Text = "";
             }
         }
 
@@ -106,25 +104,32 @@ namespace TrabajoPractico.GUILayer
                 int cantidad = 0;
                 int.TryParse(txtCantidad.Text, out cantidad);
                 var prenda = (Prenda)cboPrenda.SelectedItem;
-                txtImporte.Text = (prenda.Precio * cantidad).ToString("C");
             }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            int cantidad = 0;
-            int.TryParse(txtCantidad.Text, out cantidad);
+            if (txtCantidad.Text != "")
+            {
+                int cantidad = 0;
+                int.TryParse(txtCantidad.Text, out cantidad);
 
-            var prenda = (Prenda)cboPrenda.SelectedItem;
-            
-            listaFacturaDetalle.Add(new VentaDetalle(){
-                NroItem = listaFacturaDetalle.Count + 1,
-                Prenda = prenda,
-                Cantidad = cantidad,
-                PrecioUnitario = prenda.Precio
-            });
-            CalcularTotales();
-            InicializarDetalle();
+                var prenda = (Prenda)cboPrenda.SelectedItem;
+
+                listaFacturaDetalle.Add(new VentaDetalle()
+                {
+                    NroItem = listaFacturaDetalle.Count + 1,
+                    Prenda = prenda,
+                    Cantidad = cantidad,
+                    PrecioUnitario = prenda.Precio
+                });
+                CalcularTotales();
+                InicializarDetalle();
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar la cantidad", "Cantidad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             
         }
 
@@ -153,7 +158,6 @@ namespace TrabajoPractico.GUILayer
             cboPrenda.SelectedItem = -1;
             txtCantidad.Text = "";
             txtPrecio.Text = 0.ToString("N2");
-            txtImporte.Text = 0.ToString("N2");
 
         }
 
@@ -188,6 +192,7 @@ namespace TrabajoPractico.GUILayer
             {
                 var detalleSeleccionado = (VentaDetalle)grdDetalle.CurrentRow.DataBoundItem;
                 listaFacturaDetalle.Remove(detalleSeleccionado);
+                CalcularTotales();
             }
         }
 
@@ -204,7 +209,7 @@ namespace TrabajoPractico.GUILayer
                 {
                     Fecha = dtpFecha.Value,
                     Cliente = (Cliente)cboCliente.SelectedItem,
-                    TipoFactura = (TipoFactura)cboTipoFac.SelectedItem,
+                    TipoFactura = cboTipoFac.SelectedValue.ToString(),
                     VentaDetalle = listaFacturaDetalle,
                     SubTotal = double.Parse(txtTotal.Text),
                 };
@@ -238,6 +243,11 @@ namespace TrabajoPractico.GUILayer
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtImporte_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
