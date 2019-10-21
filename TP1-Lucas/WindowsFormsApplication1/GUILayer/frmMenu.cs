@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrabajoPractico.GUILayer;
-
+using TrabajoPractico.Reportes;
 namespace TrabajoPractico
 {
     public partial class frmMenu : Form
@@ -20,6 +20,9 @@ namespace TrabajoPractico
         frmEmpleados empleado = new frmEmpleados();
         frmCliente cliente = new frmCliente();
         frmProveedor proveedor = new frmProveedor();
+        frmTransaccion transaccion = new frmTransaccion();
+        frmReportePrendaMarca reporteMarca = new frmReportePrendaMarca();
+        frmReportePrendaTipo reporteTipo = new frmReportePrendaTipo();
 
         public frmMenu()
         {
@@ -67,6 +70,31 @@ namespace TrabajoPractico
         private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             proveedor.ShowDialog();
+        }
+
+        private void ventaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            transaccion.ShowDialog();
+        }
+
+        private void prendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void marcaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            reporteMarca.ShowDialog();
+        }
+
+        private void tipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reporteTipo.ShowDialog();
         }
     }
 }

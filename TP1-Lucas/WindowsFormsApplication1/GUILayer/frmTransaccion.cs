@@ -137,15 +137,13 @@ namespace TrabajoPractico.GUILayer
         {
             var subtotal = listaFacturaDetalle.Sum(p => p.Importe);
             txtTotal.Text = subtotal.ToString();
-
-
         }
 
         private void InicializarFormulario()
         {
             btnAgregar.Enabled = false;
             cboCliente.SelectedIndex = -1;
-
+            txtTotal.Clear();
             InicializarDetalle();
 
             grdDetalle.DataSource = null;

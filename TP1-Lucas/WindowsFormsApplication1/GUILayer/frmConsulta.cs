@@ -11,7 +11,7 @@ using TrabajoPractico.Entities;
 using TrabajoPractico.DataAccessLayer;
 using TrabajoPractico.BusinessLayer;
 using TrabajoPractico.GUILayer;
-
+using TrabajoPractico.Reportes;
 
 namespace TrabajoPractico
 {
@@ -224,6 +224,11 @@ namespace TrabajoPractico
             abmPrenda.seleccionarPrenda(frmABMPrenda.FormMode.delete, prenda);
             abmPrenda.ShowDialog();
             btnConsultar_Click_1(sender, e);
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

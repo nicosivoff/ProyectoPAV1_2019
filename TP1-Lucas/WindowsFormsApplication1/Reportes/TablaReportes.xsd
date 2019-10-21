@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TipoPrenda" targetNamespace="http://tempuri.org/TipoPrenda.xsd" xmlns:mstns="http://tempuri.org/TipoPrenda.xsd" xmlns="http://tempuri.org/TipoPrenda.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.TrabajoPractico.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PrendaTipoTableAdapter" GeneratorDataComponentClassName="PrendaTipoTableAdapter" Name="PrendaTipo" UserDataComponentName="PrendaTipoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Prenda.codPrenda, TipoPrenda.descrip, Prenda.talle
+FROM            Prenda INNER JOIN
+                         TipoPrenda ON Prenda.tipoPrenda = TipoPrenda.codTipoPrenda</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="codPrenda" DataSetColumn="codPrenda" />
+              <Mapping SourceColumn="descrip" DataSetColumn="descrip" />
+              <Mapping SourceColumn="talle" DataSetColumn="talle" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Prenda.codPrenda, TipoPrenda.descrip, Prenda.talle
+FROM            Prenda INNER JOIN
+                         TipoPrenda ON Prenda.tipoPrenda = TipoPrenda.codTipoPrenda
+WHERE Prenda.borrado = 0</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Prenda.codPrenda, TipoPrenda.descrip, Prenda.talle
+FROM            Prenda INNER JOIN
+                         TipoPrenda ON Prenda.tipoPrenda = TipoPrenda.codTipoPrenda
+WHERE        (Prenda.borrado = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PrendaMarcaTableAdapter" GeneratorDataComponentClassName="PrendaMarcaTableAdapter" Name="PrendaMarca" UserDataComponentName="PrendaMarcaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Prenda.codPrenda, Marca.nombre, Prenda.precio
+FROM            Marca INNER JOIN
+                         Prenda ON Marca.idMarca = Prenda.marca</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="codPrenda" DataSetColumn="codPrenda" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="precio" DataSetColumn="precio" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TipoPrenda" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="TipoPrenda" msprop:Generator_UserDSName="TipoPrenda">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PrendaTipo" msprop:Generator_TableClassName="PrendaTipoDataTable" msprop:Generator_TableVarName="tablePrendaTipo" msprop:Generator_RowChangedName="PrendaTipoRowChanged" msprop:Generator_TablePropName="PrendaTipo" msprop:Generator_RowDeletingName="PrendaTipoRowDeleting" msprop:Generator_RowChangingName="PrendaTipoRowChanging" msprop:Generator_RowEvHandlerName="PrendaTipoRowChangeEventHandler" msprop:Generator_RowDeletedName="PrendaTipoRowDeleted" msprop:Generator_RowClassName="PrendaTipoRow" msprop:Generator_UserTableName="PrendaTipo" msprop:Generator_RowEvArgName="PrendaTipoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codPrenda" msprop:Generator_ColumnVarNameInTable="columncodPrenda" msprop:Generator_ColumnPropNameInRow="codPrenda" msprop:Generator_ColumnPropNameInTable="codPrendaColumn" msprop:Generator_UserColumnName="codPrenda" type="xs:int" />
+              <xs:element name="descrip" msprop:Generator_ColumnVarNameInTable="columndescrip" msprop:Generator_ColumnPropNameInRow="descrip" msprop:Generator_ColumnPropNameInTable="descripColumn" msprop:Generator_UserColumnName="descrip">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="talle" msprop:Generator_ColumnVarNameInTable="columntalle" msprop:Generator_ColumnPropNameInRow="talle" msprop:Generator_ColumnPropNameInTable="talleColumn" msprop:Generator_UserColumnName="talle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PrendaMarca" msprop:Generator_TableClassName="PrendaMarcaDataTable" msprop:Generator_TableVarName="tablePrendaMarca" msprop:Generator_TablePropName="PrendaMarca" msprop:Generator_RowDeletingName="PrendaMarcaRowDeleting" msprop:Generator_RowChangingName="PrendaMarcaRowChanging" msprop:Generator_RowEvHandlerName="PrendaMarcaRowChangeEventHandler" msprop:Generator_RowDeletedName="PrendaMarcaRowDeleted" msprop:Generator_UserTableName="PrendaMarca" msprop:Generator_RowChangedName="PrendaMarcaRowChanged" msprop:Generator_RowEvArgName="PrendaMarcaRowChangeEvent" msprop:Generator_RowClassName="PrendaMarcaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codPrenda" msprop:Generator_ColumnVarNameInTable="columncodPrenda" msprop:Generator_ColumnPropNameInRow="codPrenda" msprop:Generator_ColumnPropNameInTable="codPrendaColumn" msprop:Generator_UserColumnName="codPrenda" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio" msprop:Generator_ColumnVarNameInTable="columnprecio" msprop:Generator_ColumnPropNameInRow="precio" msprop:Generator_ColumnPropNameInTable="precioColumn" msprop:Generator_UserColumnName="precio" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
