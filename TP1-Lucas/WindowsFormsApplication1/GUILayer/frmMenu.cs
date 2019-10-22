@@ -108,5 +108,17 @@ namespace TrabajoPractico
             frmReporteEmpleados reporte = new frmReporteEmpleados();
             reporte.ShowDialog();
         }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteProveedores reporte = new frmReporteProveedores();
+            reporte.ShowDialog();
+        }
+
+        private void perfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReportePerfiles reporte = new frmReportePerfiles();
+            reporte.ShowDialog();
+        }
     }
 }

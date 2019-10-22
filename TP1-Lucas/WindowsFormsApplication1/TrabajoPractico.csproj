@@ -65,15 +65,37 @@
     <Compile Include="DataAccessLayer\ProveedorDao.cs" />
     <Compile Include="DataAccessLayer\TrasaccionDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
+    <Compile Include="dsClientes.cs">
+      <DependentUpon>dsClientes.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="dsClientes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsClientes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsEmpleados.cs">
+      <DependentUpon>dsEmpleados.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="dsEmpleados.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsEmpleados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPerfiles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPerfiles.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsProveedores.cs">
+      <DependentUpon>DsProveedores.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DsProveedores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsProveedores.xsd</DependentUpon>
     </Compile>
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Empleado.cs" />
@@ -209,6 +231,12 @@
     <Compile Include="Reportes\frmReporteEmpleados.Designer.cs">
       <DependentUpon>frmReporteEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmReportePerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReportePerfiles.Designer.cs">
+      <DependentUpon>frmReportePerfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmReportePrendaMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +248,12 @@
     </Compile>
     <Compile Include="Reportes\frmReportePrendaTipo.Designer.cs">
       <DependentUpon>frmReportePrendaTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReporteProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteProveedores.Designer.cs">
+      <DependentUpon>frmReporteProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\TablaReportes.cs">
       <DependentUpon>TablaReportes.xsd</DependentUpon>
@@ -300,16 +334,24 @@
     <EmbeddedResource Include="Reportes\frmReporteEmpleados.resx">
       <DependentUpon>frmReporteEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportePerfiles.resx">
+      <DependentUpon>frmReportePerfiles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReportePrendaMarca.resx">
       <DependentUpon>frmReportePrendaMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReportePrendaTipo.resx">
       <DependentUpon>frmReportePrendaTipo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteProveedores.resx">
+      <DependentUpon>frmReporteProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteClientes.rdlc" />
     <EmbeddedResource Include="Reportes\Reporte1.rdlc" />
     <EmbeddedResource Include="Reportes\Reporte2.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteEmpleados.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePerfiles.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteProveedores.rdlc" />
     <None Include="dsClientes.xsc">
       <DependentUpon>dsClientes.xsd</DependentUpon>
     </None>
@@ -331,6 +373,28 @@
     </None>
     <None Include="dsEmpleados.xss">
       <DependentUpon>dsEmpleados.xsd</DependentUpon>
+    </None>
+    <None Include="dsPerfiles.xsc">
+      <DependentUpon>dsPerfiles.xsd</DependentUpon>
+    </None>
+    <None Include="dsPerfiles.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPerfiles.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsPerfiles.xss">
+      <DependentUpon>dsPerfiles.xsd</DependentUpon>
+    </None>
+    <None Include="DsProveedores.xsc">
+      <DependentUpon>DsProveedores.xsd</DependentUpon>
+    </None>
+    <None Include="DsProveedores.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsProveedores.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DsProveedores.xss">
+      <DependentUpon>DsProveedores.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

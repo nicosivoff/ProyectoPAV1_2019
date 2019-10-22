@@ -23,3 +23,10 @@ namespace TrabajoPractico.Reportes {
         }
     }
 }
+
+namespace TrabajoPractico.Reportes.TipoPrendaTableAdapters {
+    
+    
+    public partial class PrendaMarcaTableAdapter {
+    }
+}

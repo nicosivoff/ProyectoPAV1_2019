@@ -20,17 +20,17 @@ namespace TrabajoPractico {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dsEmpleados")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DsProveedores")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsEmpleados : global::System.Data.DataSet {
+    public partial class DsProveedores : global::System.Data.DataSet {
         
-        private EmpleadoDataTable tableEmpleado;
+        private ProveedorDataTable tableProveedor;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public dsEmpleados() {
+        public DsProveedores() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace TrabajoPractico {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected dsEmpleados(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DsProveedores(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace TrabajoPractico {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Empleado"] != null)) {
-                    base.Tables.Add(new EmpleadoDataTable(ds.Tables["Empleado"]));
+                if ((ds.Tables["Proveedor"] != null)) {
+                    base.Tables.Add(new ProveedorDataTable(ds.Tables["Proveedor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace TrabajoPractico {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public EmpleadoDataTable Empleado {
+        public ProveedorDataTable Proveedor {
             get {
-                return this.tableEmpleado;
+                return this.tableProveedor;
             }
         }
         
@@ -127,7 +127,7 @@ namespace TrabajoPractico {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dsEmpleados cln = ((dsEmpleados)(base.Clone()));
+            DsProveedores cln = ((DsProveedores)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace TrabajoPractico {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Empleado"] != null)) {
-                    base.Tables.Add(new EmpleadoDataTable(ds.Tables["Empleado"]));
+                if ((ds.Tables["Proveedor"] != null)) {
+                    base.Tables.Add(new ProveedorDataTable(ds.Tables["Proveedor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace TrabajoPractico {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableEmpleado = ((EmpleadoDataTable)(base.Tables["Empleado"]));
+            this.tableProveedor = ((ProveedorDataTable)(base.Tables["Proveedor"]));
             if ((initTable == true)) {
-                if ((this.tableEmpleado != null)) {
-                    this.tableEmpleado.InitVars();
+                if ((this.tableProveedor != null)) {
+                    this.tableProveedor.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace TrabajoPractico {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dsEmpleados";
+            this.DataSetName = "DsProveedores";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dsEmpleados.xsd";
+            this.Namespace = "http://tempuri.org/DsProveedores.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableEmpleado = new EmpleadoDataTable();
-            base.Tables.Add(this.tableEmpleado);
+            this.tableProveedor = new ProveedorDataTable();
+            base.Tables.Add(this.tableProveedor);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeEmpleado() {
+        private bool ShouldSerializeProveedor() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace TrabajoPractico {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsEmpleados ds = new dsEmpleados();
+            DsProveedores ds = new DsProveedores();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,27 +270,29 @@ namespace TrabajoPractico {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void EmpleadoRowChangeEventHandler(object sender, EmpleadoRowChangeEvent e);
+        public delegate void ProveedorRowChangeEventHandler(object sender, ProveedorRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class EmpleadoDataTable : global::System.Data.TypedTableBase<EmpleadoRow> {
+        public partial class ProveedorDataTable : global::System.Data.TypedTableBase<ProveedorRow> {
             
-            private global::System.Data.DataColumn columnlegajo;
+            private global::System.Data.DataColumn columnCUIL;
             
-            private global::System.Data.DataColumn columnnombre;
+            private global::System.Data.DataColumn columntelefono;
             
-            private global::System.Data.DataColumn columnapellido;
+            private global::System.Data.DataColumn columndireccion;
+            
+            private global::System.Data.DataColumn columnrazonSocial;
             
             private global::System.Data.DataColumn columnborrado;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EmpleadoDataTable() {
-                this.TableName = "Empleado";
+            public ProveedorDataTable() {
+                this.TableName = "Proveedor";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +300,7 @@ namespace TrabajoPractico {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal EmpleadoDataTable(global::System.Data.DataTable table) {
+            internal ProveedorDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,32 +317,40 @@ namespace TrabajoPractico {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected EmpleadoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ProveedorDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn legajoColumn {
+            public global::System.Data.DataColumn CUILColumn {
                 get {
-                    return this.columnlegajo;
+                    return this.columnCUIL;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nombreColumn {
+            public global::System.Data.DataColumn telefonoColumn {
                 get {
-                    return this.columnnombre;
+                    return this.columntelefono;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn apellidoColumn {
+            public global::System.Data.DataColumn direccionColumn {
                 get {
-                    return this.columnapellido;
+                    return this.columndireccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn razonSocialColumn {
+                get {
+                    return this.columnrazonSocial;
                 }
             }
             
@@ -363,55 +373,56 @@ namespace TrabajoPractico {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EmpleadoRow this[int index] {
+            public ProveedorRow this[int index] {
                 get {
-                    return ((EmpleadoRow)(this.Rows[index]));
+                    return ((ProveedorRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EmpleadoRowChangeEventHandler EmpleadoRowChanging;
+            public event ProveedorRowChangeEventHandler ProveedorRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EmpleadoRowChangeEventHandler EmpleadoRowChanged;
+            public event ProveedorRowChangeEventHandler ProveedorRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EmpleadoRowChangeEventHandler EmpleadoRowDeleting;
+            public event ProveedorRowChangeEventHandler ProveedorRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EmpleadoRowChangeEventHandler EmpleadoRowDeleted;
+            public event ProveedorRowChangeEventHandler ProveedorRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddEmpleadoRow(EmpleadoRow row) {
+            public void AddProveedorRow(ProveedorRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EmpleadoRow AddEmpleadoRow(string legajo, string nombre, string apellido, bool borrado) {
-                EmpleadoRow rowEmpleadoRow = ((EmpleadoRow)(this.NewRow()));
+            public ProveedorRow AddProveedorRow(int CUIL, int telefono, string direccion, string razonSocial, bool borrado) {
+                ProveedorRow rowProveedorRow = ((ProveedorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        legajo,
-                        nombre,
-                        apellido,
+                        CUIL,
+                        telefono,
+                        direccion,
+                        razonSocial,
                         borrado};
-                rowEmpleadoRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowEmpleadoRow);
-                return rowEmpleadoRow;
+                rowProveedorRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowProveedorRow);
+                return rowProveedorRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EmpleadoRow FindBylegajo(string legajo) {
-                return ((EmpleadoRow)(this.Rows.Find(new object[] {
-                            legajo})));
+            public ProveedorRow FindByCUIL(int CUIL) {
+                return ((ProveedorRow)(this.Rows.Find(new object[] {
+                            CUIL})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                EmpleadoDataTable cln = ((EmpleadoDataTable)(base.Clone()));
+                ProveedorDataTable cln = ((ProveedorDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -419,64 +430,67 @@ namespace TrabajoPractico {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new EmpleadoDataTable();
+                return new ProveedorDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnlegajo = base.Columns["legajo"];
-                this.columnnombre = base.Columns["nombre"];
-                this.columnapellido = base.Columns["apellido"];
+                this.columnCUIL = base.Columns["CUIL"];
+                this.columntelefono = base.Columns["telefono"];
+                this.columndireccion = base.Columns["direccion"];
+                this.columnrazonSocial = base.Columns["razonSocial"];
                 this.columnborrado = base.Columns["borrado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnlegajo = new global::System.Data.DataColumn("legajo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlegajo);
-                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre);
-                this.columnapellido = new global::System.Data.DataColumn("apellido", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnapellido);
+                this.columnCUIL = new global::System.Data.DataColumn("CUIL", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUIL);
+                this.columntelefono = new global::System.Data.DataColumn("telefono", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntelefono);
+                this.columndireccion = new global::System.Data.DataColumn("direccion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndireccion);
+                this.columnrazonSocial = new global::System.Data.DataColumn("razonSocial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrazonSocial);
                 this.columnborrado = new global::System.Data.DataColumn("borrado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnborrado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnlegajo}, true));
-                this.columnlegajo.AllowDBNull = false;
-                this.columnlegajo.Unique = true;
-                this.columnlegajo.MaxLength = 50;
-                this.columnnombre.AllowDBNull = false;
-                this.columnnombre.MaxLength = 50;
-                this.columnapellido.AllowDBNull = false;
-                this.columnapellido.MaxLength = 50;
+                                this.columnCUIL}, true));
+                this.columnCUIL.AllowDBNull = false;
+                this.columnCUIL.Unique = true;
+                this.columntelefono.AllowDBNull = false;
+                this.columndireccion.AllowDBNull = false;
+                this.columndireccion.MaxLength = 50;
+                this.columnrazonSocial.AllowDBNull = false;
+                this.columnrazonSocial.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EmpleadoRow NewEmpleadoRow() {
-                return ((EmpleadoRow)(this.NewRow()));
+            public ProveedorRow NewProveedorRow() {
+                return ((ProveedorRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new EmpleadoRow(builder);
+                return new ProveedorRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(EmpleadoRow);
+                return typeof(ProveedorRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.EmpleadoRowChanged != null)) {
-                    this.EmpleadoRowChanged(this, new EmpleadoRowChangeEvent(((EmpleadoRow)(e.Row)), e.Action));
+                if ((this.ProveedorRowChanged != null)) {
+                    this.ProveedorRowChanged(this, new ProveedorRowChangeEvent(((ProveedorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -484,8 +498,8 @@ namespace TrabajoPractico {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.EmpleadoRowChanging != null)) {
-                    this.EmpleadoRowChanging(this, new EmpleadoRowChangeEvent(((EmpleadoRow)(e.Row)), e.Action));
+                if ((this.ProveedorRowChanging != null)) {
+                    this.ProveedorRowChanging(this, new ProveedorRowChangeEvent(((ProveedorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -493,8 +507,8 @@ namespace TrabajoPractico {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.EmpleadoRowDeleted != null)) {
-                    this.EmpleadoRowDeleted(this, new EmpleadoRowChangeEvent(((EmpleadoRow)(e.Row)), e.Action));
+                if ((this.ProveedorRowDeleted != null)) {
+                    this.ProveedorRowDeleted(this, new ProveedorRowChangeEvent(((ProveedorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -502,14 +516,14 @@ namespace TrabajoPractico {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.EmpleadoRowDeleting != null)) {
-                    this.EmpleadoRowDeleting(this, new EmpleadoRowChangeEvent(((EmpleadoRow)(e.Row)), e.Action));
+                if ((this.ProveedorRowDeleting != null)) {
+                    this.ProveedorRowDeleting(this, new ProveedorRowChangeEvent(((ProveedorRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveEmpleadoRow(EmpleadoRow row) {
+            public void RemoveProveedorRow(ProveedorRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -518,7 +532,7 @@ namespace TrabajoPractico {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsEmpleados ds = new dsEmpleados();
+                DsProveedores ds = new DsProveedores();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -536,7 +550,7 @@ namespace TrabajoPractico {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "EmpleadoDataTable";
+                attribute2.FixedValue = "ProveedorDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -580,47 +594,58 @@ namespace TrabajoPractico {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class EmpleadoRow : global::System.Data.DataRow {
+        public partial class ProveedorRow : global::System.Data.DataRow {
             
-            private EmpleadoDataTable tableEmpleado;
+            private ProveedorDataTable tableProveedor;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal EmpleadoRow(global::System.Data.DataRowBuilder rb) : 
+            internal ProveedorRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableEmpleado = ((EmpleadoDataTable)(this.Table));
+                this.tableProveedor = ((ProveedorDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string legajo {
+            public int CUIL {
                 get {
-                    return ((string)(this[this.tableEmpleado.legajoColumn]));
+                    return ((int)(this[this.tableProveedor.CUILColumn]));
                 }
                 set {
-                    this[this.tableEmpleado.legajoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nombre {
-                get {
-                    return ((string)(this[this.tableEmpleado.nombreColumn]));
-                }
-                set {
-                    this[this.tableEmpleado.nombreColumn] = value;
+                    this[this.tableProveedor.CUILColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string apellido {
+            public int telefono {
                 get {
-                    return ((string)(this[this.tableEmpleado.apellidoColumn]));
+                    return ((int)(this[this.tableProveedor.telefonoColumn]));
                 }
                 set {
-                    this[this.tableEmpleado.apellidoColumn] = value;
+                    this[this.tableProveedor.telefonoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string direccion {
+                get {
+                    return ((string)(this[this.tableProveedor.direccionColumn]));
+                }
+                set {
+                    this[this.tableProveedor.direccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string razonSocial {
+                get {
+                    return ((string)(this[this.tableProveedor.razonSocialColumn]));
+                }
+                set {
+                    this[this.tableProveedor.razonSocialColumn] = value;
                 }
             }
             
@@ -629,27 +654,27 @@ namespace TrabajoPractico {
             public bool borrado {
                 get {
                     try {
-                        return ((bool)(this[this.tableEmpleado.borradoColumn]));
+                        return ((bool)(this[this.tableProveedor.borradoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'borrado\' de la tabla \'Empleado\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'borrado\' de la tabla \'Proveedor\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEmpleado.borradoColumn] = value;
+                    this[this.tableProveedor.borradoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsborradoNull() {
-                return this.IsNull(this.tableEmpleado.borradoColumn);
+                return this.IsNull(this.tableProveedor.borradoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetborradoNull() {
-                this[this.tableEmpleado.borradoColumn] = global::System.Convert.DBNull;
+                this[this.tableProveedor.borradoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -657,22 +682,22 @@ namespace TrabajoPractico {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class EmpleadoRowChangeEvent : global::System.EventArgs {
+        public class ProveedorRowChangeEvent : global::System.EventArgs {
             
-            private EmpleadoRow eventRow;
+            private ProveedorRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EmpleadoRowChangeEvent(EmpleadoRow row, global::System.Data.DataRowAction action) {
+            public ProveedorRowChangeEvent(ProveedorRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EmpleadoRow Row {
+            public ProveedorRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -688,7 +713,7 @@ namespace TrabajoPractico {
         }
     }
 }
-namespace TrabajoPractico.dsEmpleadosTableAdapters {
+namespace TrabajoPractico.DsProveedoresTableAdapters {
     
     
     /// <summary>
@@ -700,7 +725,7 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class EmpleadoTableAdapter : global::System.ComponentModel.Component {
+    public partial class ProveedorTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -714,7 +739,7 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public EmpleadoTableAdapter() {
+        public ProveedorTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -811,44 +836,48 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Empleado";
-            tableMapping.ColumnMappings.Add("legajo", "legajo");
-            tableMapping.ColumnMappings.Add("nombre", "nombre");
-            tableMapping.ColumnMappings.Add("apellido", "apellido");
+            tableMapping.DataSetTable = "Proveedor";
+            tableMapping.ColumnMappings.Add("CUIL", "CUIL");
+            tableMapping.ColumnMappings.Add("telefono", "telefono");
+            tableMapping.ColumnMappings.Add("direccion", "direccion");
+            tableMapping.ColumnMappings.Add("razonSocial", "razonSocial");
             tableMapping.ColumnMappings.Add("borrado", "borrado");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Canario].[dbo].[Empleado] WHERE (([legajo] = ?) AND ([nombre] = ?) A" +
-                "ND ([apellido] = ?) AND ((? = 1 AND [borrado] IS NULL) OR ([borrado] = ?)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Canario4].[dbo].[Proveedor] WHERE (([CUIL] = ?) AND ([telefono] = ?)" +
+                " AND ([direccion] = ?) AND ([razonSocial] = ?) AND ((? = 1 AND [borrado] IS NULL" +
+                ") OR ([borrado] = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_legajo", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "legajo", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_nombre", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nombre", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_apellido", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "apellido", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUIL", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUIL", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_telefono", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "telefono", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_direccion", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "direccion", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_razonSocial", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "razonSocial", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_borrado", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "borrado", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_borrado", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "borrado", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Canario].[dbo].[Empleado] ([legajo], [nombre], [apellido], [borrado]" +
-                ") VALUES (?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Canario4].[dbo].[Proveedor] ([CUIL], [telefono], [direccion], [razon" +
+                "Social], [borrado]) VALUES (?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("legajo", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "legajo", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("nombre", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nombre", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("apellido", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "apellido", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUIL", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUIL", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("telefono", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "telefono", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("direccion", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "direccion", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("razonSocial", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "razonSocial", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("borrado", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "borrado", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Canario].[dbo].[Empleado] SET [legajo] = ?, [nombre] = ?, [apellido] = ?," +
-                " [borrado] = ? WHERE (([legajo] = ?) AND ([nombre] = ?) AND ([apellido] = ?) AND" +
-                " ((? = 1 AND [borrado] IS NULL) OR ([borrado] = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Canario4].[dbo].[Proveedor] SET [CUIL] = ?, [telefono] = ?, [direccion] = ?, [razonSocial] = ?, [borrado] = ? WHERE (([CUIL] = ?) AND ([telefono] = ?) AND ([direccion] = ?) AND ([razonSocial] = ?) AND ((? = 1 AND [borrado] IS NULL) OR ([borrado] = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("legajo", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "legajo", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("nombre", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nombre", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("apellido", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "apellido", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUIL", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUIL", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("telefono", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "telefono", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("direccion", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "direccion", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("razonSocial", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "razonSocial", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("borrado", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "borrado", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_legajo", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "legajo", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_nombre", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "nombre", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_apellido", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "apellido", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUIL", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUIL", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_telefono", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "telefono", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_direccion", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "direccion", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_razonSocial", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "razonSocial", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_borrado", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "borrado", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_borrado", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "borrado", global::System.Data.DataRowVersion.Original, false, null));
         }
@@ -857,7 +886,7 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::TrabajoPractico.Properties.Settings.Default.ConnectionString1;
+            this._connection.ConnectionString = global::TrabajoPractico.Properties.Settings.Default.ConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -866,7 +895,8 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \"legajo\", \"nombre\", \"apellido\", \"borrado\" FROM \"dbo\".\"Empleado\"";
+            this._commandCollection[0].CommandText = "SELECT \"CUIL\", \"telefono\", \"direccion\", \"razonSocial\", \"borrado\" FROM \"dbo\".\"Prov" +
+                "eedor\"";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -874,7 +904,7 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsEmpleados.EmpleadoDataTable dataTable) {
+        public virtual int Fill(DsProveedores.ProveedorDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -887,9 +917,9 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsEmpleados.EmpleadoDataTable GetData() {
+        public virtual DsProveedores.ProveedorDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsEmpleados.EmpleadoDataTable dataTable = new dsEmpleados.EmpleadoDataTable();
+            DsProveedores.ProveedorDataTable dataTable = new DsProveedores.ProveedorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -897,15 +927,15 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsEmpleados.EmpleadoDataTable dataTable) {
+        public virtual int Update(DsProveedores.ProveedorDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsEmpleados dataSet) {
-            return this.Adapter.Update(dataSet, "Empleado");
+        public virtual int Update(DsProveedores dataSet) {
+            return this.Adapter.Update(dataSet, "Proveedor");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -927,32 +957,28 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_legajo, string Original_nombre, string Original_apellido, global::System.Nullable<bool> Original_borrado) {
-            if ((Original_legajo == null)) {
-                throw new global::System.ArgumentNullException("Original_legajo");
+        public virtual int Delete(int Original_CUIL, int Original_telefono, string Original_direccion, string Original_razonSocial, global::System.Nullable<bool> Original_borrado) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_CUIL));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_telefono));
+            if ((Original_direccion == null)) {
+                throw new global::System.ArgumentNullException("Original_direccion");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_legajo));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_direccion));
             }
-            if ((Original_nombre == null)) {
-                throw new global::System.ArgumentNullException("Original_nombre");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nombre));
-            }
-            if ((Original_apellido == null)) {
-                throw new global::System.ArgumentNullException("Original_apellido");
+            if ((Original_razonSocial == null)) {
+                throw new global::System.ArgumentNullException("Original_razonSocial");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_apellido));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_razonSocial));
             }
             if ((Original_borrado.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_borrado.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((bool)(Original_borrado.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -974,30 +1000,26 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string legajo, string nombre, string apellido, global::System.Nullable<bool> borrado) {
-            if ((legajo == null)) {
-                throw new global::System.ArgumentNullException("legajo");
+        public virtual int Insert(int CUIL, int telefono, string direccion, string razonSocial, global::System.Nullable<bool> borrado) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(CUIL));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(telefono));
+            if ((direccion == null)) {
+                throw new global::System.ArgumentNullException("direccion");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(legajo));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(direccion));
             }
-            if ((nombre == null)) {
-                throw new global::System.ArgumentNullException("nombre");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(nombre));
-            }
-            if ((apellido == null)) {
-                throw new global::System.ArgumentNullException("apellido");
+            if ((razonSocial == null)) {
+                throw new global::System.ArgumentNullException("razonSocial");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(apellido));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(razonSocial));
             }
             if ((borrado.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(borrado.Value));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(borrado.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1019,56 +1041,48 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string legajo, string nombre, string apellido, global::System.Nullable<bool> borrado, string Original_legajo, string Original_nombre, string Original_apellido, global::System.Nullable<bool> Original_borrado) {
-            if ((legajo == null)) {
-                throw new global::System.ArgumentNullException("legajo");
+        public virtual int Update(int CUIL, int telefono, string direccion, string razonSocial, global::System.Nullable<bool> borrado, int Original_CUIL, int Original_telefono, string Original_direccion, string Original_razonSocial, global::System.Nullable<bool> Original_borrado) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(CUIL));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(telefono));
+            if ((direccion == null)) {
+                throw new global::System.ArgumentNullException("direccion");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(legajo));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(direccion));
             }
-            if ((nombre == null)) {
-                throw new global::System.ArgumentNullException("nombre");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(nombre));
-            }
-            if ((apellido == null)) {
-                throw new global::System.ArgumentNullException("apellido");
+            if ((razonSocial == null)) {
+                throw new global::System.ArgumentNullException("razonSocial");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(apellido));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(razonSocial));
             }
             if ((borrado.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(borrado.Value));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((bool)(borrado.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_legajo == null)) {
-                throw new global::System.ArgumentNullException("Original_legajo");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_legajo));
-            }
-            if ((Original_nombre == null)) {
-                throw new global::System.ArgumentNullException("Original_nombre");
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_CUIL));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_telefono));
+            if ((Original_direccion == null)) {
+                throw new global::System.ArgumentNullException("Original_direccion");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_nombre));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_direccion));
             }
-            if ((Original_apellido == null)) {
-                throw new global::System.ArgumentNullException("Original_apellido");
+            if ((Original_razonSocial == null)) {
+                throw new global::System.ArgumentNullException("Original_razonSocial");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_apellido));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_razonSocial));
             }
             if ((Original_borrado.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(Original_borrado.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(Original_borrado.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1090,8 +1104,8 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nombre, string apellido, global::System.Nullable<bool> borrado, string Original_legajo, string Original_nombre, string Original_apellido, global::System.Nullable<bool> Original_borrado) {
-            return this.Update(Original_legajo, nombre, apellido, borrado, Original_legajo, Original_nombre, Original_apellido, Original_borrado);
+        public virtual int Update(int telefono, string direccion, string razonSocial, global::System.Nullable<bool> borrado, int Original_CUIL, int Original_telefono, string Original_direccion, string Original_razonSocial, global::System.Nullable<bool> Original_borrado) {
+            return this.Update(Original_CUIL, telefono, direccion, razonSocial, borrado, Original_CUIL, Original_telefono, Original_direccion, Original_razonSocial, Original_borrado);
         }
     }
     
@@ -1107,7 +1121,7 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private EmpleadoTableAdapter _empleadoTableAdapter;
+        private ProveedorTableAdapter _proveedorTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1129,12 +1143,12 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public EmpleadoTableAdapter EmpleadoTableAdapter {
+        public ProveedorTableAdapter ProveedorTableAdapter {
             get {
-                return this._empleadoTableAdapter;
+                return this._proveedorTableAdapter;
             }
             set {
-                this._empleadoTableAdapter = value;
+                this._proveedorTableAdapter = value;
             }
         }
         
@@ -1157,9 +1171,9 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._empleadoTableAdapter != null) 
-                            && (this._empleadoTableAdapter.Connection != null))) {
-                    return this._empleadoTableAdapter.Connection;
+                if (((this._proveedorTableAdapter != null) 
+                            && (this._proveedorTableAdapter.Connection != null))) {
+                    return this._proveedorTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1174,7 +1188,7 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._empleadoTableAdapter != null)) {
+                if ((this._proveedorTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1186,14 +1200,14 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(dsEmpleados dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DsProveedores dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._empleadoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Empleado.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._proveedorTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Proveedor.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._empleadoTableAdapter.Update(updatedRows));
+                    result = (result + this._proveedorTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1205,13 +1219,13 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(dsEmpleados dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DsProveedores dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._empleadoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Empleado.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._proveedorTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Proveedor.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._empleadoTableAdapter.Update(addedRows));
+                    result = (result + this._proveedorTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1223,13 +1237,13 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(dsEmpleados dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DsProveedores dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._empleadoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Empleado.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._proveedorTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Proveedor.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._empleadoTableAdapter.Update(deletedRows));
+                    result = (result + this._proveedorTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1265,15 +1279,15 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(dsEmpleados dataSet) {
+        public virtual int UpdateAll(DsProveedores dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._empleadoTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._empleadoTableAdapter.Connection) == false))) {
+            if (((this._proveedorTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._proveedorTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -1309,13 +1323,13 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._empleadoTableAdapter != null)) {
-                    revertConnections.Add(this._empleadoTableAdapter, this._empleadoTableAdapter.Connection);
-                    this._empleadoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._empleadoTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._empleadoTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._empleadoTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._empleadoTableAdapter.Adapter);
+                if ((this._proveedorTableAdapter != null)) {
+                    revertConnections.Add(this._proveedorTableAdapter, this._proveedorTableAdapter.Connection);
+                    this._proveedorTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._proveedorTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._proveedorTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._proveedorTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._proveedorTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1376,9 +1390,9 @@ namespace TrabajoPractico.dsEmpleadosTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._empleadoTableAdapter != null)) {
-                    this._empleadoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._empleadoTableAdapter]));
-                    this._empleadoTableAdapter.Transaction = null;
+                if ((this._proveedorTableAdapter != null)) {
+                    this._proveedorTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._proveedorTableAdapter]));
+                    this._proveedorTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
