@@ -96,5 +96,17 @@ namespace TrabajoPractico
         {
             reporteTipo.ShowDialog();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteClientes reporte = new frmReporteClientes();
+            reporte.ShowDialog();
+        }
+
+        private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmReporteEmpleados reporte = new frmReporteEmpleados();
+            reporte.ShowDialog();
+        }
     }
 }
