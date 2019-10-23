@@ -24,7 +24,7 @@ namespace TrabajoPractico.DataAccessLayer
                                                         ",subtotal ",
                                                         ",borrado) ",
                                                     " VALUES ('",
-                                                    venta.Fecha,"'",
+                                                    venta.Fecha.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss"), "'",
                                                     ",",venta.Cliente.NroDoc,
                                                     ",'",venta.TipoFactura,"'",
                                                     ",", venta.SubTotal,

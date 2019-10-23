@@ -74,6 +74,14 @@ namespace TrabajoPractico.GUILayer
                 var cliente = (Cliente)cboCliente.SelectedItem;
               
             }
+            if (cboCliente.SelectedIndex == -1) 
+            {
+                cboPrenda.Enabled = false;
+            }
+            else
+            {
+                cboPrenda.Enabled = true;
+            }
         }
 
         private void cboPrenda_SelectedIndexChanged(object sender, EventArgs e)

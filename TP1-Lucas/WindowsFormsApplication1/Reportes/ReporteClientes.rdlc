@@ -245,9 +245,8 @@
         </TablixRowHierarchy>
         <DataSetName>dsClientes</DataSetName>
         <Top>3.99203cm</Top>
-        <Left>0cm</Left>
         <Height>2.52292cm</Height>
-        <Width>16.51cm</Width>
+        <Width>16.50999cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -256,7 +255,6 @@
       </Tablix>
       <Line Name="Line1">
         <Top>1.65516cm</Top>
-        <Left>0cm</Left>
         <Height>0cm</Height>
         <Width>16.58938cm</Width>
         <ZIndex>1</ZIndex>
@@ -313,7 +311,7 @@
     <Height>2.56494in</Height>
     <Style />
   </Body>
-  <Width>6.53125in</Width>
+  <Width>6.55209in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

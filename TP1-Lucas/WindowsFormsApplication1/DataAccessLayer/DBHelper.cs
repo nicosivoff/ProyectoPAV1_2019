@@ -14,7 +14,7 @@ namespace TrabajoPractico.DataAccessLayer
         private OleDbCommand comando = new OleDbCommand();
         private static DBHelper instance = new DBHelper();
         private OleDbTransaction dbTransacion;
-        private string cadenaConexion = @"Provider=SQLNCLI11;Data Source=(localdb)\Servidor;User ID=lucas;Initial Catalog=Canario4;Password=39622720a";
+        private string cadenaConexion = @"Provider=SQLNCLI11;Data Source=maquis;User ID=avisuales1;Initial Catalog=Canario;Password=avisuales1";
         public void conectar()
         {
             conexion.ConnectionString = cadenaConexion;
