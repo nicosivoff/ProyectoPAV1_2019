@@ -6,15 +6,15 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.27271cm</Width>
+              <Width>7.70425cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.23062cm</Width>
+              <Width>9.66216cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.94396cm</Height>
+              <Height>1.38052cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -87,7 +87,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.94396cm</Height>
+              <Height>1.38052cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -99,9 +99,7 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!idPerfil.Value</Value>
-                              <Style>
-                                <FontSize>14pt</FontSize>
-                              </Style>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -133,9 +131,7 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!nombre.Value</Value>
-                              <Style>
-                                <FontSize>14pt</FontSize>
-                              </Style>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -178,10 +174,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.08703cm</Top>
-        <Left>3.40995cm</Left>
-        <Height>1.88792cm</Height>
-        <Width>10.50333cm</Width>
+        <Top>3.13916cm</Top>
+        <Height>2.76104cm</Height>
+        <Width>17.36641cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -189,9 +184,9 @@
         </Style>
       </Tablix>
       <Line Name="Line1">
-        <Top>0.42016cm</Top>
+        <Top>0.59655cm</Top>
         <Height>0cm</Height>
-        <Width>17.94849cm</Width>
+        <Width>17.36641cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -200,9 +195,9 @@
         </Style>
       </Line>
       <Line Name="Line2">
-        <Top>1.46085cm</Top>
+        <Top>1.92828cm</Top>
         <Height>0cm</Height>
-        <Width>17.94849cm</Width>
+        <Width>17.36641cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -229,7 +224,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>0.59655cm</Top>
+        <Top>0.77294cm</Top>
         <Left>7.3787cm</Left>
         <Height>0.86431cm</Height>
         <Width>2.5cm</Width>
@@ -245,10 +240,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>2.32292in</Height>
     <Style />
   </Body>
-  <Width>7.06634in</Width>
+  <Width>6.87883in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

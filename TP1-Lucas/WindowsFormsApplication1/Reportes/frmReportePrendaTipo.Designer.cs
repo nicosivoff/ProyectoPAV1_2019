@@ -50,6 +50,7 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "Prenda";
             reportDataSource1.Value = this.prendaTipoBindingSource;
@@ -57,7 +58,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TrabajoPractico.Reportes.Reporte1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(541, 446);
+            this.reportViewer1.Size = new System.Drawing.Size(655, 623);
             this.reportViewer1.TabIndex = 0;
             // 
             // prendaTipoTableAdapter
@@ -68,9 +69,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 446);
+            this.ClientSize = new System.Drawing.Size(655, 623);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmReportePrendaTipo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReportePrendaTipo";
             this.Load += new System.EventHandler(this.frmReportePrendaTipo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prendaTipoBindingSource)).EndInit();

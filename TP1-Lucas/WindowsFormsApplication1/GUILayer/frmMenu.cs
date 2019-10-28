@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TrabajoPractico.Estadisticas;
 using TrabajoPractico.GUILayer;
 using TrabajoPractico.Reportes;
 namespace TrabajoPractico
@@ -119,6 +120,12 @@ namespace TrabajoPractico
         {
             frmReportePerfiles reporte = new frmReportePerfiles();
             reporte.ShowDialog();
+        }
+
+        private void empleadosToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmEstEmpleados formulario = new frmEstEmpleados();
+            formulario.ShowDialog();
         }
     }
 }

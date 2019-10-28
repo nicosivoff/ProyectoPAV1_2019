@@ -1,6 +1,6 @@
-﻿namespace TrabajoPractico.Reportes
+﻿namespace TrabajoPractico.Estadisticas
 {
-    partial class frmReporteEmpleados
+    partial class frmEstEmpleados
     {
         /// <summary>
         /// Required designer variable.
@@ -31,52 +31,61 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsClientes = new TrabajoPractico.dsClientes();
+            this.dsClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsEmpleados = new TrabajoPractico.dsEmpleados();
-            this.empleadoTableAdapter = new TrabajoPractico.dsEmpleadosTableAdapters.EmpleadoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
+            this.dsEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dsClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsClientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsEmpleadosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
-            this.reportViewer1.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "dsEmpleados";
-            reportDataSource1.Value = this.empleadoBindingSource;
+            reportDataSource1.Name = "dsEstEmpleados";
+            reportDataSource1.Value = this.dsEmpleadosBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TrabajoPractico.Reportes.ReporteEmpleados.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TrabajoPractico.Estadisticas.EstadisticaEmpleados.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(639, 634);
+            this.reportViewer1.Size = new System.Drawing.Size(569, 504);
             this.reportViewer1.TabIndex = 0;
             // 
-            // empleadoBindingSource
+            // dsClientes
             // 
-            this.empleadoBindingSource.DataMember = "Empleado";
-            this.empleadoBindingSource.DataSource = this.dsEmpleados;
+            this.dsClientes.DataSetName = "dsClientes";
+            this.dsClientes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dsClientesBindingSource
+            // 
+            this.dsClientesBindingSource.DataSource = this.dsClientes;
+            this.dsClientesBindingSource.Position = 0;
             // 
             // dsEmpleados
             // 
             this.dsEmpleados.DataSetName = "dsEmpleados";
             this.dsEmpleados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // empleadoTableAdapter
+            // dsEmpleadosBindingSource
             // 
-            this.empleadoTableAdapter.ClearBeforeFill = true;
+            this.dsEmpleadosBindingSource.DataSource = this.dsEmpleados;
+            this.dsEmpleadosBindingSource.Position = 0;
             // 
-            // frmReporteEmpleados
+            // frmEstEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 634);
+            this.ClientSize = new System.Drawing.Size(569, 504);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "frmReporteEmpleados";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmReporteEmpleados";
-            this.Load += new System.EventHandler(this.frmReporteEmpleados_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
+            this.Name = "frmEstEmpleados";
+            this.Text = "EstadisticaEmpleados";
+            this.Load += new System.EventHandler(this.EstadisticaEmpleados_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dsClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsClientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsEmpleadosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -84,8 +93,10 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource dsEmpleadosBindingSource;
         private dsEmpleados dsEmpleados;
-        private System.Windows.Forms.BindingSource empleadoBindingSource;
-        private dsEmpleadosTableAdapters.EmpleadoTableAdapter empleadoTableAdapter;
+        private dsClientes dsClientes;
+        private System.Windows.Forms.BindingSource dsClientesBindingSource;
+
     }
 }

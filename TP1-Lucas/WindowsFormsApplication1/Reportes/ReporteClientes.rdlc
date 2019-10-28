@@ -244,7 +244,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsClientes</DataSetName>
-        <Top>3.99203cm</Top>
+        <Top>2.74849cm</Top>
         <Height>2.52292cm</Height>
         <Width>16.50999cm</Width>
         <Style>
@@ -308,7 +308,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2.56494in</Height>
+    <Height>2.10661in</Height>
     <Style />
   </Body>
   <Width>6.55209in</Width>

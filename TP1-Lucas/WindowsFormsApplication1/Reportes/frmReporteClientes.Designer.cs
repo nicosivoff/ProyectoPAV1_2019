@@ -31,17 +31,19 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsClientes = new TrabajoPractico.dsClientes();
             this.dsClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteTableAdapter = new TrabajoPractico.dsClientesTableAdapters.ClienteTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsClientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
+            this.reportViewer1.AutoSize = true;
+            this.reportViewer1.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.DocumentMapWidth = 52;
             reportDataSource1.Name = "dsClientes";
@@ -50,8 +52,13 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TrabajoPractico.Reportes.ReporteClientes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(609, 411);
+            this.reportViewer1.Size = new System.Drawing.Size(635, 538);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "Cliente";
+            this.clienteBindingSource.DataSource = this.dsClientes;
             // 
             // dsClientes
             // 
@@ -63,11 +70,6 @@
             this.dsClientesBindingSource.DataSource = this.dsClientes;
             this.dsClientesBindingSource.Position = 0;
             // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataMember = "Cliente";
-            this.clienteBindingSource.DataSource = this.dsClientes;
-            // 
             // clienteTableAdapter
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
@@ -76,15 +78,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 411);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(635, 538);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmReporteClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReporteClientes";
             this.Load += new System.EventHandler(this.frmReporteClientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsClientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

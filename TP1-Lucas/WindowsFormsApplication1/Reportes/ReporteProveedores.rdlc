@@ -6,21 +6,21 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>5.1352cm</Width>
+              <Width>5.20796cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.1352cm</Width>
+              <Width>5.20796cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.07686cm</Width>
+              <Width>4.14962cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.19353cm</Width>
+              <Width>6.26629cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.04979cm</Height>
+              <Height>1.27145cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -104,7 +104,7 @@
                               <Value>Telefono</Value>
                               <Style>
                                 <FontSize>14pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
+                                <FontWeight>Normal</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -165,7 +165,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.04979cm</Height>
+              <Height>1.27145cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -318,9 +318,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.66939cm</Top>
-        <Height>2.09958cm</Height>
-        <Width>20.54078cm</Width>
+        <Top>3.01335cm</Top>
+        <Height>2.54289cm</Height>
+        <Width>20.83182cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -347,7 +347,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>0.67592cm</Top>
+        <Top>0.81703cm</Top>
         <Left>7.98724cm</Left>
         <Height>0.85549cm</Height>
         <Width>5.14583cm</Width>
@@ -374,7 +374,7 @@
         </Style>
       </Line>
       <Line Name="Line2">
-        <Top>1.63724cm</Top>
+        <Top>1.90182cm</Top>
         <Height>0cm</Height>
         <Width>20.83182cm</Width>
         <ZIndex>3</ZIndex>
@@ -385,7 +385,7 @@
         </Style>
       </Line>
     </ReportItems>
-    <Height>1.98958in</Height>
+    <Height>2.1875in</Height>
     <Style />
   </Body>
   <Width>8.20151in</Width>

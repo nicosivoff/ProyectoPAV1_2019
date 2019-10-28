@@ -30,27 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsProveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsProveedores = new TrabajoPractico.DsProveedores();
-            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.proveedorTableAdapter = new TrabajoPractico.DsProveedoresTableAdapters.ProveedorTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProveedores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // proveedorBindingSource
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.proveedorBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TrabajoPractico.Reportes.ReporteProveedores.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(459, 384);
-            this.reportViewer1.TabIndex = 0;
+            this.proveedorBindingSource.DataMember = "Proveedor";
+            this.proveedorBindingSource.DataSource = this.dsProveedoresBindingSource;
             // 
             // dsProveedoresBindingSource
             // 
@@ -62,10 +55,18 @@
             this.dsProveedores.DataSetName = "DsProveedores";
             this.dsProveedores.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // proveedorBindingSource
+            // reportViewer1
             // 
-            this.proveedorBindingSource.DataMember = "Proveedor";
-            this.proveedorBindingSource.DataSource = this.dsProveedoresBindingSource;
+            this.reportViewer1.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.proveedorBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TrabajoPractico.Reportes.ReporteProveedores.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(783, 579);
+            this.reportViewer1.TabIndex = 0;
             // 
             // proveedorTableAdapter
             // 
@@ -75,14 +76,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 384);
+            this.ClientSize = new System.Drawing.Size(783, 579);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmReporteProveedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReporteProveedores";
             this.Load += new System.EventHandler(this.frmReporteProveedores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProveedores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

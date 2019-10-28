@@ -17,7 +17,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>2.52236cm</Height>
+              <Height>1.27882cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -124,7 +124,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>2.52236cm</Height>
+              <Height>1.27882cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -249,8 +249,8 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.03528cm</Top>
-        <Height>5.04472cm</Height>
-        <Width>16.51cm</Width>
+        <Height>2.55764cm</Height>
+        <Width>16.50999cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -258,7 +258,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.0625in</Height>
     <Style />
   </Body>
   <Width>6.57675in</Width>
@@ -277,7 +277,6 @@
                 <TextRun>
                   <Value>Prenda por Marca</Value>
                   <Style>
-                    <FontStyle>Italic</FontStyle>
                     <FontSize>18pt</FontSize>
                   </Style>
                 </TextRun>
@@ -336,7 +335,9 @@
     <TopMargin>2cm</TopMargin>
     <BottomMargin>2cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
-    <Style />
+    <Style>
+      <BackgroundColor>PaleGoldenrod</BackgroundColor>
+    </Style>
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
