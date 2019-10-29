@@ -246,7 +246,7 @@
         <DataSetName>Prenda</DataSetName>
         <Top>1.01424cm</Top>
         <Left>0.00001cm</Left>
-        <Height>2.72613cm</Height>
+        <Height>2.72614cm</Height>
         <Width>17.43921cm</Width>
         <Style>
           <Border>
@@ -256,7 +256,9 @@
       </Tablix>
     </ReportItems>
     <Height>1.6705in</Height>
-    <Style />
+    <Style>
+      <BackgroundColor>PaleGoldenrod</BackgroundColor>
+    </Style>
   </Body>
   <Width>6.91792in</Width>
   <Page>

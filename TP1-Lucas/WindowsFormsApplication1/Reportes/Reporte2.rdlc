@@ -258,10 +258,12 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.0625in</Height>
-    <Style />
+    <Height>1.25in</Height>
+    <Style>
+      <BackgroundColor>PaleGoldenrod</BackgroundColor>
+    </Style>
   </Body>
-  <Width>6.57675in</Width>
+  <Width>6.59759in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -326,6 +328,7 @@
         <Border>
           <Style>None</Style>
         </Border>
+        <BackgroundColor>PaleGoldenrod</BackgroundColor>
       </Style>
     </PageHeader>
     <PageHeight>29.7cm</PageHeight>

@@ -89,6 +89,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPerfiles.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsPrenda.cs">
+      <DependentUpon>dsPrenda.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsPrenda.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPrenda.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DsProveedores.cs">
       <DependentUpon>DsProveedores.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -109,6 +118,18 @@
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Entities\Venta.cs" />
     <Compile Include="Entities\VentaDetalle.cs" />
+    <Compile Include="Estadisticas\frmEstadisticaStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaStock.Designer.cs">
+      <DependentUpon>frmEstadisticaStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaPerfiles.Designer.cs">
+      <DependentUpon>frmEstadisticaPerfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estadisticas\frmEstEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +265,12 @@
     <Compile Include="Reportes\frmReportePerfiles.Designer.cs">
       <DependentUpon>frmReportePerfiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmReportePrenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReportePrenda.Designer.cs">
+      <DependentUpon>frmReportePrenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmReportePrendaMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +299,14 @@
       <DependentUpon>TablaReportes.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Estadisticas\EstadisticaEmpleados.rdlc" />
+    <EmbeddedResource Include="Estadisticas\EstadisticaPerfiles.rdlc" />
+    <EmbeddedResource Include="Estadisticas\EstadisticaPrendaStock.rdlc" />
+    <EmbeddedResource Include="Estadisticas\frmEstadisticaStock.resx">
+      <DependentUpon>frmEstadisticaStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\frmEstadisticaPerfiles.resx">
+      <DependentUpon>frmEstadisticaPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas\frmEstEmpleados.resx">
       <DependentUpon>frmEstEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -348,6 +383,9 @@
     <EmbeddedResource Include="Reportes\frmReportePerfiles.resx">
       <DependentUpon>frmReportePerfiles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportePrenda.resx">
+      <DependentUpon>frmReportePrenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReportePrendaMarca.resx">
       <DependentUpon>frmReportePrendaMarca.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,6 +400,7 @@
     <EmbeddedResource Include="Reportes\Reporte2.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteEmpleados.rdlc" />
     <EmbeddedResource Include="Reportes\ReportePerfiles.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePrendas.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteProveedores.rdlc" />
     <None Include="dsClientes.xsc">
       <DependentUpon>dsClientes.xsd</DependentUpon>
@@ -395,6 +434,17 @@
     </None>
     <None Include="dsPerfiles.xss">
       <DependentUpon>dsPerfiles.xsd</DependentUpon>
+    </None>
+    <None Include="dsPrenda.xsc">
+      <DependentUpon>dsPrenda.xsd</DependentUpon>
+    </None>
+    <None Include="dsPrenda.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPrenda.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsPrenda.xss">
+      <DependentUpon>dsPrenda.xsd</DependentUpon>
     </None>
     <None Include="DsProveedores.xsc">
       <DependentUpon>DsProveedores.xsd</DependentUpon>

@@ -26,8 +26,8 @@ namespace TrabajoPractico.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLNCLI11;Data Source=LAPTOP-TCTA87VI\\SQLEXPRESS;Integrated Security=SSP" +
-            "I;Initial Catalog=Canario")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLNCLI11;Data Source=(localdb)\\Servidor;User ID=lucas;Initial Catalog=C" +
+            "anario4;Password=39622720a")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
@@ -37,8 +37,8 @@ namespace TrabajoPractico.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLNCLI11;Data Source=(localdb)\\MartinPC;Integrated Security=SSPI;Initia" +
-            "l Catalog=Canario")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLNCLI11;Data Source=(localdb)\\Servidor;Password=39622720a;User ID=luca" +
+            "s;Initial Catalog=Canario4;Password=39622720a")]
         public string ConnectionString1 {
             get {
                 return ((string)(this["ConnectionString1"]));
@@ -49,7 +49,7 @@ namespace TrabajoPractico.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLNCLI11;Data Source=(localdb)\\Servidor;Password=39622720a;User ID=luca" +
-            "s;Initial Catalog=Canario4")]
+            "s;Initial Catalog=Canario4;Password=39622720a")]
         public string ConnectionString2 {
             get {
                 return ((string)(this["ConnectionString2"]));

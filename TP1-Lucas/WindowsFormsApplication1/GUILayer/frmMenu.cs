@@ -127,5 +127,24 @@ namespace TrabajoPractico
             frmEstEmpleados formulario = new frmEstEmpleados();
             formulario.ShowDialog();
         }
+
+        private void perfilesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaPerfiles formulario = new frmEstadisticaPerfiles();
+            formulario.ShowDialog();
+
+        }
+
+        private void prendaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmReportePrenda formulario = new frmReportePrenda();
+            formulario.ShowDialog();
+        }
+
+        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaStock formulario = new frmEstadisticaStock();
+            formulario.ShowDialog();
+        }
     }
 }

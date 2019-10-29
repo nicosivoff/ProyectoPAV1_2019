@@ -309,7 +309,9 @@
       </Textbox>
     </ReportItems>
     <Height>2.10661in</Height>
-    <Style />
+    <Style>
+      <BackgroundColor>PaleGoldenrod</BackgroundColor>
+    </Style>
   </Body>
   <Width>6.55209in</Width>
   <Page>
