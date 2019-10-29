@@ -11,9 +11,9 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace TrabajoPractico.Estadisticas
 {
-    public partial class frmEstEmpleados : Form
+    public partial class frmEstadisticaEmpleados : Form
     {
-        public frmEstEmpleados()
+        public frmEstadisticaEmpleados()
         {
             InitializeComponent();
         }

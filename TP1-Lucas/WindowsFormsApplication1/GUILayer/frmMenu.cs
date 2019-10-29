@@ -124,7 +124,7 @@ namespace TrabajoPractico
 
         private void empleadosToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            frmEstEmpleados formulario = new frmEstEmpleados();
+            frmEstadisticaEmpleados formulario = new frmEstadisticaEmpleados();
             formulario.ShowDialog();
         }
 
@@ -144,6 +144,12 @@ namespace TrabajoPractico
         private void stockToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmEstadisticaStock formulario = new frmEstadisticaStock();
+            formulario.ShowDialog();
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaClientes formulario = new frmEstadisticaClientes();
             formulario.ShowDialog();
         }
     }

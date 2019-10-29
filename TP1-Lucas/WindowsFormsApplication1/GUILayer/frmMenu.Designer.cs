@@ -53,6 +53,7 @@
             this.empleadosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -224,6 +225,7 @@
             // estadisticasToolStripMenuItem
             // 
             this.estadisticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientesToolStripMenuItem1,
             this.empleadosToolStripMenuItem2,
             this.perfilesToolStripMenuItem1,
             this.stockToolStripMenuItem});
@@ -251,6 +253,13 @@
             this.stockToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.stockToolStripMenuItem.Text = "Stock";
             this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
+            // 
+            // clientesToolStripMenuItem1
+            // 
+            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem1.Text = "Clientes";
+            this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
             // frmMenu
             // 
@@ -299,5 +308,6 @@
         private System.Windows.Forms.ToolStripMenuItem perfilesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem prendaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
     }
 }
