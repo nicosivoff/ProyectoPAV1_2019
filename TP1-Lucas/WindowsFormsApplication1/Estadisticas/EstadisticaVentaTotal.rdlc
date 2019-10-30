@@ -2,56 +2,58 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Chart Name="Chart4">
+      <Chart Name="Chart1">
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart4_CategoryGroup">
+              <Group Name="Chart1_CategoryGroup">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!nroDoc.Value</GroupExpression>
+                  <GroupExpression>=Fields!idVenta.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!nroDoc.Value</Value>
+                  <Value>=Fields!idVenta.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="Chart4_CategoryGroup1">
+                  <Group Name="Chart1_CategoryGroup1">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!nombre.Value</GroupExpression>
+                      <GroupExpression>=Fields!subtotal.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!nombre.Value</Value>
+                      <Value>=Fields!subtotal.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!nombre.Value</Label>
+                  <Label>=Fields!subtotal.Value</Label>
                 </ChartMember>
               </ChartMembers>
-              <Label>=Fields!nroDoc.Value</Label>
+              <Label>=Fields!idVenta.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label>nombre</Label>
+              <Label>subtotal</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
         <ChartData>
           <ChartSeriesCollection>
-            <ChartSeries Name="nombre">
+            <ChartSeries Name="subtotal">
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Count(Fields!nombre.Value)</Y>
+                    <Y>=Sum(Fields!subtotal.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
@@ -60,6 +62,7 @@
                   <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
+              <Type>Shape</Type>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -254,7 +257,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Chart Title</Caption>
+            <Caption>Totales ventas</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -280,10 +283,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.32516cm</Top>
-        <Left>5.94995cm</Left>
-        <Height>5cm</Height>
-        <Width>7.5cm</Width>
+        <Top>1.29328cm</Top>
+        <Left>3.48933cm</Left>
+        <Height>5.84667cm</Height>
+        <Width>8.84938cm</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -294,10 +297,10 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>3.60417in</Height>
+    <Height>3.39434in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>5.87859in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -310,60 +313,44 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="dsClientes">
+    <DataSource Name="DsEst">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>cd1d0c63-d93b-4837-b9bf-d8ce20c2d056</rd:DataSourceID>
+      <rd:DataSourceID>2584879f-56d4-40ee-8c03-b3d950873eae</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>dsClientes</DataSourceName>
+        <DataSourceName>DsEst</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="nroDoc">
-          <DataField>nroDoc</DataField>
+        <Field Name="idVenta">
+          <DataField>idVenta</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="telefono">
-          <DataField>telefono</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="subtotal">
+          <DataField>subtotal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="nombre">
-          <DataField>nombre</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="apellido">
-          <DataField>apellido</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="domicilio">
-          <DataField>domicilio</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="email">
-          <DataField>email</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="borrado">
-          <DataField>borrado</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
+        <Field Name="fecha">
+          <DataField>fecha</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>dsClientes</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Martin\Documents\GitHub\ProyectoPAV1_2019\TP1-Lucas\WindowsFormsApplication1\dsClientes.xsd</rd:SchemaPath>
-        <rd:TableName>Cliente</rd:TableName>
+        <rd:DataSetName>DsEst</rd:DataSetName>
+        <rd:SchemaPath>C:\proyectos_git\ProyectoPAV1_2019\TP1-Lucas\WindowsFormsApplication1\Estadisticas\DsVentaTipoFac.xsd</rd:SchemaPath>
+        <rd:TableName>VentaTransaccion</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ClienteTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>VentaTransaccionTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>5f0d0e23-1ffa-4f46-b1a0-8ac2088c1666</rd:ReportID>
+  <rd:ReportID>18200dbd-6754-4747-987c-0c68df13ac24</rd:ReportID>
 </Report>
