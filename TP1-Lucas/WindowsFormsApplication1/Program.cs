@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrabajoPractico.GUILayer;
-
+using TrabajoPractico.Estadisticas;
 namespace TrabajoPractico
 {
     static class Program
@@ -17,7 +17,7 @@ namespace TrabajoPractico
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenu());
+            Application.Run(new frmEstadisticasVenta());
             
         }
     }

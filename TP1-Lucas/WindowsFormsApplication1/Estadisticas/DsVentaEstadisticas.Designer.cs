@@ -20,17 +20,17 @@ namespace TrabajoPractico.Estadisticas {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DsEst")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DsVentaEstadisticas")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DsEst : global::System.Data.DataSet {
+    public partial class DsVentaEstadisticas : global::System.Data.DataSet {
         
-        private VentaTransaccionDataTable tableVentaTransaccion;
+        private DsVentaDataTable tableDsVenta;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DsEst() {
+        public DsVentaEstadisticas() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace TrabajoPractico.Estadisticas {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DsEst(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DsVentaEstadisticas(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace TrabajoPractico.Estadisticas {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["VentaTransaccion"] != null)) {
-                    base.Tables.Add(new VentaTransaccionDataTable(ds.Tables["VentaTransaccion"]));
+                if ((ds.Tables["DsVenta"] != null)) {
+                    base.Tables.Add(new DsVentaDataTable(ds.Tables["DsVenta"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace TrabajoPractico.Estadisticas {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public VentaTransaccionDataTable VentaTransaccion {
+        public DsVentaDataTable DsVenta {
             get {
-                return this.tableVentaTransaccion;
+                return this.tableDsVenta;
             }
         }
         
@@ -127,7 +127,7 @@ namespace TrabajoPractico.Estadisticas {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DsEst cln = ((DsEst)(base.Clone()));
+            DsVentaEstadisticas cln = ((DsVentaEstadisticas)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace TrabajoPractico.Estadisticas {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["VentaTransaccion"] != null)) {
-                    base.Tables.Add(new VentaTransaccionDataTable(ds.Tables["VentaTransaccion"]));
+                if ((ds.Tables["DsVenta"] != null)) {
+                    base.Tables.Add(new DsVentaDataTable(ds.Tables["DsVenta"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace TrabajoPractico.Estadisticas {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableVentaTransaccion = ((VentaTransaccionDataTable)(base.Tables["VentaTransaccion"]));
+            this.tableDsVenta = ((DsVentaDataTable)(base.Tables["DsVenta"]));
             if ((initTable == true)) {
-                if ((this.tableVentaTransaccion != null)) {
-                    this.tableVentaTransaccion.InitVars();
+                if ((this.tableDsVenta != null)) {
+                    this.tableDsVenta.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace TrabajoPractico.Estadisticas {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DsEst";
+            this.DataSetName = "DsVentaEstadisticas";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DsEst.xsd";
+            this.Namespace = "http://tempuri.org/DsVentaEstadisticas.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableVentaTransaccion = new VentaTransaccionDataTable();
-            base.Tables.Add(this.tableVentaTransaccion);
+            this.tableDsVenta = new DsVentaDataTable();
+            base.Tables.Add(this.tableDsVenta);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeVentaTransaccion() {
+        private bool ShouldSerializeDsVenta() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace TrabajoPractico.Estadisticas {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DsEst ds = new DsEst();
+            DsVentaEstadisticas ds = new DsVentaEstadisticas();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,25 +270,25 @@ namespace TrabajoPractico.Estadisticas {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void VentaTransaccionRowChangeEventHandler(object sender, VentaTransaccionRowChangeEvent e);
+        public delegate void DsVentaRowChangeEventHandler(object sender, DsVentaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class VentaTransaccionDataTable : global::System.Data.TypedTableBase<VentaTransaccionRow> {
+        public partial class DsVentaDataTable : global::System.Data.TypedTableBase<DsVentaRow> {
             
             private global::System.Data.DataColumn columnidVenta;
             
-            private global::System.Data.DataColumn columnsubtotal;
+            private global::System.Data.DataColumn columndescripcion;
             
-            private global::System.Data.DataColumn columnfecha;
+            private global::System.Data.DataColumn columnsubtotal;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VentaTransaccionDataTable() {
-                this.TableName = "VentaTransaccion";
+            public DsVentaDataTable() {
+                this.TableName = "DsVenta";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +296,7 @@ namespace TrabajoPractico.Estadisticas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal VentaTransaccionDataTable(global::System.Data.DataTable table) {
+            internal DsVentaDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,7 +313,7 @@ namespace TrabajoPractico.Estadisticas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected VentaTransaccionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DsVentaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -328,17 +328,17 @@ namespace TrabajoPractico.Estadisticas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn subtotalColumn {
+            public global::System.Data.DataColumn descripcionColumn {
                 get {
-                    return this.columnsubtotal;
+                    return this.columndescripcion;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fechaColumn {
+            public global::System.Data.DataColumn subtotalColumn {
                 get {
-                    return this.columnfecha;
+                    return this.columnsubtotal;
                 }
             }
             
@@ -353,54 +353,47 @@ namespace TrabajoPractico.Estadisticas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VentaTransaccionRow this[int index] {
+            public DsVentaRow this[int index] {
                 get {
-                    return ((VentaTransaccionRow)(this.Rows[index]));
+                    return ((DsVentaRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event VentaTransaccionRowChangeEventHandler VentaTransaccionRowChanging;
+            public event DsVentaRowChangeEventHandler DsVentaRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event VentaTransaccionRowChangeEventHandler VentaTransaccionRowChanged;
+            public event DsVentaRowChangeEventHandler DsVentaRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event VentaTransaccionRowChangeEventHandler VentaTransaccionRowDeleting;
+            public event DsVentaRowChangeEventHandler DsVentaRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event VentaTransaccionRowChangeEventHandler VentaTransaccionRowDeleted;
+            public event DsVentaRowChangeEventHandler DsVentaRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddVentaTransaccionRow(VentaTransaccionRow row) {
+            public void AddDsVentaRow(DsVentaRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VentaTransaccionRow AddVentaTransaccionRow(decimal subtotal, System.DateTime fecha) {
-                VentaTransaccionRow rowVentaTransaccionRow = ((VentaTransaccionRow)(this.NewRow()));
+            public DsVentaRow AddDsVentaRow(string descripcion, decimal subtotal) {
+                DsVentaRow rowDsVentaRow = ((DsVentaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        subtotal,
-                        fecha};
-                rowVentaTransaccionRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowVentaTransaccionRow);
-                return rowVentaTransaccionRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VentaTransaccionRow FindByidVenta(int idVenta) {
-                return ((VentaTransaccionRow)(this.Rows.Find(new object[] {
-                            idVenta})));
+                        descripcion,
+                        subtotal};
+                rowDsVentaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDsVentaRow);
+                return rowDsVentaRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                VentaTransaccionDataTable cln = ((VentaTransaccionDataTable)(base.Clone()));
+                DsVentaDataTable cln = ((DsVentaDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -408,15 +401,15 @@ namespace TrabajoPractico.Estadisticas {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new VentaTransaccionDataTable();
+                return new DsVentaDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnidVenta = base.Columns["idVenta"];
+                this.columndescripcion = base.Columns["descripcion"];
                 this.columnsubtotal = base.Columns["subtotal"];
-                this.columnfecha = base.Columns["fecha"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -424,46 +417,44 @@ namespace TrabajoPractico.Estadisticas {
             private void InitClass() {
                 this.columnidVenta = new global::System.Data.DataColumn("idVenta", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidVenta);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
                 this.columnsubtotal = new global::System.Data.DataColumn("subtotal", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsubtotal);
-                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidVenta}, true));
                 this.columnidVenta.AutoIncrement = true;
                 this.columnidVenta.AutoIncrementSeed = -1;
                 this.columnidVenta.AutoIncrementStep = -1;
                 this.columnidVenta.AllowDBNull = false;
                 this.columnidVenta.ReadOnly = true;
-                this.columnidVenta.Unique = true;
+                this.columndescripcion.AllowDBNull = false;
+                this.columndescripcion.MaxLength = 50;
                 this.columnsubtotal.AllowDBNull = false;
-                this.columnfecha.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VentaTransaccionRow NewVentaTransaccionRow() {
-                return ((VentaTransaccionRow)(this.NewRow()));
+            public DsVentaRow NewDsVentaRow() {
+                return ((DsVentaRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new VentaTransaccionRow(builder);
+                return new DsVentaRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(VentaTransaccionRow);
+                return typeof(DsVentaRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.VentaTransaccionRowChanged != null)) {
-                    this.VentaTransaccionRowChanged(this, new VentaTransaccionRowChangeEvent(((VentaTransaccionRow)(e.Row)), e.Action));
+                if ((this.DsVentaRowChanged != null)) {
+                    this.DsVentaRowChanged(this, new DsVentaRowChangeEvent(((DsVentaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -471,8 +462,8 @@ namespace TrabajoPractico.Estadisticas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.VentaTransaccionRowChanging != null)) {
-                    this.VentaTransaccionRowChanging(this, new VentaTransaccionRowChangeEvent(((VentaTransaccionRow)(e.Row)), e.Action));
+                if ((this.DsVentaRowChanging != null)) {
+                    this.DsVentaRowChanging(this, new DsVentaRowChangeEvent(((DsVentaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -480,8 +471,8 @@ namespace TrabajoPractico.Estadisticas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.VentaTransaccionRowDeleted != null)) {
-                    this.VentaTransaccionRowDeleted(this, new VentaTransaccionRowChangeEvent(((VentaTransaccionRow)(e.Row)), e.Action));
+                if ((this.DsVentaRowDeleted != null)) {
+                    this.DsVentaRowDeleted(this, new DsVentaRowChangeEvent(((DsVentaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -489,14 +480,14 @@ namespace TrabajoPractico.Estadisticas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.VentaTransaccionRowDeleting != null)) {
-                    this.VentaTransaccionRowDeleting(this, new VentaTransaccionRowChangeEvent(((VentaTransaccionRow)(e.Row)), e.Action));
+                if ((this.DsVentaRowDeleting != null)) {
+                    this.DsVentaRowDeleting(this, new DsVentaRowChangeEvent(((DsVentaRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveVentaTransaccionRow(VentaTransaccionRow row) {
+            public void RemoveDsVentaRow(DsVentaRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -505,7 +496,7 @@ namespace TrabajoPractico.Estadisticas {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DsEst ds = new DsEst();
+                DsVentaEstadisticas ds = new DsVentaEstadisticas();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -523,7 +514,7 @@ namespace TrabajoPractico.Estadisticas {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "VentaTransaccionDataTable";
+                attribute2.FixedValue = "DsVentaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -567,25 +558,36 @@ namespace TrabajoPractico.Estadisticas {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class VentaTransaccionRow : global::System.Data.DataRow {
+        public partial class DsVentaRow : global::System.Data.DataRow {
             
-            private VentaTransaccionDataTable tableVentaTransaccion;
+            private DsVentaDataTable tableDsVenta;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal VentaTransaccionRow(global::System.Data.DataRowBuilder rb) : 
+            internal DsVentaRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableVentaTransaccion = ((VentaTransaccionDataTable)(this.Table));
+                this.tableDsVenta = ((DsVentaDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int idVenta {
                 get {
-                    return ((int)(this[this.tableVentaTransaccion.idVentaColumn]));
+                    return ((int)(this[this.tableDsVenta.idVentaColumn]));
                 }
                 set {
-                    this[this.tableVentaTransaccion.idVentaColumn] = value;
+                    this[this.tableDsVenta.idVentaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string descripcion {
+                get {
+                    return ((string)(this[this.tableDsVenta.descripcionColumn]));
+                }
+                set {
+                    this[this.tableDsVenta.descripcionColumn] = value;
                 }
             }
             
@@ -593,21 +595,10 @@ namespace TrabajoPractico.Estadisticas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal subtotal {
                 get {
-                    return ((decimal)(this[this.tableVentaTransaccion.subtotalColumn]));
+                    return ((decimal)(this[this.tableDsVenta.subtotalColumn]));
                 }
                 set {
-                    this[this.tableVentaTransaccion.subtotalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha {
-                get {
-                    return ((global::System.DateTime)(this[this.tableVentaTransaccion.fechaColumn]));
-                }
-                set {
-                    this[this.tableVentaTransaccion.fechaColumn] = value;
+                    this[this.tableDsVenta.subtotalColumn] = value;
                 }
             }
         }
@@ -616,22 +607,22 @@ namespace TrabajoPractico.Estadisticas {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class VentaTransaccionRowChangeEvent : global::System.EventArgs {
+        public class DsVentaRowChangeEvent : global::System.EventArgs {
             
-            private VentaTransaccionRow eventRow;
+            private DsVentaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VentaTransaccionRowChangeEvent(VentaTransaccionRow row, global::System.Data.DataRowAction action) {
+            public DsVentaRowChangeEvent(DsVentaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VentaTransaccionRow Row {
+            public DsVentaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -647,7 +638,7 @@ namespace TrabajoPractico.Estadisticas {
         }
     }
 }
-namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
+namespace TrabajoPractico.Estadisticas.DsVentaEstadisticasTableAdapters {
     
     
     /// <summary>
@@ -659,7 +650,7 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class VentaTransaccionTableAdapter : global::System.ComponentModel.Component {
+    public partial class DsVentaTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -673,7 +664,7 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public VentaTransaccionTableAdapter() {
+        public DsVentaTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -770,29 +761,11 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "VentaTransaccion";
+            tableMapping.DataSetTable = "DsVenta";
             tableMapping.ColumnMappings.Add("idVenta", "idVenta");
+            tableMapping.ColumnMappings.Add("descripcion", "descripcion");
             tableMapping.ColumnMappings.Add("subtotal", "subtotal");
-            tableMapping.ColumnMappings.Add("fecha", "fecha");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [VentaTransaccion] WHERE (([idVenta] = ?) AND ([subtotal] = ?) AND ([" +
-                "fecha] = ?))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idVenta", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idVenta", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_subtotal", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "subtotal", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fecha", global::System.Data.OleDb.OleDbType.DBDate, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fecha", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [VentaTransaccion] SET [subtotal] = ?, [fecha] = ? WHERE (([idVenta] = ?) " +
-                "AND ([subtotal] = ?) AND ([fecha] = ?))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("subtotal", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "subtotal", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fecha", global::System.Data.OleDb.OleDbType.DBDate, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fecha", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idVenta", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idVenta", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_subtotal", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "subtotal", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_fecha", global::System.Data.OleDb.OleDbType.DBDate, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fecha", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -805,19 +778,62 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        idVenta, subtotal, fecha\r\nFROM            VentaTransaccion";
+            this._commandCollection[0].CommandText = @"SELECT        VentaTransaccion.idVenta, VentaTransaccion.subtotal, VentaTransaccion.tipoFactura
+FROM            VentaTransaccion INNER JOIN
+                         TipoFactura ON VentaTransaccion.tipoFactura = TipoFactura.codTipoFac INNER JOIN
+                         Cliente ON VentaTransaccion.cliente = Cliente.nroDoc
+WHERE        (VentaTransaccion.fecha BETWEEN @fechaDesde AND @fechaHasta) AND (VentaTransaccion.cliente = @idCliente) AND (VentaTransaccion.subtotal BETWEEN @min AND @max) AND (VentaTransaccion.tipoFactura = @tipoF)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fecha", global::System.Data.OleDb.OleDbType.DBDate, 3, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fecha", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("fecha1", global::System.Data.OleDb.OleDbType.DBDate, 3, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fecha", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("cliente", global::System.Data.OleDb.OleDbType.Char, 50, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "cliente", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("subtotal", global::System.Data.OleDb.OleDbType.Numeric, 9, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "subtotal", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("subtotal1", global::System.Data.OleDb.OleDbType.Numeric, 9, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "subtotal", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("tipoFactura", global::System.Data.OleDb.OleDbType.Char, 50, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tipoFactura", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT VentaTransaccion.idVenta, VentaTransaccion.subtotal, VentaTransaccion.tipo" +
+                "Factura FROM VentaTransaccion INNER JOIN TipoFactura ON VentaTransaccion.tipoFac" +
+                "tura = TipoFactura.codTipoFac INNER JOIN Cliente ON VentaTransaccion.cliente = C" +
+                "liente.nroDoc";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsEst.VentaTransaccionDataTable dataTable) {
+        public virtual int ConsultaFechaClienteFacturaSubtotal(DsVentaEstadisticas.DsVentaDataTable dataTable, string fecha, string fecha1, string cliente, decimal subtotal, decimal subtotal1, string tipoFactura) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((fecha == null)) {
+                throw new global::System.ArgumentNullException("fecha");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fecha));
+            }
+            if ((fecha1 == null)) {
+                throw new global::System.ArgumentNullException("fecha1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(fecha1));
+            }
+            if ((cliente == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(cliente));
+            }
+            this.Adapter.SelectCommand.Parameters[3].Value = ((decimal)(subtotal));
+            this.Adapter.SelectCommand.Parameters[4].Value = ((decimal)(subtotal1));
+            if ((tipoFactura == null)) {
+                throw new global::System.ArgumentNullException("tipoFactura");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(tipoFactura));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -829,9 +845,35 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DsEst.VentaTransaccionDataTable GetData() {
+        public virtual DsVentaEstadisticas.DsVentaDataTable GetData(string fecha, string fecha1, string cliente, decimal subtotal, decimal subtotal1, string tipoFactura) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DsEst.VentaTransaccionDataTable dataTable = new DsEst.VentaTransaccionDataTable();
+            if ((fecha == null)) {
+                throw new global::System.ArgumentNullException("fecha");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fecha));
+            }
+            if ((fecha1 == null)) {
+                throw new global::System.ArgumentNullException("fecha1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(fecha1));
+            }
+            if ((cliente == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(cliente));
+            }
+            this.Adapter.SelectCommand.Parameters[3].Value = ((decimal)(subtotal));
+            this.Adapter.SelectCommand.Parameters[4].Value = ((decimal)(subtotal1));
+            if ((tipoFactura == null)) {
+                throw new global::System.ArgumentNullException("tipoFactura");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(tipoFactura));
+            }
+            DsVentaEstadisticas.DsVentaDataTable dataTable = new DsVentaEstadisticas.DsVentaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -839,80 +881,25 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsEst.VentaTransaccionDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int ConsultaTodos(DsVentaEstadisticas.DsVentaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsEst dataSet) {
-            return this.Adapter.Update(dataSet, "VentaTransaccion");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idVenta, decimal Original_subtotal, System.DateTime Original_fecha) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idVenta));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_subtotal));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_fecha));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal subtotal, System.DateTime fecha, int Original_idVenta, decimal Original_subtotal, System.DateTime Original_fecha) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(subtotal));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(fecha));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_idVenta));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_subtotal));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_fecha));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DsVentaEstadisticas.DsVentaDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            DsVentaEstadisticas.DsVentaDataTable dataTable = new DsVentaEstadisticas.DsVentaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
@@ -928,8 +915,6 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private VentaTransaccionTableAdapter _ventaTransaccionTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -942,20 +927,6 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public VentaTransaccionTableAdapter VentaTransaccionTableAdapter {
-            get {
-                return this._ventaTransaccionTableAdapter;
-            }
-            set {
-                this._ventaTransaccionTableAdapter = value;
             }
         }
         
@@ -978,10 +949,6 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._ventaTransaccionTableAdapter != null) 
-                            && (this._ventaTransaccionTableAdapter.Connection != null))) {
-                    return this._ventaTransaccionTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -995,9 +962,6 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._ventaTransaccionTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1007,17 +971,8 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DsEst dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DsVentaEstadisticas dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._ventaTransaccionTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.VentaTransaccion.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._ventaTransaccionTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1026,16 +981,8 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DsEst dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DsVentaEstadisticas dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._ventaTransaccionTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.VentaTransaccion.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._ventaTransaccionTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1044,16 +991,8 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DsEst dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DsVentaEstadisticas dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._ventaTransaccionTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.VentaTransaccion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._ventaTransaccionTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1086,17 +1025,12 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DsEst dataSet) {
+        public virtual int UpdateAll(DsVentaEstadisticas dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._ventaTransaccionTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._ventaTransaccionTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1130,15 +1064,6 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._ventaTransaccionTableAdapter != null)) {
-                    revertConnections.Add(this._ventaTransaccionTableAdapter, this._ventaTransaccionTableAdapter.Connection);
-                    this._ventaTransaccionTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._ventaTransaccionTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._ventaTransaccionTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._ventaTransaccionTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._ventaTransaccionTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1196,10 +1121,6 @@ namespace TrabajoPractico.Estadisticas.DsEstTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._ventaTransaccionTableAdapter != null)) {
-                    this._ventaTransaccionTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._ventaTransaccionTableAdapter]));
-                    this._ventaTransaccionTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
