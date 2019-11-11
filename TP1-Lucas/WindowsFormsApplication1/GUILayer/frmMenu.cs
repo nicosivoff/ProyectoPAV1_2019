@@ -24,7 +24,7 @@ namespace TrabajoPractico
         frmTransaccion transaccion = new frmTransaccion();
         frmReportePrendaMarca reporteMarca = new frmReportePrendaMarca();
         frmReportePrendaTipo reporteTipo = new frmReportePrendaTipo();
-        frmEstadisticaVentaTotal estadisticaVenta = new frmEstadisticaVentaTotal();
+        //frmEstadisticaVentaTotal estadisticaVenta = new frmEstadisticaVentaTotal();
 
         public frmMenu()
         {
@@ -156,7 +156,7 @@ namespace TrabajoPractico
 
         private void ventasTotalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            estadisticaVenta.ShowDialog();
+            //estadisticaVenta.ShowDialog();
         }
     }
 }

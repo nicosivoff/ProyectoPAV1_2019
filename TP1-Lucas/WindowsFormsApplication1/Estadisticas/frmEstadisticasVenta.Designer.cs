@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,8 +49,10 @@
             this.DsVentaEstadisticas = new TrabajoPractico.Estadisticas.DsVentaEstadisticas();
             this.DsVentaTableAdapter = new TrabajoPractico.Estadisticas.DsVentaEstadisticasTableAdapters.DsVentaTableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dsVentaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DsVentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DsVentaEstadisticas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsVentaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -186,10 +190,22 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(144, 192);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.DsVentaBindingSource;
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = this.dsVentaBindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TrabajoPractico.Estadisticas.rptEstadisticasVenta.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(15, 134);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.Size = new System.Drawing.Size(536, 312);
             this.reportViewer1.TabIndex = 15;
+            // 
+            // dsVentaBindingSource1
+            // 
+            this.dsVentaBindingSource1.DataMember = "DsVenta";
+            this.dsVentaBindingSource1.DataSource = this.DsVentaEstadisticas;
             // 
             // frmEstadisticasVenta
             // 
@@ -216,6 +232,7 @@
             this.Load += new System.EventHandler(this.frmEstadisticasVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DsVentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DsVentaEstadisticas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsVentaBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,5 +258,6 @@
         private DsVentaEstadisticas DsVentaEstadisticas;
         private DsVentaEstadisticasTableAdapters.DsVentaTableAdapter DsVentaTableAdapter;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource dsVentaBindingSource1;
     }
 }
