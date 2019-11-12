@@ -50,7 +50,7 @@ namespace TrabajoPractico.Estadisticas
                 {
                     if (cboTipoPrenda.SelectedIndex == -1 && !string.IsNullOrEmpty(txtPrecioDesde.Text) && !string.IsNullOrEmpty(txtPrecioHasta.Text))
                     {
-                        this.DsPrendaxTipoTableAdapter.ConsultarPorPrecio(this.DsPrendaxTipo._DsPrendaxTipo, Convert.ToInt32(txtPrecioDesde.Text), Convert.ToInt32(txtPrecioHasta.Text));
+                        //this.DsPrendaxTipoTableAdapter.ConsultarPorPrecio(this.DsPrendaxTipo._DsPrendaxTipo, Convert.ToInt32(txtPrecioDesde.Text), Convert.ToInt32(txtPrecioHasta.Text));
                     }
                     else
                     {
