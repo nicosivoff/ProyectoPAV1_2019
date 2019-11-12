@@ -98,6 +98,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPrenda.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Estadisticas\DsPrendaxMarca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsPrendaxMarca.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DsProveedores.cs">
       <DependentUpon>DsProveedores.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -133,6 +138,12 @@
     </Compile>
     <Compile Include="Estadisticas\frmEstadisticaClientes.Designer.cs">
       <DependentUpon>frmEstadisticaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaPrendaxMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\frmEstadisticaPrendaxMarca.Designer.cs">
+      <DependentUpon>frmEstadisticaPrendaxMarca.cs</DependentUpon>
     </Compile>
     <Compile Include="Estadisticas\frmEstadisticaPrendaxTipo.cs">
       <SubType>Form</SubType>
@@ -332,6 +343,9 @@
     <EmbeddedResource Include="Estadisticas\frmEstadisticaClientes.resx">
       <DependentUpon>frmEstadisticaClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\frmEstadisticaPrendaxMarca.resx">
+      <DependentUpon>frmEstadisticaPrendaxMarca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas\frmEstadisticaPrendaxTipo.resx">
       <DependentUpon>frmEstadisticaPrendaxTipo.cs</DependentUpon>
     </EmbeddedResource>
@@ -348,6 +362,7 @@
     <EmbeddedResource Include="Estadisticas\frmEstadisticasVenta.resx">
       <DependentUpon>frmEstadisticasVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\rptEstadisticasPrendaxMarca.rdlc" />
     <EmbeddedResource Include="Estadisticas\rptEstadisticasVenta.rdlc" />
     <EmbeddedResource Include="Estadisticas\rptEstadisticasVentaxTipo.rdlc" />
     <EmbeddedResource Include="GUILayer\frmABMCliente.resx">
@@ -485,6 +500,17 @@
     </None>
     <None Include="dsPrenda.xss">
       <DependentUpon>dsPrenda.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\DsPrendaxMarca.xsc">
+      <DependentUpon>DsPrendaxMarca.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\DsPrendaxMarca.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsPrendaxMarca.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Estadisticas\DsPrendaxMarca.xss">
+      <DependentUpon>DsPrendaxMarca.xsd</DependentUpon>
     </None>
     <None Include="DsProveedores.xsc">
       <DependentUpon>DsProveedores.xsd</DependentUpon>
