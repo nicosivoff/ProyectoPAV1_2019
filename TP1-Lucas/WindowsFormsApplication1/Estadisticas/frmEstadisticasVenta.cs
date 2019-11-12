@@ -45,27 +45,74 @@ namespace TrabajoPractico.Estadisticas
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            ReportParameter[] parametros = new ReportParameter[6];
-            //Establecemos el valor de los parámetros
-            parametros[0] = new ReportParameter("fechadesde", dtpFechaDesde.Value.ToShortDateString());
-            parametros[1] = new ReportParameter("fechahasta", dtpFechaHasta.Value.ToShortDateString());
-            parametros[2] = new ReportParameter("IdCliente", cboCliente.SelectedIndex == -1 ? "0" : cboCliente.SelectedValue.ToString());
-            parametros[3] = new ReportParameter("tipoF", cboTipo.SelectedIndex == -1 ? "0" : cboTipo.SelectedValue.ToString());
-            parametros[4] = new ReportParameter("min", txtMinimo.Text);
-            parametros[5] = new ReportParameter("max", txtMaximo.Text);
-
             
             if (cboCliente.SelectedIndex > -1 && cboTipo.SelectedIndex > -1 && !string.IsNullOrEmpty(txtMinimo.Text) && !string.IsNullOrEmpty(txtMaximo.Text))
             {
-                /*this.DsVentaTableAdapter.ConsultaFechaClienteFacturaSubtotal(
-                    this.DsVentaEstadisticas.DsVenta, "01-01-2017", "01-01-2020"
-                    , cboCliente.SelectedValue.ToString(),Convert.ToInt32(txtMaximo.Text),Convert.ToInt32(txtMinimo.Text),cboTipo.SelectedValue.ToString());*/
-                this.DsVentaTableAdapter.ConsultaFechaClienteFacturaSubtotal(
-                    this.DsVentaEstadisticas.DsVenta, "01-01-2017", "01-01-2020"
-                    , cboCliente.SelectedValue.ToString(), Convert.ToInt32(txtMinimo.Text), Convert.ToInt32(txtMaximo.Text), cboTipo.SelectedValue.ToString());
+                this.DsVentaTableAdapter.ConsultaFechaClienteSubtotalFactura(
+                    this.DsVentaEstadisticas.DsVenta, dtpFechaDesde.Value.ToShortDateString(), dtpFechaHasta.Value.ToShortDateString()
+                    , Convert.ToInt32(cboCliente.SelectedValue), Convert.ToInt32(txtMinimo.Text), Convert.ToInt32(txtMaximo.Text), cboTipo.SelectedValue.ToString());
+            }
+            else
+            {
+                if (cboCliente.SelectedIndex > -1 && !string.IsNullOrEmpty(txtMinimo.Text) && !string.IsNullOrEmpty(txtMaximo.Text) && cboTipo.SelectedIndex == -1)
+                {
+                    this.DsVentaTableAdapter.ConsultaFechaClienteSubtotal(
+                    this.DsVentaEstadisticas.DsVenta, dtpFechaDesde.Value.ToShortDateString(), dtpFechaHasta.Value.ToShortDateString()
+                    , Convert.ToInt32(cboCliente.SelectedValue), Convert.ToInt32(txtMinimo.Text), Convert.ToInt32(txtMaximo.Text));
+                }
+                else
+                {
+                     if (cboCliente.SelectedIndex > -1 && cboTipo.SelectedIndex > -1 && string.IsNullOrEmpty(txtMinimo.Text) && string.IsNullOrEmpty(txtMaximo.Text))
+                     {
+                         this.DsVentaTableAdapter.ConsultaFechaClienteFactura(
+                         this.DsVentaEstadisticas.DsVenta, dtpFechaDesde.Value.ToShortDateString(), dtpFechaHasta.Value.ToShortDateString()
+                         , Convert.ToInt32(cboCliente.SelectedValue), cboTipo.SelectedValue.ToString());
+                     }
+                     else
+                     {
+                         if (cboTipo.SelectedIndex > -1 && !string.IsNullOrEmpty(txtMinimo.Text) && !string.IsNullOrEmpty(txtMaximo.Text) && cboCliente.SelectedIndex == -1)
+                         {
+                             this.DsVentaTableAdapter.ConsultaFechaSubtotalFactura(
+                             this.DsVentaEstadisticas.DsVenta, dtpFechaDesde.Value.ToShortDateString(), dtpFechaHasta.Value.ToShortDateString()
+                             , Convert.ToInt32(txtMinimo.Text), Convert.ToInt32(txtMaximo.Text), cboTipo.SelectedValue.ToString());
+                         }
+                         else
+                         {
+                             if (cboCliente.SelectedIndex > -1)
+                             {
+                                 this.DsVentaTableAdapter.ConsultaFechaCliente(
+                                 this.DsVentaEstadisticas.DsVenta, dtpFechaDesde.Value.ToShortDateString(), dtpFechaHasta.Value.ToShortDateString()
+                                 , Convert.ToInt32(cboCliente.SelectedValue));
+                             }
+                             else
+                             {
+                                 if (!string.IsNullOrEmpty(txtMinimo.Text) && !string.IsNullOrEmpty(txtMaximo.Text))
+                                 {
+                                     this.DsVentaTableAdapter.ConsultaFechaSubtotal(
+                                     this.DsVentaEstadisticas.DsVenta, dtpFechaDesde.Value.ToShortDateString(), dtpFechaHasta.Value.ToShortDateString()
+                                     , Convert.ToInt32(txtMinimo.Text), Convert.ToInt32(txtMaximo.Text));
+                                 }
+                                 else
+                                 {
+                                     if (cboTipo.SelectedIndex > -1)
+                                     {
+                                         this.DsVentaTableAdapter.ConsultaFechaFactura(
+                                         this.DsVentaEstadisticas.DsVenta, dtpFechaDesde.Value.ToShortDateString(), dtpFechaHasta.Value.ToShortDateString()
+                                         , cboTipo.SelectedValue.ToString());
+                                     }
+                                     else
+                                     {
+                                         this.DsVentaTableAdapter.ConsultaFecha(
+                                         this.DsVentaEstadisticas.DsVenta, dtpFechaDesde.Value.ToShortDateString(), dtpFechaHasta.Value.ToShortDateString());
+                                     }
+                                 }
+                             }
+                         }
+                     }
+                }
             }
 
-            //reportViewer1.LocalReport.SetParameters(parametros);
+
             reportViewer1.LocalReport.Refresh();
             reportViewer1.RefreshReport();
         }

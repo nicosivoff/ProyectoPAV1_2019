@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.DsVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DsVentaEstadisticas = new TrabajoPractico.Estadisticas.DsVentaEstadisticas();
+            this.dsVentaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,15 +48,27 @@
             this.txtMaximo = new System.Windows.Forms.TextBox();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.DsVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DsVentaEstadisticas = new TrabajoPractico.Estadisticas.DsVentaEstadisticas();
             this.DsVentaTableAdapter = new TrabajoPractico.Estadisticas.DsVentaEstadisticasTableAdapters.DsVentaTableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsVentaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DsVentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DsVentaEstadisticas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsVentaBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DsVentaBindingSource
+            // 
+            this.DsVentaBindingSource.DataMember = "DsVenta";
+            this.DsVentaBindingSource.DataSource = this.DsVentaEstadisticas;
+            // 
+            // DsVentaEstadisticas
+            // 
+            this.DsVentaEstadisticas.DataSetName = "DsVentaEstadisticas";
+            this.DsVentaEstadisticas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dsVentaBindingSource1
+            // 
+            this.dsVentaBindingSource1.DataMember = "DsVenta";
+            this.dsVentaBindingSource1.DataSource = this.DsVentaEstadisticas;
             // 
             // label1
             // 
@@ -174,16 +189,6 @@
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
-            // DsVentaBindingSource
-            // 
-            this.DsVentaBindingSource.DataMember = "DsVenta";
-            this.DsVentaBindingSource.DataSource = this.DsVentaEstadisticas;
-            // 
-            // DsVentaEstadisticas
-            // 
-            this.DsVentaEstadisticas.DataSetName = "DsVentaEstadisticas";
-            this.DsVentaEstadisticas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // DsVentaTableAdapter
             // 
             this.DsVentaTableAdapter.ClearBeforeFill = true;
@@ -199,19 +204,14 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TrabajoPractico.Estadisticas.rptEstadisticasVenta.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(15, 134);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(536, 312);
+            this.reportViewer1.Size = new System.Drawing.Size(628, 368);
             this.reportViewer1.TabIndex = 15;
-            // 
-            // dsVentaBindingSource1
-            // 
-            this.dsVentaBindingSource1.DataMember = "DsVenta";
-            this.dsVentaBindingSource1.DataSource = this.DsVentaEstadisticas;
             // 
             // frmEstadisticasVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 458);
+            this.ClientSize = new System.Drawing.Size(656, 523);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGenerar);
