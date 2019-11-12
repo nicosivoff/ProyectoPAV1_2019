@@ -17,7 +17,7 @@ namespace TrabajoPractico
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEstadisticasVenta());
+            Application.Run(new frmEstadisticaPrendaxTipo());
             
         }
     }
