@@ -42,7 +42,7 @@ namespace TrabajoPractico.Estadisticas
             }
             else 
             {
-                if (cboTipoPrenda.SelectedIndex > -1 && (!string.IsNullOrEmpty(txtPrecioDesde.Text) || (!string.IsNullOrEmpty(txtPrecioHasta.Text))))
+                if (cboTipoPrenda.SelectedIndex > -1 && (string.IsNullOrEmpty(txtPrecioDesde.Text) || (string.IsNullOrEmpty(txtPrecioHasta.Text))))
                 {
                     this.DsPrendaxTipoTableAdapter.ConsultarPorTipo(this.DsPrendaxTipo._DsPrendaxTipo, Convert.ToInt32(cboTipoPrenda.SelectedValue));
                 }
@@ -50,6 +50,8 @@ namespace TrabajoPractico.Estadisticas
                 {
                     if (cboTipoPrenda.SelectedIndex == -1 && !string.IsNullOrEmpty(txtPrecioDesde.Text) && !string.IsNullOrEmpty(txtPrecioHasta.Text))
                     {
+                        txtPrecioDesde.Text = "";
+                        txtPrecioHasta.Text = "";
                         this.DsPrendaxTipoTableAdapter.ConsultarPorPrecio(this.DsPrendaxTipo._DsPrendaxTipo, Convert.ToInt32(txtPrecioDesde.Text), Convert.ToInt32(txtPrecioHasta.Text));
                     }
                     else
