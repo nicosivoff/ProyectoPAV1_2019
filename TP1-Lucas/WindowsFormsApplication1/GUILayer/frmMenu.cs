@@ -158,5 +158,23 @@ namespace TrabajoPractico
         {
             //estadisticaVenta.ShowDialog();
         }
+
+        private void porMarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaPrendaxMarca formulario = new frmEstadisticaPrendaxMarca();
+            formulario.ShowDialog();
+        }
+
+        private void porTipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaPrendaxTipo formulario = new frmEstadisticaPrendaxTipo();
+            formulario.ShowDialog();
+        }
+
+        private void ventasConFiltrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticasVenta formulario = new frmEstadisticasVenta();
+            formulario.ShowDialog();
+        }
     }
 }

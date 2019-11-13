@@ -6,17 +6,17 @@
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart1_CategoryGroup1">
+              <Group Name="Chart1_CategoryGroup">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!tipoPrenda.Value</GroupExpression>
+                  <GroupExpression>=Fields!descripcion.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!tipoPrenda.Value</Value>
+                  <Value>=Fields!descripcion.Value</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label>=Fields!tipoPrenda.Value</Label>
+              <Label>=Fields!descripcion.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>

@@ -42,10 +42,36 @@ namespace TrabajoPractico.Estadisticas
                 this.DsPrendaxMarcaTableAdapter.ConsultaMarcaPrecios(this.dsPrendaxMarca._DsPrendaxMarca, Convert.ToInt32(cboMarca.SelectedValue),
                     Convert.ToInt32(txtPrecioDesde.Text), Convert.ToInt32(txtPrecioHasta.Text));
             }
-            
+            else 
+            {
+                if (cboMarca.SelectedIndex > -1 && (string.IsNullOrEmpty(txtPrecioDesde.Text) || (string.IsNullOrEmpty(txtPrecioHasta.Text))))
+                {
+                    this.DsPrendaxMarcaTableAdapter.ConsultaPorMarca(this.dsPrendaxMarca._DsPrendaxMarca, Convert.ToInt32(cboMarca.SelectedValue));
+                }
+                else 
+                {
+                    if (cboMarca.SelectedIndex == -1 && !string.IsNullOrEmpty(txtPrecioDesde.Text) && !string.IsNullOrEmpty(txtPrecioHasta.Text))
+                    {
+                        txtPrecioDesde.Text = "";
+                        txtPrecioHasta.Text = "";
+                        this.DsPrendaxMarcaTableAdapter.ConsultaPorPrecio(this.dsPrendaxMarca._DsPrendaxMarca, Convert.ToInt32(txtPrecioDesde.Text), Convert.ToInt32(txtPrecioHasta.Text));
+                    }
+                    else
+                    {
+                        this.DsPrendaxMarcaTableAdapter.ConsultaSinParametros(this.dsPrendaxMarca._DsPrendaxMarca);
+                    }
+                }
+            }
 
             reportViewer1.LocalReport.Refresh();
             reportViewer1.RefreshReport();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            cboMarca.SelectedIndex = -1;
+            txtPrecioDesde.Text = "";
+            txtPrecioHasta.Text = "";
         }
 
         

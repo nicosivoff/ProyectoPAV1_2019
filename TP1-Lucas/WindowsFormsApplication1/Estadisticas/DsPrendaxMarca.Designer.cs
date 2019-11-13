@@ -2528,7 +2528,7 @@ namespace TrabajoPractico.Estadisticas.DsPrendaxMarcaTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        Prenda.descripcion, Prenda.cantidad, Marca.nombre, Prenda.precio
@@ -2539,6 +2539,28 @@ WHERE        (Prenda.borrado = 0) AND (Marca.idMarca = ?) AND (Prenda.precio BET
             this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idMarca", global::System.Data.OleDb.OleDbType.Integer, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idMarca", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("precio", global::System.Data.OleDb.OleDbType.Integer, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "precio", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("precio1", global::System.Data.OleDb.OleDbType.Integer, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "precio", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        Prenda.descripcion, Prenda.cantidad, Marca.nombre, Prenda.precio\r\nF" +
+                "ROM            Prenda INNER JOIN\r\n                         Marca ON Prenda.marca" +
+                " = Marca.idMarca\r\nWHERE        (Prenda.borrado = 0) AND (Marca.idMarca = ?)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idMarca", global::System.Data.OleDb.OleDbType.Integer, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idMarca", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        Prenda.descripcion, Prenda.cantidad, Marca.nombre, Prenda.precio\r\nF" +
+                "ROM            Prenda INNER JOIN\r\n                         Marca ON Prenda.marca" +
+                " = Marca.idMarca\r\nWHERE        (Prenda.borrado = 0) AND (Prenda.precio BETWEEN ?" +
+                " AND ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("precio", global::System.Data.OleDb.OleDbType.Integer, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "precio", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("precio1", global::System.Data.OleDb.OleDbType.Integer, 4, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "precio", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        Prenda.descripcion, Prenda.cantidad, Marca.nombre, Prenda.precio\r\nF" +
+                "ROM            Prenda INNER JOIN\r\n                         Marca ON Prenda.marca" +
+                " = Marca.idMarca\r\nWHERE        (Prenda.borrado = 0)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2566,6 +2588,84 @@ WHERE        (Prenda.borrado = 0) AND (Marca.idMarca = ?) AND (Prenda.precio BET
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idMarca));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(precio));
             this.Adapter.SelectCommand.Parameters[2].Value = ((int)(precio1));
+            DsPrendaxMarca.DsPrendaxMarcaDataTable dataTable = new DsPrendaxMarca.DsPrendaxMarcaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int ConsultaPorMarca(DsPrendaxMarca.DsPrendaxMarcaDataTable dataTable, int idMarca) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idMarca));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DsPrendaxMarca.DsPrendaxMarcaDataTable GetDataBy(int idMarca) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idMarca));
+            DsPrendaxMarca.DsPrendaxMarcaDataTable dataTable = new DsPrendaxMarca.DsPrendaxMarcaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int ConsultaPorPrecio(DsPrendaxMarca.DsPrendaxMarcaDataTable dataTable, int precio, int precio1) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(precio));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(precio1));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DsPrendaxMarca.DsPrendaxMarcaDataTable GetDataBy1(int precio, int precio1) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(precio));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(precio1));
+            DsPrendaxMarca.DsPrendaxMarcaDataTable dataTable = new DsPrendaxMarca.DsPrendaxMarcaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int ConsultaSinParametros(DsPrendaxMarca.DsPrendaxMarcaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DsPrendaxMarca.DsPrendaxMarcaDataTable GetDataBy2() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             DsPrendaxMarca.DsPrendaxMarcaDataTable dataTable = new DsPrendaxMarca.DsPrendaxMarcaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
