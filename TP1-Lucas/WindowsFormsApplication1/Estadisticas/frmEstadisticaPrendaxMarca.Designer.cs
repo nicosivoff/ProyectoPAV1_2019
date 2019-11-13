@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.dsPrendaxMarcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPrendaxMarca = new TrabajoPractico.Estadisticas.DsPrendaxMarca();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,22 +41,32 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.cboMarca = new System.Windows.Forms.ComboBox();
-            this.dsPrendaxMarcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsPrendaxMarca = new TrabajoPractico.Estadisticas.DsPrendaxMarca();
             this.dsPrendaxMarca1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DsPrendaxMarcaTableAdapter = new TrabajoPractico.Estadisticas.DsPrendaxMarcaTableAdapters.DsPrendaxMarcaTableAdapter();
             this.dsPrendaxMarca2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPrendaxMarcaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dsPrendaxMarcaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPrendaxMarca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPrendaxMarca1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPrendaxMarca2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrendaxMarcaBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dsPrendaxMarcaBindingSource
+            // 
+            this.dsPrendaxMarcaBindingSource.DataSource = this.dsPrendaxMarca;
+            this.dsPrendaxMarcaBindingSource.Position = 0;
+            // 
+            // dsPrendaxMarca
+            // 
+            this.dsPrendaxMarca.DataSetName = "DsPrendaxMarca";
+            this.dsPrendaxMarca.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "DsPrendaxMarca";
-            reportDataSource2.Value = this.dsPrendaxMarcaBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DsPrendaxMarca";
+            reportDataSource1.Value = this.dsPrendaxMarcaBindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TrabajoPractico.Estadisticas.rptEstadisticasPrendaxMarca.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 91);
             this.reportViewer1.Name = "reportViewer1";
@@ -129,19 +141,14 @@
             this.cboMarca.Size = new System.Drawing.Size(100, 21);
             this.cboMarca.TabIndex = 9;
             // 
-            // dsPrendaxMarcaBindingSource
-            // 
-            this.dsPrendaxMarcaBindingSource.DataSource = this.dsPrendaxMarca;
-            this.dsPrendaxMarcaBindingSource.Position = 0;
-            // 
-            // dsPrendaxMarca
-            // 
-            this.dsPrendaxMarca.DataSetName = "DsPrendaxMarca";
-            this.dsPrendaxMarca.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // DsPrendaxMarcaTableAdapter
             // 
             this.DsPrendaxMarcaTableAdapter.ClearBeforeFill = true;
+            // 
+            // dsPrendaxMarcaBindingSource1
+            // 
+            this.dsPrendaxMarcaBindingSource1.DataMember = "DsPrendaxMarca";
+            this.dsPrendaxMarcaBindingSource1.DataSource = this.dsPrendaxMarcaBindingSource;
             // 
             // frmEstadisticaPrendaxMarca
             // 
@@ -164,6 +171,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsPrendaxMarca)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPrendaxMarca1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPrendaxMarca2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrendaxMarcaBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +193,6 @@
         private System.Windows.Forms.BindingSource dsPrendaxMarca1BindingSource;
         private DsPrendaxMarcaTableAdapters.DsPrendaxMarcaTableAdapter DsPrendaxMarcaTableAdapter;
         private System.Windows.Forms.BindingSource dsPrendaxMarca2BindingSource;
+        private System.Windows.Forms.BindingSource dsPrendaxMarcaBindingSource1;
     }
 }
